@@ -20,8 +20,12 @@
     <div class="container">
         <!-- Logo start -->
         <div class="logo">
-            <a href="index.html"><img alt="" src="assets/images/logo.png" /></a>
+            <a href="index.html">
+                <img alt="Logo Tanah Datar" src="/dist/assets/compiled/jpg/logotanahdatar.png" />
+            </a>
+            <h3>DEWAN PERWAKILAN RAKYAT DAERAH</h3>
         </div>
+        
         <!-- Logo end -->
         
         @include('dprdtd.template.navbar')
