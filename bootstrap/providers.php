@@ -1,0 +1,25 @@
+<?php
+
+return [
+    App\Providers\AgendaServiceProvider::class,
+    App\Providers\AppServiceProvider::class,
+    App\Providers\ArticleServiceProvider::class,
+    App\Providers\CategoryServiceProvider::class,
+    App\Providers\CommentServiceProvider::class,
+    App\Providers\DashboardServiceProvider::class,
+    App\Providers\FileUploadServiceProvider::class,
+    App\Providers\GlobalItemProvider::class,
+    App\Providers\HeaderItemProvider::class,
+    App\Providers\HeaderItemServiceProvider::class,
+    App\Providers\LinkServiceProvider::class,
+    App\Providers\LoginServiceProvider::class,
+    App\Providers\MenuServiceProvider::class,
+    App\Providers\NewsServiceProvider::class,
+    App\Providers\PengumumanServiceProvider::class,
+    App\Providers\ProfileServiceProvider::class,
+    App\Providers\RoleServiceProvider::class,
+    App\Providers\SettingServiceProvider::class,
+    App\Providers\SkpdLinkServiceProvider::class,
+    App\Providers\SlideLinkServiceProvider::class,
+    App\Providers\UserManagerProider::class,
+];

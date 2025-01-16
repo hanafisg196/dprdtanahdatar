@@ -1,0 +1,499 @@
+  <!-- Content start -->
+  <div class="rev_slider_wrapper fullscreen-container" data-alias="concept1">
+    <!-- START REVOLUTION SLIDER 5.1.6 fullscreen mode -->
+    <div id="rev_slider_4_1" class="rev_slider fullscreenbanner" data-version="5.0">
+        <ul>
+
+            <!-- SLIDE  -->
+            <li data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="1500" data-saveperformance="off">
+                <video autoplay muted loop preload="auto" style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="assets/images/videos/hands.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- LAYERS -->
+
+                <!-- LAYER NR. 1 -->
+                <h4 class="tp-caption uppercase tp-resizeme"
+                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                    data-y="['top','top','top','top']" data-voffset="['120','120','260','200']"
+                    data-fontsize="['50','50','15','15']"
+                    data-lineheight="['75','75','35','25']"
+                    data-width="none"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-transform_idle="o:1;"
+                    data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeOut;"
+                    data-transform_out="y:-50px;opacity:0;s:500;e:Power2.easeIn;s:500;e:Power2.easeIn;"
+                    data-start="1500"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-responsive_offset="on"
+                    style="z-index: 8; white-space: nowrap;">Pemerintahan Kabupaten<span class="main-color"> Tanah Datar</span> </h4>
+
+                <!-- LAYER NR. 2 -->
+                <div class="tp-caption uppercase tp-resizeme t-center"
+                    data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                    data-y="['top','top','top','top']" data-voffset="['250','180','250','180']"
+                    data-width="['auto','auto','500','300']"
+                    data-fontsize="['20','20','20','20']"
+                    data-lineheight="['20','20','20','20']"
+                    data-height="none"
+                    data-whitespace="['nowrap','nowrap','normal','normal']"
+                    data-transform_idle="o:1;"
+                    data-transform_in="y:50px;opacity:0;s:1500;e:Power4.easeOut;"
+                    data-transform_out="y:-50px;opacity:0;s:500;e:Power2.easeIn;s:500;e:Power2.easeIn;"
+                    data-start="1800"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-responsive_offset="on"
+                    style="z-index: 14;">
+                    Tuah Sakato, &nbsp; Adat Mamakai
+                </div>
+                <!-- LAYER NR. 3 -->
+                 <a class="tp-caption t-center main-bg border5px"
+                     data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                     data-y="['top','top','top','top']" data-voffset="['350','280','350','280']"
+                     data-width="['100','100','80','80']"
+                     data-height="['80','80','60','60']"
+                     data-fontsize="['20','20','10','10']"
+                     data-lineheight="['50','50','30','30']"
+                     data-whitespace="nowrap"
+                     data-transform_idle="o:1;"
+                     data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                     data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                     data-start="2100"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-responsive_offset="on"
+                     data-responsive="off"
+                     id="popover1"
+                     style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                     flex-direction: column;
+                     text-align: center;
+                     background-color: rgba(0, 0, 0, 0.75);
+                     color: #fff;">
+                     <i class="fa fa-home" style="font-size: 40px; margin-bottom: 5px;"></i>
+                     <span style="font-size: 10px;line-height: 1;display: block;">
+                       PELUK TANDA DIRI</span>
+                    </a>
+
+                <!-- LAYER NR. 4 -->
+                    <button class="tp-caption t-center main-bg border5px"
+                    data-x="['center','center','center','center']" data-hoffset="['50','50','0','0']"
+                    data-y="['middle','middle','middle','middle']" data-voffset="['100','100','40','40']"
+                    data-width="['80','80','60','60']"
+                    data-height="['80','80','60','60']"
+                    data-fontsize="['20','20','10','10']"
+                    data-lineheight="['50','50','30','30']"
+                    data-whitespace="nowrap"
+                    data-transform_idle="o:1;"
+                    data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                    data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                    data-start="2600"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-toggle="modal"
+                    data-target=".bs-example-investasi-sm"
+                    data-responsive_offset="on"
+                    data-responsive="off"
+                    style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                        flex-direction: column;
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, 0.75);
+                        color: #fff;
+                    ">
+                    <i class="fa fa-line-chart" style="font-size: 40px; margin-bottom: 5px;"></i>
+                    <span style="font-size: 10px; line-height: 1;">INVESTASI</span>
+                    </button>
+
+                    <button class="tp-caption t-center main-bg border5px"
+                    data-x="['center','center','center','center']" data-hoffset="['160','160','0','0']"
+                    data-y="['middle','middle','middle','middle']" data-voffset="['100','100','40','40']"
+                    data-width="['80','80','60','60']"
+                    data-height="['80','80','60','60']"
+                    data-fontsize="['20','20','10','10']"
+                    data-lineheight="['50','50','30','30']"
+                    data-whitespace="nowrap"
+                    data-transform_idle="o:1;"
+                    data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                    data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                    data-start="2600"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-responsive_offset="on"
+                    data-responsive="off"
+                    data-toggle="modal"
+                    data-target=".bs-example-ppid-sm"
+                    style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                        flex-direction: column;
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, 0.75);
+                        color: #fff;
+                    ">
+                    <i class="fa fa-book" style="font-size: 40px; margin-bottom: 5px;"></i>
+                    <span style="font-size: 10px; line-height: 1;">PPID</span>
+                  </button>
+
+                <a class="tp-caption t-center main-bg border5px"
+                 data-x="['center','center','center','center']" data-hoffset="['265','265','0','0']"
+                 data-y="['middle','middle','middle','middle']" data-voffset="['100','100','40','40']"
+                 data-width="['80','80','60','60']"
+                 data-height="['80','80','60','60']"
+                 data-fontsize="['20','20','10','10']"
+                 data-lineheight="['50','50','30','30']"
+                 data-whitespace="nowrap"
+                 data-transform_idle="o:1;"
+                 data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                 data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                 data-start="2600"
+                 data-splitin="none"
+                 data-splitout="none"
+                 data-responsive_offset="on"
+                 data-responsive="off"
+                 href="https://ipkd.tanahdatar.go.id/"
+                  style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.75);
+                    color: #fff;
+                  ">
+                <i class="fa fa-credit-card" style="font-size: 40px; margin-bottom: 5px;"></i>
+                <span style="font-size: 10px; line-height: 1;">IPKD</span>
+                </a>
+
+
+                <button class="tp-caption t-center main-bg border5px"
+                data-x="['center','center','center','center']" data-hoffset="['-50','-50','0','100']"
+                data-y="['middle','middle','middle','middle']" data-voffset="['100','100','40','40']"
+                data-width="['80','80','60','60']"
+                data-height="['80','80','60','60']"
+                data-fontsize="['20','20','10','10']"
+                data-lineheight="['50','50','30','30']"
+                data-whitespace="nowrap"
+                data-transform_idle="o:1;"
+                data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                data-start="2600"
+                data-splitin="none"
+                data-splitout="none"
+                data-toggle="modal"
+                data-target=".bs-example-modal-spbe-lg"
+                data-responsive_offset="on"
+                data-responsive="off"
+                style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.75);
+                    color: #fff;
+                ">
+                <i class="fa fa-window-maximize" style="font-size: 40px; margin-bottom: 5px;"></i>
+                <span style="font-size: 10px; line-height: 1;">SPBE</span>
+                </button>
+
+                <button class="tp-caption t-center main-bg border5px"
+                id="popupid2"
+                data-x="['center','center','center','left']" data-hoffset="['-160','-160','0','100']"
+                data-y="['middle','middle','middle','middle']" data-voffset="['100','100','40','40']"
+                data-width="['80','80','60','60']"
+                data-height="['80','80','60','60']"
+                data-fontsize="['20','20','10','10']"
+                data-lineheight="['50','50','30','30']"
+                data-whitespace="nowrap"
+                data-transform_idle="o:1;"
+                data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                data-start="2600"
+                data-splitin="none"
+                data-splitout="none"
+                data-responsive_offset="on"
+                data-responsive="off"
+                data-toggle="modal"
+                data-target=".bs-example-modal-data-sm"
+                {{-- data-toggle="popover" title="Informasi Data" data-placement="top"
+                data-content="
+                <div class='row'>
+                    <div class='list-group'>
+                        <button type='button' class='list-group-item'><i class='fa fa-external-link' style='padding-right: 3px;'></i>Portal Satu Data</button>
+                        <button type='button' class='list-group-item'><i class='fa fa-external-link' style='padding-right: 3px;'></i>Jumlah Pelayanan Peserta KB Baru Berdasarkan Metode Kontrasepsi
+                            Kabupaten Tanah Datar (Rilis data bulanan setiap tanggal 15 di bulan berikutnya(Portal Satau Data))
+                        </button>
+                    </div>
+                </div>
+                 " --}}
+                style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.75);
+                    color: #fff;
+                ">
+                <i class="fa fa-table" style="font-size: 40px; margin-bottom: 5px;"></i>
+                <span style="font-size: 10px; line-height: 1;">DATA</span>
+               </button>
+
+               <button class="tp-caption t-center main-bg border5px"
+                id="popupid1"
+                data-x="['center','center','center','left']" data-hoffset="['-265','-265','0','100']"
+                data-y="['middle','middle','middle','middle']" data-voffset="['100','100','40','40']"
+                data-width="['80','80','60','60']"
+                data-height="['80','80','60','60']"
+                data-fontsize="['20','20','10','10']"
+                data-lineheight="['50','50','30','30']"
+                data-whitespace="nowrap"
+                data-transform_idle="o:1;"
+                data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                data-start="2600"
+                data-splitin="none"
+                data-splitout="none"
+                data-responsive_offset="on"
+                data-responsive="off"
+                data-toggle="modal"
+                data-target=".bs-example-modal-radio-sm"
+                {{-- data-toggle="popover" title="Informasi Radio" data-placement="top"
+                data-content="
+                <div class='list-group'>
+                <button type='button' class='list-group-item'><i class='fa fa-external-link' style='padding-right: 3px;'></i>Radio Luhak Nan Tuo</button>
+                </div>
+                 " --}}
+                style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.75);
+                    color: #fff;
+                    ">
+                <i class="fa fa-microphone" style="font-size: 40px; margin-bottom: 5px;"></i>
+                <span style="font-size: 10px; line-height: 1;">RADIO</span>
+               </button>
+
+
+                 <!-- LAYER NR. 5 -->
+                 <div class="tp-caption t-center main-bg border5px"
+                 data-x="['center','center','center','center']" data-hoffset="['50','50','0','0']"
+                 data-y="['middle','middle','middle','middle']" data-voffset="['200','200','40','40']"
+                 data-width="['80','80','60','60']"
+                 data-height="['80','80','60','60']"
+                 data-fontsize="['20','20','10','10']"
+                 data-lineheight="['50','50','30','30']"
+                 data-whitespace="nowrap"
+                 data-transform_idle="o:1;"
+                 data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                 data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                 data-start="2600"
+                 data-splitin="none"
+                 data-splitout="none"
+                 data-responsive_offset="on"
+                 data-responsive="off"
+                 data-toggle="modal"
+                 data-target=".bs-example-pengaduan-sm"
+                 style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                     flex-direction: column;
+                     text-align: center;
+                     background-color: rgba(0, 0, 0, 0.75);
+                     color: #fff;
+                 ">
+                 <i class="fa fa-sticky-note" style="font-size: 40px; margin-bottom: 5px;"></i>
+                 <span style="font-size: 10px; line-height: 1;">PENGADUAN</span>
+                 </div>
+
+                 <div class="tp-caption t-center main-bg border5px"
+                 data-x="['center','center','center','center']" data-hoffset="['160','160','0','0']"
+                 data-y="['middle','middle','middle','middle']" data-voffset="['200','200','40','40']"
+                 data-width="['80','80','60','60']"
+                 data-height="['80','80','60','60']"
+                 data-fontsize="['20','20','10','10']"
+                 data-lineheight="['50','50','30','30']"
+                 data-whitespace="nowrap"
+                 data-transform_idle="o:1;"
+                 data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+                 data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                 data-start="2600"
+                 data-splitin="none"
+                 data-splitout="none"
+                 data-responsive_offset="on"
+                 data-responsive="off"
+                 data-toggle="modal"
+                 data-target=".bs-example-tda-sm"
+                 style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                     flex-direction: column;
+                     text-align: center;
+                     background-color: rgba(0, 0, 0, 0.75);
+                     color: #fff;
+                 ">
+                 <i class="fa fa-bookmark" style="font-size: 40px; margin-bottom: 5px;"></i>
+                 <span style="font-size: 10px; line-height: 1;">TDA</span>
+                 </div>
+
+             <div class="tp-caption t-center main-bg border5px"
+              data-x="['center','center','center','center']" data-hoffset="['265','265','0','0']"
+              data-y="['middle','middle','middle','middle']" data-voffset="['200','200','40','40']"
+              data-width="['80','80','60','60']"
+              data-height="['80','80','60','60']"
+              data-fontsize="['20','20','10','10']"
+              data-lineheight="['50','50','30','30']"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+              data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+              data-start="2600"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              data-responsive="off"
+              data-toggle="modal"
+              data-target=".bs-example-gender-sm"
+               style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                 flex-direction: column;
+                 text-align: center;
+                 background-color: rgba(0, 0, 0, 0.75);
+                 color: #fff;
+               ">
+             <i class="fa fa-window-restore" style="font-size: 40px; margin-bottom: 5px;"></i>
+             <span style="font-size: 10px; line-height: 1;">GENDER</span>
+             </div>
+
+             <div class="tp-caption t-center main-bg border5px"
+             data-x="['center','center','center','center']" data-hoffset="['-50','-50','0','100']"
+             data-y="['middle','middle','middle','middle']" data-voffset="['200','200','40','40']"
+             data-width="['80','80','60','60']"
+             data-height="['80','80','60','60']"
+             data-fontsize="['20','20','10','10']"
+             data-lineheight="['50','50','30','30']"
+             data-whitespace="nowrap"
+             data-transform_idle="o:1;"
+             data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+             data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+             data-start="2600"
+             data-splitin="none"
+             data-splitout="none"
+             data-responsive_offset="on"
+             data-responsive="off"
+             data-toggle="modal"
+             data-target=".bs-example-pendidikan-sm"
+             style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                 flex-direction: column;
+                 text-align: center;
+                 background-color: rgba(0, 0, 0, 0.75);
+                 color: #fff;
+             ">
+             <i class="fa fa-graduation-cap" style="font-size: 40px; margin-bottom: 5px;"></i>
+             <span style="font-size: 10px; line-height: 1;">PENDIDIKAN</span>
+             </div>
+
+             <div class="tp-caption t-center main-bg border5px"
+             data-x="['center','center','center','left']" data-hoffset="['-160','-160','0','100']"
+             data-y="['middle','middle','middle','middle']" data-voffset="['200','200','40','40']"
+             data-width="['80','80','60','60']"
+             data-height="['80','80','60','60']"
+             data-fontsize="['20','20','10','10']"
+             data-lineheight="['50','50','30','30']"
+             data-whitespace="nowrap"
+             data-transform_idle="o:1;"
+             data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+             data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+             data-start="2600"
+             data-splitin="none"
+             data-splitout="none"
+             data-responsive_offset="on"
+             data-responsive="off"
+             data-toggle="modal"
+             data-target=".bs-example-modal-pariwisata-lg"
+             style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                 flex-direction: column;
+                 text-align: center;
+                 background-color: rgba(0, 0, 0, 0.75);
+                 color: #fff;
+             ">
+             <i class="fa fa-location-arrow" style="font-size: 40px; margin-bottom: 5px;"></i>
+             <span style="font-size: 10px; line-height: 1;">PARIWISATA</span>
+             </div>
+
+             <div class="tp-caption t-center main-bg border5px"
+             data-x="['center','center','center','left']" data-hoffset="['-265','-265','0','100']"
+             data-y="['middle','middle','middle','middle']" data-voffset="['200','200','40','40']"
+             data-width="['80','80','60','60']"
+             data-height="['80','80','60','60']"
+             data-fontsize="['20','20','10','10']"
+             data-lineheight="['50','50','30','30']"
+             data-whitespace="nowrap"
+             data-transform_idle="o:1;"
+             data-transform_in="opacity:0;sX:0;sY:0;s:1000;e:Power2.easeInOut;"
+             data-transform_out="opacity:0;sX:0;sY:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+             data-start="2600"
+             data-splitin="none"
+             data-splitout="none"
+             data-responsive_offset="on"
+             data-responsive="off"
+             data-toggle="modal"
+             data-target=".bs-example-siduri-sm"
+             style=" z-index: 13;display: flex; align-items: center;justify-content: center;
+                 flex-direction: column;
+                 text-align: center;
+                 background-color: rgba(0, 0, 0, 0.75);
+                 color: #fff;">
+             <i class="fa fa-hospital-o" style="font-size: 40px; margin-bottom: 5px;"></i>
+             <span style="font-size: 10px; line-height: 1;">SIDURI</span>
+             </div>
+
+            <!-- LAYER NR. 100 -->
+            <div class="tp-caption rev-btn "
+                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                data-y="['top','top','top','bottom']" data-voffset="['700','700','700','0']"
+                data-width="none"
+                data-height="none"
+                data-whitespace="nowrap"
+                data-transform_idle="o:1;"
+                data-transform_in="y:[50%];opacity:0;s:1000;e:Power2.easeInOut;"
+                data-transform_out="opacity:0;s:1000;e:Power3.easeIn;s:300;e:Power3.easeIn;"
+                data-start="3300"
+                data-splitin="none"
+                data-splitout="none"
+                data-responsive_offset="on"
+                data-responsive="off"
+                style="z-index: 13; font-size: 20px; line-height: 50px; font-weight: 500;
+                padding:0 30px;border-radius:3px;">
+                <a class="btn btn-lg btn-icon-right no-bg main-bg" href="{{route('home')}}"><i class="fa fa-arrow-right"></i><span>MASUK WEBSITE</span></a>
+            </div>
+
+
+            </li>
+
+        </ul>
+        <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+    </div>
+</div>
+<!-- Content start -->
+
+<!-- Modals -->
+@include('tanahdatar.page.landing-modals')
+<!-- Modals end -->
+
+<!-- Footer start -->
+
+
+<script>
+    $(document).ready(function() {
+        // Initialize all popovers
+        $('[data-toggle="popover"]').popover();
+
+        // Close any open popover when clicking outside
+        $(document).on('click', function (e) {
+            // Check if the click was outside of any popover
+            if (!$(e.target).closest('[data-toggle="popover"]').length) {
+                // Close all popovers
+                $('[data-toggle="popover"]').popover('hide');
+            }
+        });
+
+        // Optionally, you can make sure the popover doesn't close when clicked inside
+        $('[data-toggle="popover"]').on('click', function (e) {
+            e.stopPropagation(); // Prevent the click inside popover from closing it
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $('.bs-example-modal-lg').modal('show');
+    });
+</script>
