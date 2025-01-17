@@ -32,11 +32,19 @@ Route::get('/', function () {
     return view('dprdtd.page.home');
 })->name('home');
 
+Route::get('/berita', function () {
+    return view('dprdtd.page.detail-blog');
+})->name('berita');
+Route::get('/member', function () {
+    return view('dprdtd.page.detail-member');
+})->name('member');
+
+
 // Route::get('/home', [HomePageController::class, 'index'])->name('home');
 // Route::get('/berita/{slug}', [NewsPageController::class,'detailNews'])->name('news.detail');
 // // Route::post('/commen/{newsId}', [NewsPageController::class,'detailNews'])->name('news.detail');
-// Route::get('/login', [LoginController::class, 'index'])->name('login');
-// Route::post('/login', [LoginController::class, 'dologin'])->name('doLogin');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'dologin'])->name('doLogin');
 // Route::get('/fetching', [FetchingDataControlller::class, 'fetchData']);
 
 

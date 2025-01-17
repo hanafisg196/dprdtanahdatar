@@ -13,7 +13,7 @@
             <li class="widget w-recent-posts">
                 <h4 class="widget-title"><span class="main-color">BERITA </span>LAINYA</h4>
                 <div class="widget-content">
-              
+                    <p>test</p>
                 </div>
             </li>
         </ul>
