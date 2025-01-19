@@ -13,7 +13,6 @@ return [
     App\Providers\HeaderItemServiceProvider::class,
     App\Providers\LinkServiceProvider::class,
     App\Providers\LoginServiceProvider::class,
-    App\Providers\MemberServiceProvider::class,
     App\Providers\MenuServiceProvider::class,
     App\Providers\NewsServiceProvider::class,
     App\Providers\PengumumanServiceProvider::class,
