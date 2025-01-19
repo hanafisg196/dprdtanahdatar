@@ -8,41 +8,37 @@
                 <span>Dashboard</span>
             </a>
         </li>
-        <li class="sidebar-item has-sub {{ Request::is('dashboard/content*') ? 'active' : '' }}">
+        <li class="sidebar-item has-sub {{ Request::is('dashboard/konten*') ? 'active' : '' }}">
             <a href="#" class='sidebar-link'>
             <i class="bi bi-grid-1x2-fill"></i>
                 <span>Postingan</span>
             </a>
             <ul class="submenu ">
-                <li class="submenu-item {{Request::is('dashboard/content/berita*') ? 'active' : ''}}">
+                <li class="submenu-item {{Request::is('dashboard/konten/postingan*') ? 'active' : ''}}">
                     <a  href="{{route('dashboard.news.post.list')}}" class="submenu-link">
-                        <span>Berita</span>
+                        <span>Konten</span>
                     </a>
                 </li>
 
-                <li class="submenu-item {{Request::is('dashboard/content/article*') ? 'active' : ''}}">
-                    <a href="{{route('dashboard.article.list')}}"  class="submenu-link">
-                        <span>Artikel</span>
+                <li class="submenu-item {{Request::is('dashboard/konten/anggota*') ? 'active' : ''}}">
+                    <a  href="{{route('dashboard.member.list')}}" class="submenu-link">
+                        <span>Anggota</span>
                     </a>
                 </li>
-                <li class="submenu-item {{Request::is('dashboard/content/pengumuman*') ? 'active' : ''}}">
-                    <a href="{{route('dashboard.pengumuman.list')}}" class="submenu-link">
-                        <span>Pengumuman</span>
-                    </a>
-                </li>
-                <li class="submenu-item {{Request::is('dashboard/content/agenda*') ? 'active' : ''}}">
-                    <a href="{{route('dashboard.agenda.list')}}" class="submenu-link">
-                        <span>Agenda</span>
+
+                <li class="submenu-item {{Request::is('dashboard/konten/partai*') ? 'active' : ''}}">
+                    <a  href="{{route('dashboard.party.list')}}" class="submenu-link">
+                        <span>Partai</span>
                     </a>
                 </li>
            </ul>
         </li>
-        <li class="sidebar-item {{ Request::is('filemanager') ? 'active' : '' }}">
+        {{-- <li class="sidebar-item {{ Request::is('filemanager') ? 'active' : '' }}">
             <a  href="{{ route('filemanager') }}" class='sidebar-link'>
                 <i class="bi bi-folder-fill"></i>
                 <span>File Mananger</span>
             </a>
-        </li>
+        </li> --}}
         <livewire:is-admin-menu>
     </ul>
 </div>
