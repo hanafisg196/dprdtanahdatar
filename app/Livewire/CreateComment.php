@@ -4,17 +4,31 @@ namespace App\Livewire;
 
 use App\Models\Comment;
 use App\Services\CommentService;
-use Illuminate\Http\Request;
 use Livewire\Component;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Validate;
+use Livewire\WithPagination;
+
 class CreateComment extends Component
 {
+    use WithPagination;
+    #[Validate('required|string')]
     public $nama;
+
+    #[Validate('nullable|url')]
     public $website;
+
+    #[Validate('required|email')]
     public $email;
+
+    #[Validate('required|string|max:200')]
     public $komentar;
+
+    public $perPage = 5;
+
     public $newsId;
-    public $comment;
+
+
     protected CommentService $commentService;
 
     public function boot(
@@ -30,15 +44,20 @@ class CreateComment extends Component
     }
     public function makeComment()
     {
-        $request = new Request([
-            'nama' => $this->nama,
-            'website' => $this->website,
+        $this->validate();
+        Comment::create([
+            'name' => $this->nama,
             'email' => $this->email,
-            'komentar' => $this->komentar
+            'website' =>  $this->website,
+            'message' =>  $this->komentar,
+            'news_id' => $this->newsId
         ]);
-        $this->commentService->createComment($request,$this->newsId);
         $this->resetForm();
         $this->dispatch('comment-created', ['message' => 'Komentar berhasil ditambahkan.']);
+    }
+    public function loadMore()
+    {
+        $this->perPage += 5;
     }
     private function resetForm() {
         $this->nama = '';
@@ -48,9 +67,9 @@ class CreateComment extends Component
     }
     public function render()
     {
-        $this->comment = Comment::where('news_id' , $this->newsId)->latest()->get();
+        $comments = Comment::where('news_id' , $this->newsId)->latest()->paginate($this->perPage);
 
-        return view('livewire.create-comment')->with('comment', $this->comment);
+        return view('livewire.create-comment')->with('comments', $comments);
     }
 
 }

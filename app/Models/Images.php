@@ -15,7 +15,9 @@ class Images extends Model
         'thumbnail',
         'news_id',
         'article_id',
-        'user_id'
+        'user_id',
+        'party_id',
+        'member_id'
     ];
 
     public function news()
@@ -26,6 +28,14 @@ class Images extends Model
     public function articles()
     {
         return $this->belongsTo(Article::class, 'article_id','id');
+    }
+
+    public function members(){
+        return $this->belongsTo(Member::class, 'member_id','id');
+    }
+    
+    public function parties(){
+        return $this->belongsTo(Party::class, 'party_id','id');
     }
 
     public function users(){

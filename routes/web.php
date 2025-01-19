@@ -13,6 +13,7 @@ use App\Http\Controllers\ImageContentController;
 use App\Http\Controllers\ImageSliderController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Frontend\HomePageController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\NewsPostController;
 use App\Http\Controllers\PengumumanPostController;
@@ -29,14 +30,23 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('tanahdatar.page.landing-page');
-})->name('landing.page');
-Route::get('/home', [HomePageController::class, 'index'])->name('home');
-Route::get('/berita/{slug}', [NewsPageController::class,'detailNews'])->name('news.detail');
-// Route::post('/commen/{newsId}', [NewsPageController::class,'detailNews'])->name('news.detail');
+    return view('dprdtd.page.home');
+})->name('home');
+
+Route::get('/berita', function () {
+    return view('dprdtd.page.detail-blog');
+})->name('berita');
+Route::get('/member', function () {
+    return view('dprdtd.page.detail-member');
+})->name('member');
+
+
+// Route::get('/home', [HomePageController::class, 'index'])->name('home');
+// Route::get('/berita/{slug}', [NewsPageController::class,'detailNews'])->name('news.detail');
+// // Route::post('/commen/{newsId}', [NewsPageController::class,'detailNews'])->name('news.detail');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'dologin'])->name('doLogin');
-Route::get('/fetching', [FetchingDataControlller::class, 'fetchData']);
+// Route::get('/fetching', [FetchingDataControlller::class, 'fetchData']);
 
 
 
@@ -48,7 +58,6 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/profil', [ProfileController::class, 'index'])->name('profile');
-    Route::get('/dashboard/content/berita/list', [NewsPostController::class, 'index'])->name('dashboard.news.post.list');
     Route::get('/dashboard/content/berita/form', [NewsPostController::class, 'form'])->name('dashboard.news.post.form');
     Route::post('/dashboard/content/berita/store', [NewsPostController::class, 'store'])->name('dashboard.news.post.create');
     Route::get('/dashboard/content/berita/show/{id}', [NewsPostController::class, 'show'])->name('dashboard.news.post.show');
@@ -79,6 +88,23 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::post('/editor/upload', [FileUploadController::class, 'editorFileUpload']);
     Route::get('/filemanager', [FileManagerController::class, 'index'])->name('filemanager');
     Route::post('/logout', [LoginController::class, 'doLogout'])->name('logout');
+
+    //Dprd
+    Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])
+    ->name('dashboard.member.list');
+    Route::get('/dashboard/konten/partai/list', [MemberController::class, 'getParties'])
+    ->name('dashboard.party.list');
+    Route::get('/dashboard/konten/partai/new', [MemberController::class, 'partyForm'])
+    ->name('dashboard.party.new');
+
+    Route::post('/dashboard/konten/partai/create', [MemberController::class, 'createParty'])
+    ->name('dashboard.party.create');
+
+    Route::get('/dashboard/konten/anggota/registrasi', [MemberController::class, 'memberRegister'])
+    ->name('dashboard.member.register');
+
+    Route::get('/dashboard/konten/postingan/list', [NewsPostController::class, 'index'])
+    ->name('dashboard.news.post.list');
 
     Route::middleware(AdminMiddleware::class)->group(function(){
 
