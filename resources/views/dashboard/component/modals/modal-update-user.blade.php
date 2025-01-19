@@ -112,8 +112,6 @@
                         <label for="profile">Perbarui Foto</label>
                         <input type="file" class="filepond" id="file" name="file">
                     </div>
-
-
                 </div>
 
                 <div class="modal-footer">

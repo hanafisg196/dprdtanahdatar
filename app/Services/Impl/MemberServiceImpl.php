@@ -17,29 +17,38 @@ class MemberServiceImpl implements MemberService
         return Party::with('images')->latest()->get();
     }
 
-    public function copyTemporaryFile($tmpFile,$field, $fileId)
+    public function getMembers(){
+        return Member::with('images')->latest()->get();
+    }
+
+    public function copyTemporaryFile($tmpFile, $field, $fileId)
     {
         foreach ($tmpFile as $item) {
+
             $sourcePath = $item->file;
             $destinationPath = 'images/' . basename($sourcePath);
-
             Storage::copy($sourcePath, $destinationPath);
-            $images = Images::where($field, $fileId)->get();
-            if ($images->isNotEmpty()) {
-                foreach ($images as $item) {
-                    Storage::delete($item->image);
-                    Storage::delete($item->thumbnail);
-                    $item->delete();
+
+
+            if ($field && $fileId) {
+                $oldImages = Images::where($field, $fileId)->get();
+                foreach ($oldImages as $oldImage) {
+                    Storage::delete($oldImage->image);
+                    Storage::delete($oldImage->thumbnail);
+                    $oldImage->delete();
                 }
             }
+
             Images::create([
-                'party_id' => $fileId,
+                $field => $fileId,
                 'image' => $destinationPath,
             ]);
+
             Storage::delete($sourcePath);
             $item->delete();
         }
     }
+
 
     public function createParty(Request $request){
         $sessionId = Session::getId();
@@ -55,23 +64,56 @@ class MemberServiceImpl implements MemberService
         $this->copyTemporaryFile($temporaryFiles,'party_id',$party->id);
     }
 
-    public function createMember(Request $request){
+
+    public function updateParty(Request $request, $id){
         $sessionId = Session::getId();
         $temporaryFiles = Temporary::where('session_id', $sessionId)->get();
         $validated =  $request->validate([
             'nama' => 'required|string|max:150',
+            'singkatan' => 'required|string|max:10',
+        ]);
+        $party = Party::find($id);
+        $party->update([
+            'name' => $validated['nama'],
+            'initial' => $validated['singkatan']
+        ]);
+        $this->copyTemporaryFile($temporaryFiles,'party_id',$party->id);
+    }
+
+    public function deleteParty($id)
+    {
+        $party = Party::find($id);
+
+        if ($party) {
+            $images = Images::where('party_id', $id)->get();
+
+            foreach ($images as $image) {
+                if ($image) {
+                    Storage::delete($image->image);
+                    $image->delete();
+                }
+            }
+            $party->delete();
+        }
+    }
+
+
+    public function createMember(Request $request){
+        $sessionId = Session::getId();
+        $temporaryFiles = Temporary::where('session_id', $sessionId)->get();
+        $validated =  $request->validate([
+            'nama' =>  'required|string|max:150',
             'lahir' => 'required|string|max:150',
             'agama' => 'required|string|max:15',
             'dapil' => 'required|string|max:180',
-            'partai' => 'required|numeric'
+            'partai'=> 'required|numeric'
         ]);
         $member =  Member::create([
             'nama' => $validated['nama'],
             'lahir' => $validated['lahir'],
             'agama' => $validated['agama'],
-            'foto' => $validated['file'],
             'dapil' => $validated['dapil'],
-            'partai' => $validated['partai']
+            'party_id' => $validated['partai']
         ]);
         $this->copyTemporaryFile($temporaryFiles, 'member_id',$member->id);
 

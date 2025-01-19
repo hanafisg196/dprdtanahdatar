@@ -7,7 +7,7 @@
     }
 </style>
     <section class="section">
-        <form action="{{ route('dashboard.usermanager.register') }}" method="post" id="form" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.member.create') }}" method="post" id="form" enctype="multipart/form-data">
             @csrf
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center  mb-4" style="padding-left: 18%">
@@ -32,6 +32,20 @@
                                 </div>
                             @enderror
                         </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="form-group">
+                                <label for="partai">Partai</label>
+                                <small class="form-text text-danger">
+                                    <i class="fas fa-info-circle"></i>
+                                        *
+                                </small>
+                                <select class="choices form-select" id="partai" name="partai">
+                                    @foreach ($parties as $party)
+                                        <option value="{{ $party->id }}">{{ $party->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                         </div>
                         <div class="form-group">
                             <label for="sublink">Tanggal Lahir</label>
                             <small class="form-text text-danger">
@@ -61,13 +75,13 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="sublink">Daerah Pemilihan</label>
+                            <label for="dapil">Daerah Pemilihan</label>
                             <small class="form-text text-danger">
                                 <i class="fas fa-info-circle"></i>
                                 *
                             </small>
                             <input type="text" class="form-control @error('dapil') is-invalid @enderror"
-                                name="text" placeholder="">
+                                name="dapil" placeholder="">
                             @error('dapil')
                                 <div class="invalid-feedback">
                                     {{ $message }}

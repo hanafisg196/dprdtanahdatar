@@ -19,20 +19,32 @@
                 </a>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
           @foreach ($parties as $party)
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" style="position: relative;">
                 <img src="{{ asset('storage/' . $party->images->image) }}" class="card-img-top" alt="Logo Partai 1">
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{$party->images->image}}</h5>
+                <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateParty-{{$party->id}}">Edit</button>
+                    <form id="{{$party->id }}"
+                        action="{{ route('dashboard.party.delete', $party->id) }}"
+                        method="POST">
+                        @csrf
+                    </form>
+                    <button class="btn btn-sm btn-danger" onclick="confirmDelete('{{ $party->id }}')">Hapus</button>
+                </div>
+                <div class="card-body" style="margin-top: -10px;">
+                    <h6>{{$party->name}}</h6>
+                    <h5>{{$party->initial}}</h5>
+                    {{$party->images->image}}
                 </div>
             </div>
-          </div>
+           </div>
+           @include('dashboard.component.modals.modal-update-party')
           @endforeach
-          </div>
+        </div>
          </div>
-    @include('dashboard.component.alert-delete')
+         @include('dashboard.component.alert-delete')
 </section>
 @endsection
 @include('dashboard.component.filepond')

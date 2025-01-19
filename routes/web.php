@@ -89,24 +89,30 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::get('/filemanager', [FileManagerController::class, 'index'])->name('filemanager');
     Route::post('/logout', [LoginController::class, 'doLogout'])->name('logout');
 
-    //Dprd
-    Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])
-    ->name('dashboard.member.list');
-    Route::get('/dashboard/konten/partai/list', [MemberController::class, 'getParties'])
-    ->name('dashboard.party.list');
-    Route::get('/dashboard/konten/partai/new', [MemberController::class, 'partyForm'])
-    ->name('dashboard.party.new');
+        //Dprd
+        Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])
+        ->name('dashboard.member.list');
+        Route::get('/dashboard/konten/partai/list', [MemberController::class, 'getParties'])
+        ->name('dashboard.party.list');
+        Route::get('/dashboard/konten/partai/new', [MemberController::class, 'partyForm'])
+        ->name('dashboard.party.new');
 
-    Route::post('/dashboard/konten/partai/create', [MemberController::class, 'createParty'])
-    ->name('dashboard.party.create');
+        Route::post('/dashboard/konten/partai/create', [MemberController::class, 'createParty'])
+        ->name('dashboard.party.create');
+        Route::post('/dashboard/konten/partai/update/{id}', [MemberController::class, 'updateParty'])
+        ->name('dashboard.party.update');
+        Route::post('/dashboard/konten/partai/delete/{id}', [MemberController::class, 'deleteParty'])
+        ->name('dashboard.party.delete');
 
-    Route::get('/dashboard/konten/anggota/registrasi', [MemberController::class, 'memberRegister'])
-    ->name('dashboard.member.register');
+        Route::get('/dashboard/konten/anggota/registrasi', [MemberController::class, 'memberRegister'])
+        ->name('dashboard.member.register');
+        Route::post('/dashboard/konten/anggota/create', [MemberController::class, 'memberCreate'])
+        ->name('dashboard.member.create');
 
-    Route::get('/dashboard/konten/postingan/list', [NewsPostController::class, 'index'])
-    ->name('dashboard.news.post.list');
+        Route::get('/dashboard/konten/postingan/list', [NewsPostController::class, 'index'])
+        ->name('dashboard.news.post.list');
 
-    Route::middleware(AdminMiddleware::class)->group(function(){
+        Route::middleware(AdminMiddleware::class)->group(function(){
 
         Route::get('/dashboard/category/berita', [CategoryController::class, 'catNews'])->name('dashboard.category.berita');
         Route::get('/dashboard/category/article', [CategoryController::class, 'catArticle'])->name('dashboard.category.article');

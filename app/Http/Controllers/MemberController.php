@@ -18,26 +18,40 @@ class MemberController extends Controller
     }
 
    public function memberList(){
-    
-    return view('dashboard.page.dprd.member-list');
+    $members = $this->memberService->getMembers();
+    return view('dashboard.page.dprd.member-list')->with('members', $members);
    }
-   
+
    public function memberRegister(){
-    return view('dashboard.page.dprd.member-registration');
+    $parties = $this->memberService->getParties();
+    return view('dashboard.page.dprd.member-registration')->with('parties' ,$parties);
+   }
+   public function memberCreate(Request $request){
+    $this->memberService->createMember($request);
+    return view('dashboard.page.dprd.member-list');
    }
 
    public function getParties(){
       $parties = $this->memberService->getParties();
       return view('dashboard.page.dprd.member-party-list')->with('parties' ,$parties);
    }
-   
+
    public function partyForm(){
       return view('dashboard.page.dprd.member-party-new');
    }
 
    public function createParty(Request $request){
-      // dd($request->all());
       $this->memberService->createParty($request);
-      return redirect()->back()->with('success', 'Slide berhasil ditambahkan');
+      return redirect()->back()->with('success', 'Partai berhasil ditambahkan');
    }
+
+   public function updateParty(Request $request,$id){
+    $this->memberService->updateParty($request,$id);
+    return redirect()->back()->with('success', 'Partai berhasil diupdate');
+ }
+
+ public function deleteParty($id){
+    $this->memberService->deleteParty($id);
+    return redirect()->back()->with('success', 'Partai berhasil dihapus');
+ }
 }

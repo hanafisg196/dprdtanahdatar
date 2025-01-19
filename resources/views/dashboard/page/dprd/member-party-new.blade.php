@@ -32,6 +32,7 @@
                                 </div>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="sublink">Singkatan</label>
                             <small class="form-text text-danger">

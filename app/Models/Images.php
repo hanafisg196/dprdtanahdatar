@@ -33,7 +33,7 @@ class Images extends Model
     public function members(){
         return $this->belongsTo(Member::class, 'member_id','id');
     }
-    
+
     public function parties(){
         return $this->belongsTo(Party::class, 'party_id','id');
     }

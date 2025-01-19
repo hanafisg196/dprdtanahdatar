@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Tags\HasTags;
 
 class Member extends Model
 {
+    use HasTags;
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
@@ -13,7 +15,6 @@ class Member extends Model
         'nama',
         'lahir',
         'agama',
-        'file',
         'dapil',
         'party_id'
     ];
