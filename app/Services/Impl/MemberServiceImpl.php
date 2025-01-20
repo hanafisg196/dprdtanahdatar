@@ -29,7 +29,6 @@ class MemberServiceImpl implements MemberService
             $destinationPath = 'images/' . basename($sourcePath);
             Storage::copy($sourcePath, $destinationPath);
 
-
             if ($field && $fileId) {
                 $oldImages = Images::where($field, $fileId)->get();
                 foreach ($oldImages as $oldImage) {
@@ -96,11 +95,15 @@ class MemberServiceImpl implements MemberService
             $party->delete();
         }
     }
+    public function memberDetail($id){
+      return  Member::with(['images', 'tags'])->find($id);
+    }
 
 
     public function createMember(Request $request){
         $sessionId = Session::getId();
         $temporaryFiles = Temporary::where('session_id', $sessionId)->get();
+        $jabatan = explode(',', $request->tags);
         $validated =  $request->validate([
             'nama' =>  'required|string|max:150',
             'lahir' => 'required|string|max:150',
@@ -115,8 +118,51 @@ class MemberServiceImpl implements MemberService
             'dapil' => $validated['dapil'],
             'party_id' => $validated['partai']
         ]);
-        $this->copyTemporaryFile($temporaryFiles, 'member_id',$member->id);
+        $member->syncTags($jabatan);
 
+        $this->copyTemporaryFile($temporaryFiles, 'member_id',$member->id);
+    }
+
+    public function updateMember(Request $request, $id){
+        $sessionId = Session::getId();
+        $temporaryFiles = Temporary::where('session_id', $sessionId)->get();
+        $jabatan = array_filter(explode(',', $request->tags));
+        $validated =  $request->validate([
+            'nama' =>  'required|string|max:150',
+            'lahir' => 'required|string|max:150',
+            'agama' => 'required|string|max:15',
+            'dapil' => 'required|string|max:180',
+            'partai'=> 'required|numeric',
+            'tags' => 'nullable|string',
+        ]);
+        $member = Member::find($id);
+        $member->update([
+            'nama' => $validated['nama'],
+            'lahir' => $validated['lahir'],
+            'agama' => $validated['agama'],
+            'dapil' => $validated['dapil'],
+            'party_id' => $validated['partai']
+        ]);
+        $member->detachTags($jabatan);
+        // $member->attachTags($jabatan);
+        $this->copyTemporaryFile($temporaryFiles, 'member_id',$member->id);
+    }
+
+    public function deleteMember($id)
+    {
+        $member = Member::find($id);
+
+        if ($member) {
+            $images = Images::where('member_id', $id)->get();
+
+            foreach ($images as $image) {
+                if ($image) {
+                    Storage::delete($image->image);
+                    $image->delete();
+                }
+            }
+            $member->delete();
+        }
     }
 
 }

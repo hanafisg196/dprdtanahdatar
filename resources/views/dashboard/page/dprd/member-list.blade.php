@@ -12,7 +12,7 @@
             @endif
             <div class="card-header d-flex justify-content-between align-items-center  mb-4">
                 <h4 class="card-title d-flex">
-                    <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>Manajemen Anggota
+                    <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>Anggota
                 </h4>
                 <a class="btn btn-md btn-primary" href="{{ route('dashboard.member.register') }}">
                    Tambah
@@ -25,17 +25,17 @@
                   <div class="card h-100" style="position: relative;">
                       {{-- <img src="{{ asset('storage/' . $member->images->image) }}" class="card-img-top" alt="Logo Partai 1"> --}}
                       <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
-                          <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateParty-{{$member->id}}">Edit</button>
+                          <a class="btn btn-sm btn-primary" href="{{ route('dashboard.member.detail', $member->id) }}"><i class="bi bi-pencil-square"></i></a>
                           <form id="{{$member->id }}"
                               action="{{ route('dashboard.party.delete', $member->id) }}"
                               method="POST">
                               @csrf
                           </form>
-                          <button class="btn btn-sm btn-danger" onclick="confirmDelete('{{ $member->id }}')">Hapus</button>
+                          <button class="btn btn-sm btn-danger" style="margin-top: 2px;" onclick="confirmDelete('{{ $member->id }}')">xxx<i class="bi bi-trash"></i></button>
                       </div>
                       <div class="card-body" style="margin-top: -10px;">
-                          <h6>{{$member->name}}</h6>
-                      </div>
+                          <h6>{{$member->nama}}</h6>
+                     </div>
                   </div>
                  </div>
                  {{-- @include('dashboard.component.modals.modal-update-party') --}}

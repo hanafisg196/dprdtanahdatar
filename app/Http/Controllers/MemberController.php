@@ -20,6 +20,7 @@ class MemberController extends Controller
    public function memberList(){
     $members = $this->memberService->getMembers();
     return view('dashboard.page.dprd.member-list')->with('members', $members);
+    // return json_encode($members);
    }
 
    public function memberRegister(){
@@ -28,7 +29,21 @@ class MemberController extends Controller
    }
    public function memberCreate(Request $request){
     $this->memberService->createMember($request);
-    return view('dashboard.page.dprd.member-list');
+    return redirect()->route('dashboard.member.list')->with('success', 'Partai berhasil ditambahkan');
+   }
+
+   public function memberDetail($id){
+      $member =  $this->memberService->memberDetail($id);
+      $parties = $this->memberService->getParties();
+      return view('dashboard.page.dprd.member-detail')->with([
+        'member'=> $member,
+        'parties' => $parties
+      ]);
+   }
+
+   public function doUpdateMemmber(Request $request, $id){
+    $this->memberService->updateMember($request, $id);
+    return redirect()->route('dashboard.member.list')->with('success', 'Partai berhasil ditambahkan');
    }
 
    public function getParties(){

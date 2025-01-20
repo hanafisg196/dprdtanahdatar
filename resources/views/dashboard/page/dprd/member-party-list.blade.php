@@ -25,18 +25,17 @@
             <div class="card h-100" style="position: relative;">
                 <img src="{{ asset('storage/' . $party->images->image) }}" class="card-img-top" alt="Logo Partai 1">
                 <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
-                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateParty-{{$party->id}}">Edit</button>
+                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateParty-{{$party->id}}"><i class="bi bi-pencil-square"></i></button>
                     <form id="{{$party->id }}"
                         action="{{ route('dashboard.party.delete', $party->id) }}"
                         method="POST">
                         @csrf
                     </form>
-                    <button class="btn btn-sm btn-danger" onclick="confirmDelete('{{ $party->id }}')">Hapus</button>
+                    <button class="btn btn-sm btn-danger" onclick="confirmDelete('{{ $party->id }}')"><i class="bi bi-trash"></i></button>
                 </div>
                 <div class="card-body" style="margin-top: -10px;">
                     <h6>{{$party->name}}</h6>
                     <h5>{{$party->initial}}</h5>
-                    {{$party->images->image}}
                 </div>
             </div>
            </div>

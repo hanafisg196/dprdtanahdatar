@@ -34,21 +34,31 @@
 <body>
 
     <div class="pageContent">
-       <div class="container" style="margin-top: 100px;">
-                <h3>Jabatan<span style="padding-left: 200px; padding-right: 5px;">:</span>test</h3>
-                <h3>Jabatan<span style="padding-left: 200px; ">:</span></h3>
-                <h3>Jabatan<span style="padding-left: 200px; ">:</span></h3>
-                <h3>Jabatan<span style="padding-left: 200px; ">:</span></h3>
+       <div class="container" style="margin-top: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 100px;">
+            <div>
+                <h3 style="display: flex; justify-content: space-between;">
+                    Jabatanss
+                    <span>: test</span>
+                  </h3>
+
+
+            </div>
+            <div>
+                <img src="path_to_profile_image.jpg" alt="Profile Image" style="width: 50px; height: 50px; border-radius: 50%;">
+            </div>
+        </div>
        </div>
+
     </div>
-    
+
      <!-- Back to top Link -->
      <a id="to-top" href="#"><span class="fa fa fa-angle-up"></span></a>
 
      <!-- Load JS plugins -->
      <script type="text/javascript" src="/assets/js/jquery-1.12.0.min.js"></script>
      <script type="text/javascript" src="/assets/js/assets.js"></script>
- 
+
      <!-- general script file -->
      <script type="text/javascript" src="/assets/js/script.js"></script>
 </body>

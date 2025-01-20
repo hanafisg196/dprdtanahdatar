@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center  mb-4" style="padding-left: 18%">
                 <h4 class="card-title d-flex">
-                    <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>Form Registrasi
+                    <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>Perbarui Anggota
                 </h4>
             </div>
             <div class="card-body" style="margin-top: -20px;">
@@ -25,7 +25,7 @@
                                 *
                             </small>
                             <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                name="nama" placeholder="">
+                                name="nama" placeholder="" value="{{ $member->nama }}">
                             @error('password')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -53,7 +53,7 @@
                                 *
                             </small>
                             <input type="text" class="form-control @error('lahir') is-invalid @enderror"
-                                name="lahir" placeholder="">
+                                name="lahir" placeholder="" value="{{ $member->lahir }}">
                             @error('lahir')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -61,14 +61,31 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="description">Jabatan</label>
-                            <textarea name="tags" rows="3" class="form-control @error('description') is-invalid @enderror" placeholder="Jabatan 1, Jabatan 2, Jabatan 3"></textarea>
-                            @error('description')
+                            <label for="jabatan">Jabatan</label>
+                            <div style="padding-bottom: 10px;">
+                                @foreach ($member->tags as $tag)
+                                <span class="badge bg-primary" style="font-size: 0.8rem;">
+                                  {{ $tag->name }}
+                                <a class="btn-close btn-close-white ms-2" aria-label="Close"></a>
+                                </span>
+                                @endforeach
+                            </div>
+                            <label for="jabatan">Tambah Jabatan</label>
+                            <div class="form-group with-title mb-3">
+                                <textarea name="tags" rows="3" class="form-control @error('tags') is-invalid @enderror" placeholder="Jabatan 1, Jabatan 2, Jabatan 3"></textarea>
+                                @error('tags')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            @error('tags')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="sublink">Agama</label>
                             <small class="form-text text-danger">
@@ -76,7 +93,7 @@
                                 *
                             </small>
                             <input type="text" class="form-control @error('agama') is-invalid @enderror"
-                                name="agama" placeholder="">
+                                name="agama" placeholder="" value="{{ $member->agama }}">
                             @error('agama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -90,7 +107,7 @@
                                 *
                             </small>
                             <input type="text" class="form-control @error('dapil') is-invalid @enderror"
-                                name="dapil" placeholder="">
+                                name="dapil" placeholder="" value="{{ $member->dapil }}">
                             @error('dapil')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -99,6 +116,16 @@
                         </div>
                         <div class="form-group">
                             <label for="profile">Foto</label>
+                            <div class="form-group d-flex justify-content-center">
+                                @if ($member->images)
+                                <img src="{{asset('storage/' . $member->images->image) }}" alt="Profile"
+                                width="200px;" height="220px;" style="object-fit: cover;">
+                                @else
+                                <img src="{{asset('/dist/assets/compiled/png/user.png') }}" alt="Profile"
+                                width="150px;" height="150px;" style=" object-fit: cover;">
+                                @endif
+                            </div>
+                            <label for="profile">Ganti Foto</label>
                             <input type="file" class="filepond" id="file" name="file">
                         </div>
                     </div>

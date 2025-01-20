@@ -112,6 +112,9 @@ Route::middleware(AuthenticateUser::class)->group(function () {
         Route::get('/dashboard/konten/postingan/list', [NewsPostController::class, 'index'])
         ->name('dashboard.news.post.list');
 
+        Route::get('/dashboard/konten/anggota/detail/{id}', [MemberController::class, 'memberDetail'])
+        ->name('dashboard.member.detail');
+
         Route::middleware(AdminMiddleware::class)->group(function(){
 
         Route::get('/dashboard/category/berita', [CategoryController::class, 'catNews'])->name('dashboard.category.berita');

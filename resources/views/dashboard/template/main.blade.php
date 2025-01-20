@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/dist/assets/extensions/choices.js/public/assets/styles/choices.css">
     <link rel="stylesheet" href="/dist/assets/extensions/sweetalert2-11.12.4/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="/dist/assets/extensions/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
     <!-- Default theme -->
@@ -69,6 +70,7 @@
     <script src="/dist/assets/extensions/filepond/plugin/validate-size/dist/filepond-plugin-file-validate-size.js"></script>
     <script src="/dist/assets/extensions/filepond/plugin/validate-type/dist/filepond-plugin-file-validate-type.js"></script>
     <script src="/dist/assets/extensions/filepond/plugin/image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="/dist/assets/extensions/filepond/dist/filepond.js"></script>
     @yield('script')
     <script src="/dist/assets/extensions/sweetalert2-11.12.4/dist/sweetalert2.all.min.js"></script>

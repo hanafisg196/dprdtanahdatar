@@ -16,7 +16,7 @@
             <ul class="submenu ">
                 <li class="submenu-item {{Request::is('dashboard/konten/postingan*') ? 'active' : ''}}">
                     <a  href="{{route('dashboard.news.post.list')}}" class="submenu-link">
-                        <span>Konten</span>
+                        <span>Blog</span>
                     </a>
                 </li>
 

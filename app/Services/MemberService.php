@@ -11,5 +11,8 @@ interface MemberService {
     public function updateParty(Request $request, $id);
     public function createMember(Request $request);
     public function deleteParty($id);
+    public function updateMember(Request $request, $id);
+    public function deleteMember($id);
+    public function memberDetail($id);
 
 }

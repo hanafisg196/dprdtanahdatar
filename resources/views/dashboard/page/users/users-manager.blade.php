@@ -19,35 +19,35 @@
                 </a>
             </div>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                @foreach ($parties as $party)
+                @foreach ($users['users'] as $user)
                 <div class="col">
                     <div class="card h-100 position-relative">
                       <img src="{{ asset('/dist/assets/compiled/png/profile_background.png') }}" class="card-img-top" alt="Palm Springs Road" />
                       <div class="profile-image">
-                        @if ($party->images)
-                        <img src="{{ asset('storage/'. $party->images->image) }}" class="rounded-circle" alt="Profile">
+                        @if ($user->images)
+                        <img src="{{ asset('storage/'.$user->images->image) }}" class="rounded-circle" alt="Profile">
                         @else
                         <img src="{{ asset('/dist/assets/compiled/png/user.png') }}" class="rounded-circle" alt="Profile">
                         @endif
                       </div>
                         <div class="floating-buttons-action">
-                        <form id="{{$party->id }}"
-                            action="{{ route('dashboard.usermanager.delete', $party->id) }}"
+                        <form id="{{$user->id }}"
+                            action="{{ route('dashboard.usermanager.delete', $user->id) }}"
                             method="POST">
                             @csrf
                         </form>
                         <button type="button" class="btn btn-success btn-sm"
-                         data-bs-toggle="modal" data-bs-target="#updateUser-{{ $party->id }}">
+                         data-bs-toggle="modal" data-bs-target="#updateUser-{{ $user->id }}">
                         <i class="bi bi-pencil"></i>
                         </button>
                         <button type="button" class="btn btn-danger btn-sm"
-                            onclick="confirmDelete('{{ $party->id }}')">
+                            onclick="confirmDelete('{{ $user->id }}')">
                             <i class="bi bi-trash"></i>
                         </button>
                         </div>
                       <div class="card-body text-center" style="margin-top: -10px;">
-                        <h6 class="card-title">{{ $party->name }}</h6>
-                        <p class="card-text">{{ $party->email }}</p>
+                        <h6 class="card-title">{{ $user->name }}</h6>
+                        <p class="card-text">{{ $user->email }}</p>
                         <p class="card-text" style="margin-top: -15px">{{ $user->opds->nama_opd }}</p>
                       </div>
                     </div>
