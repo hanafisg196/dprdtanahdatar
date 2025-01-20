@@ -7,7 +7,7 @@
     }
 </style>
     <section class="section">
-        <form action="{{ route('dashboard.member.create') }}" method="post" id="form" enctype="multipart/form-data">
+        <form action="{{route('dashboard.member.update', $member->id)}}" method="post" id="form" enctype="multipart/form-data">
             @csrf
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center  mb-4" style="padding-left: 18%">
@@ -63,12 +63,7 @@
                         <div class="form-group">
                             <label for="jabatan">Jabatan</label>
                             <div style="padding-bottom: 10px;">
-                                @foreach ($member->tags as $tag)
-                                <span class="badge bg-primary" style="font-size: 0.8rem;">
-                                  {{ $tag->name }}
-                                <a class="btn-close btn-close-white ms-2" aria-label="Close"></a>
-                                </span>
-                                @endforeach
+                                <livewire:detach-jabatan :jabatanId="$member->id" />
                             </div>
                             <label for="jabatan">Tambah Jabatan</label>
                             <div class="form-group with-title mb-3">

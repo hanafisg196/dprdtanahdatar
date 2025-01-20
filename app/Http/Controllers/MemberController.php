@@ -20,7 +20,6 @@ class MemberController extends Controller
    public function memberList(){
     $members = $this->memberService->getMembers();
     return view('dashboard.page.dprd.member-list')->with('members', $members);
-    // return json_encode($members);
    }
 
    public function memberRegister(){
@@ -68,5 +67,12 @@ class MemberController extends Controller
  public function deleteParty($id){
     $this->memberService->deleteParty($id);
     return redirect()->back()->with('success', 'Partai berhasil dihapus');
+ }
+
+ public function updateMember(Request $request, $id){
+    $this->memberService->updateMember($request, $id);
+    return redirect()->route('dashboard.member.list')
+    ->with('success', 'Anggota berhasil di perbarui');
+
  }
 }

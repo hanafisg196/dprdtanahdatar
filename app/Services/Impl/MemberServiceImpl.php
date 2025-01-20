@@ -33,7 +33,6 @@ class MemberServiceImpl implements MemberService
                 $oldImages = Images::where($field, $fileId)->get();
                 foreach ($oldImages as $oldImage) {
                     Storage::delete($oldImage->image);
-                    Storage::delete($oldImage->thumbnail);
                     $oldImage->delete();
                 }
             }
@@ -47,7 +46,6 @@ class MemberServiceImpl implements MemberService
             $item->delete();
         }
     }
-
 
     public function createParty(Request $request){
         $sessionId = Session::getId();
@@ -96,7 +94,7 @@ class MemberServiceImpl implements MemberService
         }
     }
     public function memberDetail($id){
-      return  Member::with(['images', 'tags'])->find($id);
+      return  Member::with('images')->find($id);
     }
 
 
@@ -106,9 +104,9 @@ class MemberServiceImpl implements MemberService
         $jabatan = explode(',', $request->tags);
         $validated =  $request->validate([
             'nama' =>  'required|string|max:150',
-            'lahir' => 'required|string|max:150',
-            'agama' => 'required|string|max:15',
-            'dapil' => 'required|string|max:180',
+            'lahir' => 'nullable|string|max:150',
+            'agama' => 'nullable|string|max:15',
+            'dapil' => 'nullable|string|max:180',
             'partai'=> 'required|numeric'
         ]);
         $member =  Member::create([
@@ -129,9 +127,9 @@ class MemberServiceImpl implements MemberService
         $jabatan = array_filter(explode(',', $request->tags));
         $validated =  $request->validate([
             'nama' =>  'required|string|max:150',
-            'lahir' => 'required|string|max:150',
-            'agama' => 'required|string|max:15',
-            'dapil' => 'required|string|max:180',
+            'lahir' => 'nullable|string|max:150',
+            'agama' => 'nullable|string|max:15',
+            'dapil' => 'nullable|string|max:180',
             'partai'=> 'required|numeric',
             'tags' => 'nullable|string',
         ]);
@@ -143,8 +141,9 @@ class MemberServiceImpl implements MemberService
             'dapil' => $validated['dapil'],
             'party_id' => $validated['partai']
         ]);
-        $member->detachTags($jabatan);
-        // $member->attachTags($jabatan);
+        if (!empty($jabatan)) {
+            $member->attachTags($jabatan);
+        }
         $this->copyTemporaryFile($temporaryFiles, 'member_id',$member->id);
     }
 

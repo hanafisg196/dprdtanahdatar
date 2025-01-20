@@ -23,7 +23,13 @@
                 @foreach ($members as $member)
                 <div class="col">
                   <div class="card h-100" style="position: relative;">
-                      {{-- <img src="{{ asset('storage/' . $member->images->image) }}" class="card-img-top" alt="Logo Partai 1"> --}}
+                    @if ($member->images)
+                    <img src="{{ asset('storage/' . $member->images->image) }}"
+                    width="200" height="250" class="card-img-top" alt="Logo Partai 1" style="object-fit: cover;" >
+                    @else
+                    <img src="{{ asset('/dist/assets/compiled/png/user.png') }}"  width="200" height="250"
+                    style="object-fit: cover;"  class="rounded-circle" alt="Profile">
+                    @endif
                       <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
                           <a class="btn btn-sm btn-primary" href="{{ route('dashboard.member.detail', $member->id) }}"><i class="bi bi-pencil-square"></i></a>
                           <form id="{{$member->id }}"
@@ -31,14 +37,13 @@
                               method="POST">
                               @csrf
                           </form>
-                          <button class="btn btn-sm btn-danger" style="margin-top: 2px;" onclick="confirmDelete('{{ $member->id }}')">xxx<i class="bi bi-trash"></i></button>
+                          <button class="btn btn-sm btn-danger" style="margin-top: 2px;" onclick="confirmDelete('{{ $member->id }}')"><i class="bi bi-trash"></i></button>
                       </div>
                       <div class="card-body" style="margin-top: -10px;">
                           <h6>{{$member->nama}}</h6>
                      </div>
                   </div>
                  </div>
-                 {{-- @include('dashboard.component.modals.modal-update-party') --}}
                 @endforeach
             </div>
          </div>

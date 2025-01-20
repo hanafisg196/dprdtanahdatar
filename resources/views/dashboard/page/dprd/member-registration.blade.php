@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center  mb-4" style="padding-left: 18%">
                 <h4 class="card-title d-flex">
-                    <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>Form Registrasi
+                    <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>Registrasi Anggota
                 </h4>
             </div>
             <div class="card-body" style="margin-top: -20px;">
@@ -25,7 +25,7 @@
                                 *
                             </small>
                             <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                name="nama" placeholder="">
+                                name="nama" placeholder="Nama anggota">
                             @error('password')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -47,13 +47,13 @@
                             </div>
                          </div>
                         <div class="form-group">
-                            <label for="sublink">Tanggal Lahir</label>
+                            <label for="sublink">Lahir</label>
                             <small class="form-text text-danger">
                                 <i class="fas fa-info-circle"></i>
                                 *
                             </small>
                             <input type="text" class="form-control @error('lahir') is-invalid @enderror"
-                                name="lahir" placeholder="">
+                                name="lahir" placeholder="ex : Tempat, Tanggal Bulan Tahun ">
                             @error('lahir')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -76,7 +76,7 @@
                                 *
                             </small>
                             <input type="text" class="form-control @error('agama') is-invalid @enderror"
-                                name="agama" placeholder="">
+                                name="agama" placeholder="ex: Islam">
                             @error('agama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -90,7 +90,7 @@
                                 *
                             </small>
                             <input type="text" class="form-control @error('dapil') is-invalid @enderror"
-                                name="dapil" placeholder="">
+                                name="dapil" placeholder="ex: Daearah Pemilihan Satu">
                             @error('dapil')
                                 <div class="invalid-feedback">
                                     {{ $message }}

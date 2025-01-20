@@ -23,7 +23,13 @@
           @foreach ($parties as $party)
           <div class="col">
             <div class="card h-100" style="position: relative;">
-                <img src="{{ asset('storage/' . $party->images->image) }}" class="card-img-top" alt="Logo Partai 1">
+                @if ($party->images)
+                <img src="{{ asset('storage/' . $party->images->image) }}" class="card-img-top"
+                style="object-fit: cover;" width="220" height="200" alt="Logo Partai 1">
+                @else
+                <img src="{{ asset('storage/' . $party->images->image) }}"
+                style="object-fit: cover;" width="220" height="200" class="card-img-top" alt="Logo Partai 1">
+                @endif
                 <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
                     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateParty-{{$party->id}}"><i class="bi bi-pencil-square"></i></button>
                     <form id="{{$party->id }}"
