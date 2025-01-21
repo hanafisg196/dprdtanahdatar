@@ -12,22 +12,6 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="opd">OPD</label>
-                        <small class="form-text text-danger">
-                            <i class="fas fa-info-circle"></i>
-                                *
-                        </small>
-                        <select class="choices form-select" id="opd" name="opd">
-                            @foreach ($users['opds'] as $opd)
-                            @if (old('opd', $user->id) == $opd->id)
-                            <option value="{{ $opd->id }}" selected>{{ $opd->nama_opd }}</option>
-                        @else
-                            <option value="{{ $opd->id }}">{{ $opd->nama_opd }}</option>
-                        @endif
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <h6>Role
                             <small class="form-text text-danger">
                                 <i class="fas fa-info-circle"></i>

@@ -48,7 +48,6 @@
                       <div class="card-body text-center" style="margin-top: -10px;">
                         <h6 class="card-title">{{ $user->name }}</h6>
                         <p class="card-text">{{ $user->email }}</p>
-                        <p class="card-text" style="margin-top: -15px">{{ $user->opds->nama_opd }}</p>
                       </div>
                     </div>
                   </div>

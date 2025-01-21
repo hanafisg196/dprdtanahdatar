@@ -30,10 +30,10 @@
                     <img src="{{ asset('/dist/assets/compiled/png/user.png') }}"  width="200" height="250"
                     style="object-fit: cover;"  class="rounded-circle" alt="Profile">
                     @endif
-                      <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+                    <div style="position: absolute; top: 10px; right: 10px; z-index: 1;">
                           <a class="btn btn-sm btn-primary" href="{{ route('dashboard.member.detail', $member->id) }}"><i class="bi bi-pencil-square"></i></a>
                           <form id="{{$member->id }}"
-                              action="{{ route('dashboard.party.delete', $member->id) }}"
+                              action="{{ route('dashboard.member.delete', $member->id) }}"
                               method="POST">
                               @csrf
                           </form>
@@ -41,6 +41,7 @@
                       </div>
                       <div class="card-body" style="margin-top: -10px;">
                           <h6>{{$member->nama}}</h6>
+                          <p>- {{$member->tags->first()->name}}</p>
                      </div>
                   </div>
                  </div>

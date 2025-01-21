@@ -5,7 +5,7 @@
         <li class="sidebar-item {{ Request::is('dashboard') ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}" class='sidebar-link'>
                 <i class="bi bi-house-fill"></i>
-                <span>Dashboard</span>
+                <span>Beranda</span>
             </a>
         </li>
         <li class="sidebar-item has-sub {{ Request::is('dashboard/konten*') ? 'active' : '' }}">

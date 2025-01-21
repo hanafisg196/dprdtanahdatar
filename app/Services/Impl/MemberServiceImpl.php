@@ -18,7 +18,7 @@ class MemberServiceImpl implements MemberService
     }
 
     public function getMembers(){
-        return Member::with('images')->latest()->get();
+        return Member::with(['images','tags'])->latest()->get();
     }
 
     public function copyTemporaryFile($tmpFile, $field, $fileId)
@@ -52,7 +52,7 @@ class MemberServiceImpl implements MemberService
         $temporaryFiles = Temporary::where('session_id', $sessionId)->get();
         $validated =  $request->validate([
             'nama' => 'required|string|max:150',
-            'singkatan' => 'required|string|max:10',
+            'singkatan' => 'nullable|string|max:10',
         ]);
         $party = Party::create([
             'name' => $validated['nama'],
@@ -67,7 +67,7 @@ class MemberServiceImpl implements MemberService
         $temporaryFiles = Temporary::where('session_id', $sessionId)->get();
         $validated =  $request->validate([
             'nama' => 'required|string|max:150',
-            'singkatan' => 'required|string|max:10',
+            'singkatan' => 'nullable|string|max:10',
         ]);
         $party = Party::find($id);
         $party->update([

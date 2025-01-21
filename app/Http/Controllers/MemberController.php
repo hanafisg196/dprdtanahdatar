@@ -56,14 +56,14 @@ class MemberController extends Controller
 
    public function createParty(Request $request){
       $this->memberService->createParty($request);
-      return redirect()->back()->with('success', 'Partai berhasil ditambahkan');
+      return redirect()->route('dashboard.party.list')
+      ->with('success', 'Partai berhasil ditambahkan');
    }
 
    public function updateParty(Request $request,$id){
     $this->memberService->updateParty($request,$id);
     return redirect()->back()->with('success', 'Partai berhasil diupdate');
  }
-
  public function deleteParty($id){
     $this->memberService->deleteParty($id);
     return redirect()->back()->with('success', 'Partai berhasil dihapus');
@@ -73,6 +73,9 @@ class MemberController extends Controller
     $this->memberService->updateMember($request, $id);
     return redirect()->route('dashboard.member.list')
     ->with('success', 'Anggota berhasil di perbarui');
-
+ }
+ public function deleteMember($id){
+    $this->memberService->deleteMember($id);
+    return redirect()->back()->with('success', 'Anggota berhasil dihapus');
  }
 }

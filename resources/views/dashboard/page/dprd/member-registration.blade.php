@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Jabatan</label>
-                            <textarea name="tags" rows="3" class="form-control @error('description') is-invalid @enderror" placeholder="Jabatan 1, Jabatan 2, Jabatan 3"></textarea>
+                            <textarea name="tags" rows="3" class="form-control @error('description') is-invalid @enderror" placeholder="ex: Jabatan 1, Jabatan 2, Jabatan 3"></textarea>
                             @error('description')
                                 <div class="invalid-feedback">
                                     {{ $message }}

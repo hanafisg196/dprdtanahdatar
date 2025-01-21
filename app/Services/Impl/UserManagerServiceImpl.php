@@ -21,7 +21,6 @@ class UserManagerServiceImpl implements UserManagerService
                'username' => 'required|string|unique:users,username|max:50',
                'email' => 'required|email|unique:users,email',
                'password' => 'required|min:5|max:20|',
-               'opd' => 'required',
                'role' => 'required'
            ]);
        }
@@ -31,7 +30,6 @@ class UserManagerServiceImpl implements UserManagerService
                'name' => 'required|string|max:150',
                'username' => 'required|string|max:50|unique:users,username,' . $id,
                'email' => 'required|email|unique:users,email,' . $id,
-               'opd' => 'required',
                'role' => 'required'
            ]);
        }
@@ -61,10 +59,8 @@ class UserManagerServiceImpl implements UserManagerService
     public function getUsers()
     {
         $users = User::with(['roles', 'images'])->latest()->paginate(10);
-        $opds = Opd::latest()->get();
         return [
             'users' => $users,
-            'opds' => $opds,
         ];
     }
 
@@ -73,7 +69,7 @@ class UserManagerServiceImpl implements UserManagerService
     }
 
     public function getUserById($id){
-        return User::with(['roles','images', 'opds'])->find($id);
+        return User::with(['roles','images'])->find($id);
     }
 
     public function registerUser(Request $request){
@@ -85,7 +81,6 @@ class UserManagerServiceImpl implements UserManagerService
             'email' => $validated['email'],
             'username'=> $validated['username'],
             'password' => $validated['password'],
-            'opd_id' => $validated['opd']
          ]);
 
          $this->copyTemporaryFile($temporaryFiles, $user->id);
@@ -108,7 +103,6 @@ class UserManagerServiceImpl implements UserManagerService
             'name' => $validated['name'],
             'email' => $validated['email'],
             'username'=> $validated['username'],
-            'opd_id' => $validated['opd']
         ]);
 
         $this->copyTemporaryFile($temporaryFiles, $user->id);

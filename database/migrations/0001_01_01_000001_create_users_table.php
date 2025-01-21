@@ -20,9 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('token', 200)->unique()->nullable();
             $table->string('avatar')->nullable();
-            $table->unsignedBigInteger('opd_id');
             $table->rememberToken();
-            $table->foreign("opd_id")->on("opds")->references("id");
             $table->timestamps();
         });
 

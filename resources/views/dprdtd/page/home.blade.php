@@ -1,43 +1,152 @@
 @extends('dprdtd.template.main')
 @section('content')
-<div class="container gry-bg" style="padding: 20px; margin-top: 30px; margin-bottom: 30px;">
-    <div class="row" style="justify-content: center; margin-left: -5px; margin-right: -5px;">
-        @foreach(range(1, 4) as $item)
-        <div class="col-xs-6 custom-col" style="padding: 5px;">
-            <div class="thumbnail" style="background-color: #fff; margin: 0; position: relative; overflow: hidden;">
-                <img src="https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg" alt="Foto" class="img-responsive">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.5); color: white; text-align: center; padding: 10px; font-size: 14px;">
-                    WAKIL KETUA {{$item}}
+
+
+
+
+
+{{-- <div class="swiper-container swiper-container-h" style="display: flex; justify-content: center; width: 81%;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <article class="post-entry">
+            <a href="#" class="post-image"><img alt="" src="https://images6.alphacoders.com/134/1346530.jpeg"></a>
+            <div class="post-entry-overlay">
+                <div class="post-entry-meta-category">
+                    <span class="label label-danger">Technology</span>
+                </div>
+                <div class="post-entry-meta">
+                    <div class="post-entry-meta-title">
+                        <h2><a href="#">Test</a></h2>
+                    </div>
+                    <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
                 </div>
             </div>
-            <p class="text-center">TEST NAME</p>
-        </div>
-        @endforeach
-
-        {{-- @for ($i = 0; $i < 3; $i++)
-        <div class="col-xs-6 custom-col" style="padding: 5px;">
-            <a class="btn rect-angles btn-gry-border" href="#" style="width: 260px;">
-                <i class="fa fa-crop"></i> Angled Button
-            </a>
-        </div>
-        @endfor --}}
+        </article>
+     </div>
     </div>
-</div>
+    <div class="swiper-button swiper-next"><i class="fa fa-angle-right"></i></div>
+    <div class="swiper-button swiper-prev"><i class="fa fa-angle-left"></i></div>
+</div> --}}
 
-<div class="container gry-bg" style="padding: 20px; margin-top: 50px; margin-bottom: 30px;">
-    <div class="horizontal-slider marginelements show-arrows" data-slides_count="5" data-scroll_amount="1" data-slider-speed="600" data-center-mode="1" data-slider-infinite="1" data-slider-dots="0" data-slider-arrows="1">
-        @for ($i = 0; $i < 7; $i++)
-        <div>
-            <a class="zoom" href="https://dprd.padang.go.id/uploads/images/image_default_6718a9cfe05ec.jpg">
-                <img alt="" src="https://dprd.padang.go.id/uploads/images/image_default_6718a9cfe05ec.jpg">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.5); color: white; text-align: center; font-size: 14px;">
-                    Christian Rudi Kurniawan
+<div class="swiper-container swiper-container-h" style="height: 400px">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <article class="post-entry">
+                <a href="#" class="post-image"><img alt="" src="/assets/images/demos/magazine/1.jpg"></a>
+                <div class="post-entry-overlay">
+                    <div class="post-entry-meta-category">
+                        <span class="label label-danger">Technology</span>
+                    </div>
+                    <div class="post-entry-meta">
+                        <div class="post-entry-meta-title">
+                            <h2><a href="#">Girl Injured By Omaha Carnival Ride</a></h2>
+                        </div>
+                        <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
+                    </div>
                 </div>
-            </a>
+            </article>
         </div>
-        @endfor
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-v" style="height: 500px">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article class="post-entry">
+                            <a href="#" class="post-image"><img alt="" src="/assets/images/demos/magazine/7.jpg"></a>
+                            <div class="post-entry-overlay">
+                                <div class="post-entry-meta-category">
+                                    <span class="label label-danger">News</span>
+                                </div>
+                                <div class="post-entry-meta">
+                                    <div class="post-entry-meta-title">
+                                        <h2><a href="#">Jersey Family to Split $429.6M Powerball Jackpot</a></h2>
+                                    </div>
+                                    <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="post-entry">
+                            <a href="#" class="post-image"><img alt="" src="assets/images/demos/magazine/6.jpg"></a>
+                            <div class="post-entry-overlay">
+                                <div class="post-entry-meta-category">
+                                    <span class="label label-danger">Lifestyle</span>
+                                </div>
+                                <div class="post-entry-meta">
+                                    <div class="post-entry-meta-title">
+                                        <h2><a href="#">Three Black Female Astronauts Share Their Small</a></h2>
+                                    </div>
+                                    <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="post-entry">
+                            <a href="#" class="post-image"><img alt="" src="assets/images/demos/magazine/5.jpg"></a>
+                            <div class="post-entry-overlay">
+                                <div class="post-entry-meta-category">
+                                    <span class="label label-danger">Sports</span>
+                                </div>
+                                <div class="post-entry-meta">
+                                    <div class="post-entry-meta-title">
+                                        <h2><a href="#">10 Tips And Tricks To Learn Any Language</a></h2>
+                                    </div>
+                                    <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="swiper-button swiper-up"><i class="fa fa-angle-up"></i></div>
+                <div class="swiper-button swiper-down"><i class="fa fa-angle-down"></i></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <article class="post-entry">
+                <a href="#" class="post-image"><img alt="" src="assets/images/demos/magazine/2.jpg"></a>
+                <div class="post-entry-overlay">
+                    <div class="post-entry-meta-category">
+                        <span class="label label-danger">World</span>
+                    </div>
+                    <div class="post-entry-meta">
+                        <div class="post-entry-meta-title">
+                            <h2><a href="#">We Protect our Communities': Cop Watchers Speak</a></h2>
+                        </div>
+                        <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="swiper-slide">
+            <article class="post-entry">
+                <a href="#" class="post-image"><img alt="" src="assets/images/demos/magazine/3.jpg"></a>
+                <div class="post-entry-overlay">
+                    <div class="post-entry-meta-category">
+                        <span class="label label-danger">Political</span>
+                    </div>
+                    <div class="post-entry-meta">
+                        <div class="post-entry-meta-title">
+                            <h2><a href="#">conseq uipsum velit auctor auctor, nisi elit conseq </a></h2>
+                        </div>
+                        <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
+                    </div>
+                </div>
+            </article>
+        </div>
     </div>
+    <!-- Add Pagination -->
+    <!-- Add Pagination -->
+
+    <!-- Add Arrows -->
+    <div class="swiper-button swiper-next"><i class="fa fa-angle-right"></i></div>
+    <div class="swiper-button swiper-prev"><i class="fa fa-angle-left"></i></div>
 </div>
+
+
+@include('dprdtd.page.component.leader')
+@include('dprdtd.page.component.member')
 
 <div class="container">
     <div class="row">
@@ -72,7 +181,7 @@
                                             </div>
                                         </div>
                                         <p>
-                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. 
+                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque.
                                             <a class="more_btn main-color" href="blog-single.html">Read More</a>
                                         </p>
                                     </div>
@@ -99,7 +208,7 @@
                                                 </div>
                                             </div>
                                             <p>
-                                                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. 
+                                                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque.
                                                 <a class="more_btn main-color" href="blog-single.html">Read More</a>
                                             </p>
                                         </div>
@@ -126,7 +235,7 @@
                                             </div>
                                         </div>
                                         <p>
-                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. 
+                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque.
                                             <a class="more_btn main-color" href="blog-single.html">Read More</a>
                                         </p>
                                     </div>
@@ -138,25 +247,7 @@
                         <div class="blog-posts small-image">
                             <div class="post-item">
                                 <article class="post-content">
-                                    <div class="post-media main-border bot-4-border">
-                                        <img src="/assets/images/blog/large/1.jpg" alt="blog-post">
-                                    </div>
-                                    <div class="post-item-rit">
-                                        <div class="post-info-container">
-                                            <div class="post-info">
-                                                <h4><a href="blog-single.html">Mauris mauris ante, blandit et, ultrices a, suscipit eget.</a></h4>
-                                                <ul class="post-meta">
-                                                    <li class="main-bg"><i class="fa fa-video-camera"></i></li>
-                                                    <li class="meta_date"><i class="fa fa-folder-o"></i>in: <a href="#">Entertainment</a></li>
-                                                    <li class="meta_date"><i class="fa fa-clock-o"></i>15 May 2016</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <p>
-                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. 
-                                            <a class="more_btn main-color" href="blog-single.html">Read More</a>
-                                        </p>
-                                    </div>
+                                    <p>Kosong</p>
                                 </article>
                             </div>
                         </div>

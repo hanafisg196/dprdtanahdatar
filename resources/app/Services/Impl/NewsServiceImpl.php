@@ -94,7 +94,8 @@ class NewsServiceImpl implements NewsService
               'kategori' => 'required|numeric',
               'status' => 'required|numeric',
               'description' => 'nullable|string|max:160',
-              'keyword' => 'nullable|string|max:160'
+              'keyword' => 'nullable|string|max:160',
+              'headline' => 'required|numeric',
           ]);
       }
 
@@ -113,6 +114,7 @@ class NewsServiceImpl implements NewsService
             'description' => $validated['description'],
             'keyword' => $validated['keyword'],
             'user_id' => $user,
+            'headline' => $validated['headline']
         ]);
         $this->copyTemporaryFile($temporaryFiles, $news->id);
     }
@@ -133,6 +135,7 @@ class NewsServiceImpl implements NewsService
             'description' => $validated['description'],
             'keyword' => $validated['keyword'],
             'user_id' => $user,
+            'headline' => $validated['headline']
         ]);
         $this->copyTemporaryFile($temporaryFiles, $news->id);
     }

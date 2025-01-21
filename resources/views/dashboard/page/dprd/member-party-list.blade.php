@@ -30,8 +30,8 @@
                 <img src="{{ asset('storage/' . $party->images->image) }}"
                 style="object-fit: cover;" width="220" height="200" class="card-img-top" alt="Logo Partai 1">
                 @endif
-                <div style="position: absolute; top: 10px; right: 10px; z-index: 10;">
-                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateParty-{{$party->id}}"><i class="bi bi-pencil-square"></i></button>
+                <div style="position: absolute; top: 10px; right: 10px; z-index: 1;">
+                    <button class="btn btn-sm btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#updateParty-{{$party->id}}"><i class="bi bi-pencil-square"></i></button>
                     <form id="{{$party->id }}"
                         action="{{ route('dashboard.party.delete', $party->id) }}"
                         method="POST">

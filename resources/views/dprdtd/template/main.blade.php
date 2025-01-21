@@ -33,6 +33,55 @@
 
 <body>
     <style>
+        .post-image img {
+            width: 100%;
+            /* Menjaga lebar penuh slide */
+            height: 300px;
+            /* Tentukan tinggi tetap */
+            object-fit: cover;
+            /* Memastikan gambar terpotong agar sesuai */
+            border-radius: 10px;
+            /* Opsional untuk estetika */
+        }
+
+        .swiper.mySwiper {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            height: auto;
+        }
+
+        /* .swiper-slide img {
+            width: 100%;
+            max-height: 240x;
+            object-fit: contain;
+        } */
+
+        .swiper-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px;
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -45,46 +94,48 @@
         }
 
         .logo h3 {
-            margin: 0 0 -2px 0;
+            p margin: 0 0 -2px 0;
             font-size: 1.6rem;
             text-transform: uppercase;
             font-weight: bold;
         }
-		.custom-col {
-			width: 19%;
-			float: left;
-		}
-		@media (max-width: 768px) {
-			.custom-col {
-				width: 48%;
-			}
-		}
+
+        .custom-col {
+            width: 22%;
+            float: left;
+        }
+
+        @media (max-width: 768px) {
+            .custom-col {
+                width: 48%;
+            }
+        }
+
         .image-caption {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    }
-    .horizontal-slider {
-    position: relative;
-    overflow: visible; /* Pastikan tombol slider tidak terpotong */
-}
-       
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .horizontal-slider {
+            position: relative;
+            overflow: visible;
+            /* Pastikan tombol slider tidak terpotong */
+        }
     </style>
     <!-- site preloader start -->
     <div class="page-loader"></div>
     <!-- site preloader end -->
 
     <div class="pageWrapper">
-
         <!-- Header start -->
         @include('dprdtd.template.header')
         <!-- Header start -->
-
         <!-- Content start -->
         <div class="pageContent">
             <div class="xl-padding parallax" style="background: url('assets/images/dprdtd.png');background-size: cover;"
@@ -99,23 +150,39 @@
             </div>
         </div>
         <!-- Content start -->
-
         <!-- Footer start -->
         @include('dprdtd.template.footer')
         <!-- Footer end -->
-
     </div>
-
     <!-- Back to top Link -->
     <a id="to-top" href="#"><span class="fa fa fa-angle-up"></span></a>
-
     <!-- Load JS plugins -->
     <script type="text/javascript" src="/assets/js/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/assets.js"></script>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            var swiper = new Swiper('.mySwiper', {
+                slidesPerView: 5,
+                loop: true,
+                centeredSlides: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.swiper-pagination',
+                },
+            });
+        });
+    </script>
     <!-- general script file -->
     <script type="text/javascript" src="/assets/js/script.js"></script>
-
 </body>
 
 </html>

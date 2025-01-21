@@ -102,6 +102,8 @@ Route::middleware(AuthenticateUser::class)->group(function () {
         ->name('dashboard.member.detail');
         Route::post('/dashboard/konten/anggota/update/{id}', [MemberController::class, 'updateMember'])
         ->name('dashboard.member.update');
+        Route::post('/dashboard/konten/anggota/delete/{id}', [MemberController::class, 'deleteMember'])
+        ->name('dashboard.member.delete');
 
         Route::get('/dashboard/konten/partai/list', [MemberController::class, 'getParties'])
         ->name('dashboard.party.list');

@@ -21,7 +21,6 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'opd_id'
     ];
 
     /**
@@ -65,7 +64,5 @@ class User extends Authenticatable
     public function images(){
         return $this->hasOne(Images::class, 'user_id','id');
     }
-    public function opds(){
-        return $this->belongsTo(Opd::class, 'opd_id','id');
-    }
+
 }

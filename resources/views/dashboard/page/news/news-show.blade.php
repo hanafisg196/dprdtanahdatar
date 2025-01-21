@@ -26,30 +26,31 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
+                        {{-- <div class="col-md-4 mb-4">
                             <div class="form-group">
                                 <label for="cat_id">Status</label>
                                 <small class="form-text text-danger">
                                     <i class="fas fa-info-circle"></i>
-                                        *
+                                    *
                                 </small>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2"
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioStatusNo"
                                         value="0" {{ old('status', $data->status) == 0 ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioStatusNo">
                                         Tidak Dulu
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1"
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioStatusYes"
                                         value="1" {{ old('status', $data->status) == 1 ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioStatusYes">
                                         Publikasikan
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+
                     </div>
                 </div>
             </div>
@@ -67,6 +68,20 @@
                                     name="judul" placeholder="Judul Berita">
                             </div>
                         </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="form-group">
+                                <label for="headline">Headline</label>
+                                <small class="form-text text-danger">
+                                    <i class="fas fa-info-circle"></i>
+                                    *
+                                </small>
+                                <select class="form-control" name="headline" id="headline">
+                                    <option value="0" {{ old('headline', $data->headline) == 0 ? 'selected' : '' }}>Tidak</option>
+                                    <option value="1" {{ old('headline', $data->headline) == 1 ? 'selected' : '' }}>Ya</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div>
                             <label for="baner">Cover</label>
                             <small class="form-text text-danger">

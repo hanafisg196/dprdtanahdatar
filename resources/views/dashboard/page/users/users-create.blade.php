@@ -19,20 +19,6 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8 mb-4">
                         <div class="form-group">
-                            <label for="opd">OPD</label>
-                            <small class="form-text text-danger">
-                                <i class="fas fa-info-circle"></i>
-                                *
-                            </small>
-                            <select class="choices form-select" id="opd" name="opd">
-                                @foreach ($opds as $opd)
-                                <option value="{{ $opd->id }}" {{ old('opd') == $opd->id ? 'selected' : '' }}>
-                                    {{ $opd->nama_opd }}
-                                </option>
-                               @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <h6>Role
                                 <small class="form-text text-danger">
                                     <i class="fas fa-info-circle"></i>

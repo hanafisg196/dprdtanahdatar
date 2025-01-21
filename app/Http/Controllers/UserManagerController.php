@@ -23,8 +23,7 @@ class UserManagerController extends Controller
     }
 
     public function createForm(){
-        $opds = $this->userManagerService->getOpds();
-        return view('dashboard.page.users.users-create')->with('opds', $opds);
+        return view('dashboard.page.users.users-create');
     }
     public function register(Request $request){
         $this->userManagerService->registerUser($request);

@@ -41,7 +41,11 @@
                                 </small>
                                 <select class="choices form-select" id="partai" name="partai">
                                     @foreach ($parties as $party)
-                                        <option value="{{ $party->id }}">{{ $party->name }}</option>
+                                        @if (old('partai', $member->id) == $party->id)
+                                            <option value="{{ $party->id }}" selected>{{ $party->name }}</option>
+                                        @else
+                                            <option value="{{ $party->id }}">{{ $party->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -67,7 +71,7 @@
                             </div>
                             <label for="jabatan">Tambah Jabatan</label>
                             <div class="form-group with-title mb-3">
-                                <textarea name="tags" rows="3" class="form-control @error('tags') is-invalid @enderror" placeholder="Jabatan 1, Jabatan 2, Jabatan 3"></textarea>
+                                <textarea name="tags" rows="3" class="form-control @error('tags') is-invalid @enderror" placeholder="ex: Jabatan 1, Jabatan 2, Jabatan 3"></textarea>
                                 @error('tags')
                                     <div class="invalid-feedback">
                                         {{ $message }}

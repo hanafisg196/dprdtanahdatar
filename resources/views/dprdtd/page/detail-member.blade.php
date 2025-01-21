@@ -42,7 +42,6 @@
                     <span>: test</span>
                   </h3>
 
-
             </div>
             <div>
                 <img src="path_to_profile_image.jpg" alt="Profile Image" style="width: 50px; height: 50px; border-radius: 50%;">

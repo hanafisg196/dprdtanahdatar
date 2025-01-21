@@ -69,6 +69,19 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="form-group">
+                                <label for="headline">Headline</label>
+                                <small class="form-text text-danger">
+                                    <i class="fas fa-info-circle"></i> *
+                                </small>
+                                <select class="form-control" name="headline" id="headline">
+                                    <option value="0" {{ old('headline') == 0 ? 'selected' : '' }}>Tidak</option>
+                                    <option value="1" {{ old('headline') == 1 ? 'selected' : '' }}>Ya</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="col-md-12">
                             <div class="form-group" >
                                 <label for="baner">Cover</label>
