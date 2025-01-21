@@ -13,6 +13,7 @@ use App\Http\Controllers\ImageContentController;
 use App\Http\Controllers\ImageSliderController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Frontend\HomePageController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\NewsPostController;
@@ -29,9 +30,7 @@ use App\Models\SlideLink;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('dprdtd.page.home');
-})->name('home');
+Route::get('/', [HomeController::class, 'homePage'])->name('home');
 
 Route::get('/berita', function () {
     return view('dprdtd.page.detail-blog');

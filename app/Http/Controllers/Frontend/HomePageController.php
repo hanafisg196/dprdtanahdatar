@@ -17,6 +17,7 @@ class HomePageController extends Controller
         ->whereHas('categories', function ($query) {
             $query->where('name', 'Teks Bergerak');
         })->get();
+
         $headlineData = News::with('images')->limit(5)->get();
         $headline = collect($headlineData);
         $news = News::with(['images','categories','users.opds'])->latest()->paginate(6);

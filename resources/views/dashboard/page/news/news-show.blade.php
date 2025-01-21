@@ -26,7 +26,7 @@
                                 </select>
                             </div>
                         </div>
-                        {{-- <div class="col-md-4 mb-4">
+                        <div class="col-md-4 mb-4">
                             <div class="form-group">
                                 <label for="cat_id">Status</label>
                                 <small class="form-text text-danger">
@@ -49,7 +49,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                     </div>
                 </div>

@@ -11,6 +11,7 @@ return [
     App\Providers\GlobalItemProvider::class,
     App\Providers\HeaderItemProvider::class,
     App\Providers\HeaderItemServiceProvider::class,
+    App\Providers\HomePageServiceProvider::class,
     App\Providers\LinkServiceProvider::class,
     App\Providers\LoginServiceProvider::class,
     App\Providers\MemberServiceProvider::class,
