@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('lahir')->nullable();
             $table->string('agama')->nullable();
             $table->string('dapil')->nullable();
+            $table->string('status')->default('anggota');
             $table->unsignedBigInteger('party_id');
 
             $table->foreign("party_id")->on("parties")->references("id");

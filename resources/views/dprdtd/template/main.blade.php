@@ -123,17 +123,21 @@
 
     <div class="pageWrapper">
         <!-- Header start -->
+        @if(request()->routeIs('home'))
         @include('dprdtd.template.header')
+        <div class="xl-padding parallax" style="background: url('assets/images/dprd.png');background-size: cover;"
+            data-stellar-background-ratio="0.4" data-overlay="rgba(0,0,0,.5)">
+            <div class="t-center md-padding hi-index">
+                <h2 class="font-70 white uppercase fx" data-animate="fadeInUp" data-animation-delay="500">Selamat
+                    Datang Di<span class="main-color"> DPRD Tanah Datar</span> </h2>
+            </div>
+        </div>
+        @else
+        @include('dprdtd.template.header-two')
+        @endif
         <!-- Header start -->
         <!-- Content start -->
         <div class="pageContent">
-            <div class="xl-padding parallax" style="background: url('assets/images/dprd.png');background-size: cover;"
-                data-stellar-background-ratio="0.4" data-overlay="rgba(0,0,0,.5)">
-                <div class="t-center md-padding hi-index">
-                    <h2 class="font-70 white uppercase fx" data-animate="fadeInUp" data-animation-delay="500">Selamat
-                        Datang Di<span class="main-color"> DPRD Tanah Datar</span> </h2>
-                </div>
-            </div>
             <div class="pageContent magazine">
                 @yield('content')
             </div>
@@ -143,46 +147,7 @@
         @include('dprdtd.template.footer')
         <!-- Footer end -->
     </div>
-    <!-- Back to top Link -->
-    <a id="to-top" href="#"><span class="fa fa fa-angle-up"></span></a>
-    <!-- Load JS plugins -->
-    <script type="text/javascript" src="/assets/js/jquery-1.12.0.min.js"></script>
-    <script type="text/javascript" src="/assets/js/assets.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script type="text/javascript">
-        $(window).load(function() {
-            var swiper = new Swiper('.mySwiper', {
-                slidesPerView: 6,
-                loop: true,
-                // centeredSlides: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    clickable: true,
-                    el: '.swiper-pagination',
-                },
-            });
-        });
-    </script>
-    <!-- OWL SLIDER SCRIPTS  -->
-    <link rel="stylesheet" href="assets/css/sliders/owl.carousel.css" property='stylesheet' />
-    <script type="text/javascript" src="assets/js/sliders/owl.carousel.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#owl-slider").owlCarousel({
-                navigation: true,
-                items: 1
-            });
-        });
-    </script>
-    <!-- general script file -->
-    <script type="text/javascript" src="/assets/js/script.js"></script>
+        @include('dprdtd.template.script')
 </body>
 
 </html>

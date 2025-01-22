@@ -46,6 +46,7 @@
                                 </select>
                             </div>
                          </div>
+
                         <div class="form-group">
                             <label for="sublink">Lahir</label>
                             <small class="form-text text-danger">
@@ -59,6 +60,37 @@
                                     {{ $message }}
                                 </div>
                             @enderror
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="form-group">
+                                <label for="cat_id">Status</label>
+                                <small class="form-text text-danger">
+                                    <i class="fas fa-info-circle"></i>
+                                        *
+                                </small>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2"
+                                        value="anggota" {{ old('status') == 0 ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Anggota
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1"
+                                        value="ketua" {{ old('status') == 1 ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Ketua
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1"
+                                        value="wakil ketua" {{ old('status') == 1 ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Wakil Ketua
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Jabatan</label>

@@ -107,14 +107,16 @@ class MemberServiceImpl implements MemberService
             'lahir' => 'nullable|string|max:150',
             'agama' => 'nullable|string|max:15',
             'dapil' => 'nullable|string|max:180',
-            'partai'=> 'required|numeric'
+            'partai'=> 'required|numeric',
+            'status' => 'string'
         ]);
         $member =  Member::create([
             'nama' => $validated['nama'],
             'lahir' => $validated['lahir'],
             'agama' => $validated['agama'],
             'dapil' => $validated['dapil'],
-            'party_id' => $validated['partai']
+            'party_id' => $validated['partai'],
+            'status' => $validated['status']
         ]);
         $member->syncTags($jabatan);
 
@@ -131,7 +133,7 @@ class MemberServiceImpl implements MemberService
             'agama' => 'nullable|string|max:15',
             'dapil' => 'nullable|string|max:180',
             'partai'=> 'required|numeric',
-            'tags' => 'nullable|string',
+            'status' => 'string',
         ]);
         $member = Member::find($id);
         $member->update([
@@ -139,7 +141,8 @@ class MemberServiceImpl implements MemberService
             'lahir' => $validated['lahir'],
             'agama' => $validated['agama'],
             'dapil' => $validated['dapil'],
-            'party_id' => $validated['partai']
+            'party_id' => $validated['partai'],
+            'status' => $validated['status'],
         ]);
         if (!empty($jabatan)) {
             $member->attachTags($jabatan);

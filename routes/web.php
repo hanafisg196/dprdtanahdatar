@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\NewsPageController;
 use App\Http\Controllers\ImageContentController;
 use App\Http\Controllers\ImageSliderController;
 use App\Http\Controllers\Backend\LoginController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
@@ -39,6 +40,7 @@ Route::get('/member', function () {
     return view('dprdtd.page.detail-member');
 })->name('member');
 
+Route::get('/berita/detail/{slug}', [BlogController::class, 'getDetailBlog'])->name('detail.blog');
 
 // Route::get('/home', [HomePageController::class, 'index'])->name('home');
 // Route::get('/berita/{slug}', [NewsPageController::class,'detailNews'])->name('news.detail');
@@ -114,6 +116,7 @@ Route::middleware(AuthenticateUser::class)->group(function () {
         ->name('dashboard.party.update');
         Route::post('/dashboard/konten/partai/delete/{id}', [MemberController::class, 'deleteParty'])
         ->name('dashboard.party.delete');
+
 
 
 

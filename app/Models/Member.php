@@ -16,7 +16,8 @@ class Member extends Model
         'lahir',
         'agama',
         'dapil',
-        'party_id'
+        'party_id',
+        'status'
     ];
 
     public function parties()

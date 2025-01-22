@@ -19,4 +19,12 @@ class HomeController extends Controller
         return view('dprdtd.page.home')->with('data', $data);
 
     }
+
+    public function detailBlog(){
+
+    }
+
+    public function detailMember(){
+
+    }
 }
