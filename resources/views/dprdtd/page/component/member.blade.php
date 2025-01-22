@@ -11,22 +11,24 @@
             <div class="tab-pane fade in active" id="vision3">
                 <div class="swiper mySwiper" style="position: relative;">
                     <div class="swiper-wrapper">
-                        @foreach ( $data['members'] as  $member)
-                        <div class="swiper-slide">
-                            <a class="zoom"
-                                href="{{ asset('storage/'. $member->images->image) }}">
-                                <img alt=""
+                        @foreach ($data['members'] as $member)
+                        <div class="swiper-slide"> <!-- Pastikan class swiper-slide digunakan -->
+                            <div class="icon-box t-center light-gry-border rect-angles">
+                                <img
                                     src="{{ asset('storage/'. $member->images->image) }}"
-                                    style="max-width: 100%; height: auto;">
-                                <div class="swiper-caption">
-                                    {{$member->nama }}
-                                </div>
-                            </a>
+                                    alt="{{ $member->nama }}"
+                                    class="img-circle"
+                                    style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                <h6 class="uppercase mt-1">{{ $member->nama }}</h6>
+                            </div>
                         </div>
                         @endforeach
                     </div>
-                    <div class="swiper-button swiper-next"><i class="fa fa-angle-right"></i></div>
-                    <div class="swiper-button swiper-prev"><i class="fa fa-angle-left"></i></div>
+                    <!-- Tombol Navigasi -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
             <div class="tab-pane fade" id="mission3">

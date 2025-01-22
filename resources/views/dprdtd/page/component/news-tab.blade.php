@@ -4,9 +4,9 @@
             <h3>Publikasi</h3>
             <div class="tabs bottom-border">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#vision6" data-toggle="tab">Semua</a></li>
-                    <li><a href="#mission6" data-toggle="tab">Kegiatan</a></li>
-                    <li><a href="#strategy6" data-toggle="tab">Rapat & Acara</a></li>
+                    <li class="active" style="font-size: 1.8rem;"><a href="#vision6" data-toggle="tab">Semua</a></li>
+                    <li style="font-size: 1.8rem;"><a href="#mission6" data-toggle="tab">Kegiatan</a></li>
+                    <li style="font-size: 1.8rem;"><a href="#strategy6" data-toggle="tab">Rapat & Acara</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -17,7 +17,7 @@
                              @foreach ($data['latestNews'] as  $newsLatest )
                              <div class="blog-posts small-image">
                                 <div class="post-item">
-                                    <article class="post-content">
+                                    <article class="post-content"   >
                                         <div class="post-image main-border bot-4-border">
                                             <a href="blog-single.html">
                                                 <img src="{{ asset('storage/' . $newsLatest->images->image) }}" alt="Our Blog post goes here">
@@ -33,11 +33,10 @@
                                                     <h4><a href="">{{ $newsLatest->title }}</a></h4>
                                                 </div>
                                             </div>
-                                             <a class="more_btn main-color" href="">Lihat</a>
                                         </div>
                                     </article>
                                 </div>
-                                <div class="xs-padding">
+                                <div class="">
                                     <hr class="divider dev-style3">
                                 </div>
                             </div>

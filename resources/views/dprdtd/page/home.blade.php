@@ -1,6 +1,6 @@
 @extends('dprdtd.template.main')
 @section('content')
-<div id="owl-slider" style="width: 77%; margin: auto; height: auto; margin-top: 20px;" class="owl-carousel">
+<div id="owl-slider" style="width: 81%; margin: auto; height: auto; margin-top: 20px;" class="owl-carousel">
     @foreach ($data['headlines'] as $headline)
     <div class="item">
         <div class="slider-txt">
@@ -15,4 +15,21 @@
 @include('dprdtd.page.component.member')
 @include('dprdtd.page.component.news-tab')
 </div>
+<script>
+      var owl = $('.owl-carousel');
+         owl.owlCarousel({
+             items: 1,
+             loop: true,
+             margin: 10,
+             autoplay: true,
+             autoplayTimeout: 2000,
+             autoplayHoverPause: true
+         });
+         $('.play').on('click', function() {
+             owl.trigger('play.owl.autoplay', [1000])
+         })
+         $('.stop').on('click', function() {
+             owl.trigger('stop.owl.autoplay')
+         });
+</script>
 @endsection
