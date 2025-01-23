@@ -31,21 +31,18 @@
                                     </small>
                                 </h6>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2" value= 0
-                                        {{ old('status') == 0 ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Tidak Dulu
-                                    </label>
-                                </div>
-
-                                <div class="form-check">
                                     <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" value= 1
-                                        {{ old('status') == 1 ? 'checked' : '' }}>
+                                        {{ old('status') == 0 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="flexRadioDefault1">
                                         Publikasikan
                                     </label>
                                 </div>
-
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2" value= 0>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Tidak Dulu
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

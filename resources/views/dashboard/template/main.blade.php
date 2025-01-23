@@ -34,8 +34,49 @@
     @livewireStyles
 </head>
 
-<body>
+<style>
+    /* Your CSS for .loader, .loader--hidden, and .loader::after */
+    .loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  z-index: 9999; /* Pastikan loader ada di atas */
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+
+    .loader--hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader::after {
+      content: "";
+      width: 50px;
+      height: 50px;
+      border: 15px solid #dddddd;
+      border-top-color: #435ebe;
+      border-radius: 50%;
+      animation: loading 0.75s ease infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
     {{ timeMachine() }}
+    <div class="loader"></div>
     <div id="app">
         <div id="main" class='layout-navbar navbar-fixed'>
             <header>
@@ -66,6 +107,17 @@
             </div>
         </div>
     </div>
+    <script>
+        window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader--hidden");
+
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+  });
+});
+    </script>
     <script src="/dist/assets/extensions/filepond/plugin/image-preview/dist/filepond-plugin-image-preview.js"></script>
     <script src="/dist/assets/extensions/filepond/plugin/validate-size/dist/filepond-plugin-file-validate-size.js"></script>
     <script src="/dist/assets/extensions/filepond/plugin/validate-type/dist/filepond-plugin-file-validate-type.js"></script>

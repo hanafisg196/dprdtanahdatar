@@ -29,20 +29,22 @@
                                         *
                                 </small>
                                 <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1"
+                                        value=1 {{ old('status') == 0 ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Publikasikan
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
                                     <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2"
-                                        value=0 {{ old('status') == 0 ? 'checked' : '' }}>
+                                        value=0>
                                     <label class="form-check-label" for="flexRadioDefault2">
                                         Tidak Dulu
                                     </label>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1"
-                                        value=1 {{ old('status') == 1 ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Publikasikan
-                                    </label>
-                                </div>
+
                             </div>
                         </div>
 
@@ -154,7 +156,6 @@
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </button>
     </form>
-    @in
     @include('dashboard.component.buttonloading')
     @include('dashboard.component.choices-script')
 @endsection

@@ -16,7 +16,6 @@
                     @endforeach
 
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="vision6">

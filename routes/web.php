@@ -58,12 +58,7 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/profil', [ProfileController::class, 'index'])->name('profile');
-    Route::get('/dashboard/content/berita/form', [NewsPostController::class, 'form'])->name('dashboard.news.post.form');
-    Route::post('/dashboard/content/berita/store', [NewsPostController::class, 'store'])->name('dashboard.news.post.create');
-    Route::get('/dashboard/content/berita/show/{id}', [NewsPostController::class, 'show'])->name('dashboard.news.post.show');
-    Route::post('/dashboard/content/berita/update/{id}', [NewsPostController::class, 'update'])->name('dashboard.news.post.update');
-    Route::post('/dashboard/content/berita/delete/{id}', [NewsPostController::class, 'delete'])->name('dashboard.news.post.delete');
-    Route::get('/dashboard/content/berita/preview/{id}', [NewsPostController::class, 'preview'])->name('dashboard.news.post.preview');
+
     Route::post('/berita/upload/image', [ImageContentController::class, 'store'])->name('news.upload.images');
     Route::get('/dashboard/content/article/list', [ArticleController::class, 'index'])->name('dashboard.article.list');
     Route::get('/dashboard/content/article/form', [ArticleController::class, 'form'])->name('dashboard.article.form');
@@ -84,8 +79,16 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::post('/logout', [LoginController::class, 'doLogout'])->name('logout');
 
     //Dprd
+    //news
+    Route::get('/dashboard/konten/berita/list', [NewsPostController::class, 'index'])->name('dashboard.news.post.list');
+    Route::get('/dashboard/konten/berita/form', [NewsPostController::class, 'form'])->name('dashboard.news.post.form');
+    Route::post('/dashboard/konten/berita/store', [NewsPostController::class, 'store'])->name('dashboard.news.post.create');
+    Route::get('/dashboard/konten/berita/show/{id}', [NewsPostController::class, 'show'])->name('dashboard.news.post.show');
+    Route::post('/dashboard/konten/berita/update/{id}', [NewsPostController::class, 'update'])->name('dashboard.news.post.update');
+    Route::post('/dashboard/konten/berita/delete/{id}', [NewsPostController::class, 'delete'])->name('dashboard.news.post.delete');
+    Route::get('/dashboard/konten/berita/preview/{id}', [NewsPostController::class, 'preview'])->name('dashboard.news.post.preview');
+
     //member
-    Route::get('/dashboard/konten/postingan/list', [NewsPostController::class, 'index'])->name('dashboard.news.post.list');
     Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])->name('dashboard.member.list');
     Route::get('/dashboard/konten/anggota/registrasi', [MemberController::class, 'memberRegister'])->name('dashboard.member.register');
     Route::post('/dashboard/konten/anggota/create', [MemberController::class, 'memberCreate'])->name('dashboard.member.create');

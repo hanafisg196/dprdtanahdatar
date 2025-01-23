@@ -27,7 +27,12 @@
                     <form method="post" action="{{route('doLogin')}}">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" placeholder="Username" name="email">
+                            <input type="text" class="form-control  @error('email') is-invalid @enderror" placeholder="Username" name="email">
+                            @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                             @enderror
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
@@ -39,7 +44,20 @@
                             </div>
                         </div>
 
-                        <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Login</button>
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <label for="captcha">Captcha</label>
+                           <div class="mb-2">
+                            {!! captcha_img() !!}
+                           </div>
+                            <input type="text" class="form-control  @error('captcha') is-invalid @enderror" placeholder="captcha" name="captcha" id="captcha">
+                            @error('captcha')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                             @enderror
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Login</button>
                     </form>
 
                 </div>

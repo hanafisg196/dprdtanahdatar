@@ -17,22 +17,24 @@ class HomePageServiceImpl implements HomePageService
             ->latest()
             ->get();
         $latestNews = News::with(['images', 'categories'])
+            ->where('status', 1)
             ->latest()
             ->get();
         $leaders = Member::with('images')
             ->whereIn('status', ['ketua', 'wakil ketua'])
             ->get();
-        $members = Member::with('images')->where('status', 'anggota')->get();
+        $members = Member::with('images')
+        ->where('status', 'anggota')->get();
 
         $blogTabs = Category::with(['news' => function ($query) {
-            $query->limit(10)->with('images');
+            $query->limit(8)->with('images');
         }])->limit(8)->get();
 
 
 
         $partiesMember = Party::with('members')->get();
         $agendas =  Agenda::latest()->limit(5)->get();
-        $randomNews = News::latest()->limit(5)->get();
+        $randomNews = News::where('status', 1)->latest()->limit(5)->get();
         return [
             'headlines' => $headlines,
             'latestNews' => $latestNews,

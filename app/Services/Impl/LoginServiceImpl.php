@@ -11,6 +11,7 @@ class LoginServiceImpl implements LoginService
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|string',
+            'captcha' => 'required|captcha'
         ]);
         $credentials = $request->only('email','password');
         if (Auth::attempt($credentials)) {

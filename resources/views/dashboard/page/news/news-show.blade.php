@@ -34,6 +34,13 @@
                                     *
                                 </small>
                                 <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" id="flexRadioStatusYes"
+                                        value="1" {{ old('status', $data->status) == 1 ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="flexRadioStatusYes">
+                                        Publikasikan
+                                    </label>
+                                </div>
+                                <div class="form-check">
                                     <input class="form-check-input" type="radio" name="status" id="flexRadioStatusNo"
                                         value="0" {{ old('status', $data->status) == 0 ? 'checked' : '' }}>
                                     <label class="form-check-label" for="flexRadioStatusNo">
@@ -41,13 +48,7 @@
                                     </label>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="status" id="flexRadioStatusYes"
-                                        value="1" {{ old('status', $data->status) == 1 ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="flexRadioStatusYes">
-                                        Publikasikan
-                                    </label>
-                                </div>
+
                             </div>
                         </div>
 
