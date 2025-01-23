@@ -19,6 +19,11 @@
                         <span>Blog</span>
                     </a>
                 </li>
+                <li class="submenu-item {{Request::is('dashboard/konten/agenda*') ? 'active' : ''}}">
+                    <a href="{{route('dashboard.agenda.list')}}" class="submenu-link">
+                        <span>Agenda</span>
+                    </a>
+                </li>
 
                 <li class="submenu-item {{Request::is('dashboard/konten/anggota*') ? 'active' : ''}}">
                     <a  href="{{route('dashboard.member.list')}}" class="submenu-link">

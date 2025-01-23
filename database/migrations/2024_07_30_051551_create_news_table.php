@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug', 200)->unique();
             $table->string('description', 200)->nullable();
             $table->string('keyword', 200)->nullable();
-            $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('status')->default(1);
             $table->tinyInteger('headline')->default(0);
             $table->unsignedBigInteger('views')->default(0);
             $table->unsignedBigInteger('user_id');

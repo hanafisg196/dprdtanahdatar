@@ -15,7 +15,7 @@ class HomeController extends Controller
       }
 
     public function homePage(){
-        $data = $this->homePageService->getHedline();
+        $data = $this->homePageService->HomePageData();
         return view('dprdtd.page.home')->with('data', $data);
 
     }

@@ -2,7 +2,8 @@
     <div class="container">
         <!-- Logo start -->
         <div class="logo">
-            <a href="index.html"><img alt="" src="/assets/images/logo.png" /></a>
+            <a href="index.html"><img alt="" src="/dist/assets/compiled/jpg/logotanahdatar.png" /></a>
+            <h3 style="margin: 0; font-size: 18px;">DEWAN PERWAKILAN RAKYAT DAERAH</h3>
         </div>
         <!-- Logo end -->
           <div class="responsive-nav">

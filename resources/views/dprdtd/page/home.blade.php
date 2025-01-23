@@ -4,10 +4,15 @@
     @foreach ($data['headlines'] as $headline)
     <div class="item">
         <div class="slider-txt">
-            <h2 class="white font-30 m-b-0">{{ $headline->title }}</h2>
+            <a href="{{ route('dprd.detail.blog', $headline->slug) }}">
+            <h2 class="white font-30 m-b-0">
+
+                {{ $headline->title }}
+            </h2>
+            </a>
         </div>
-        <a href="{{ route('detail.blog', $headline->slug) }}" class="label label-danger p-a-1" style="position:absolute;left:20px;bottom:100px">Baca Lebih</a>
-        <img alt="" style="height: 400px; width: 100%;object-fit: cover" src="{{asset('storage/'. $headline->images->image)}}" />
+        <a href="{{ route('dprd.detail.blog', $headline->slug) }}" class="label label-danger p-a-1" style="position:absolute;left:20px;bottom:100px">LIHAT</a>
+        <img alt="" style="height: 400px; width: 100%;object-fit: cover; border-radius: 5px;" src="{{asset('storage/'. $headline->images->image)}}" />
     </div>
     @endforeach
 </div>

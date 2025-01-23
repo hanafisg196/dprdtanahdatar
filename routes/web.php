@@ -30,17 +30,20 @@ use App\Http\Middleware\AuthenticateUser;
 use App\Models\SlideLink;
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', [HomeController::class, 'homePage'])->name('home');
 
 Route::get('/berita', function () {
     return view('dprdtd.page.detail-blog');
 })->name('berita');
-Route::get('/member', function () {
-    return view('dprdtd.page.detail-member');
-})->name('member');
 
-Route::get('/berita/detail/{slug}', [BlogController::class, 'getDetailBlog'])->name('detail.blog');
+Route::get('/berita/detail/{slug}', [BlogController::class, 'getDetailBlog'])
+->name('dprd.detail.blog');
+Route::get('/anggota/detail/{slug}', [MemberController::class, 'getMemberDatailBySlug'])
+->name('dprd.member.detail');
+
+
+
+
 
 // Route::get('/home', [HomePageController::class, 'index'])->name('home');
 // Route::get('/berita/{slug}', [NewsPageController::class,'detailNews'])->name('news.detail');
@@ -49,11 +52,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'dologin'])->name('doLogin');
 // Route::get('/fetching', [FetchingDataControlller::class, 'fetchData']);
 
-
-
-
 Route::middleware(AuthenticateUser::class)->group(function () {
-
     Route::group(['prefix' => 'laravel-filemanager'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
@@ -79,68 +78,54 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::get('/dashboard/content/pengumuman/show/{id}', [PengumumanPostController::class, 'show'])->name('dashboard.pengumuman.show');
     Route::post('/dashboard/content/pengumuman/update/{id}', [PengumumanPostController::class, 'update'])->name('dashboard.pengumuman.update');
     Route::post('/dashboard/content/pengumuman/delete/{id}', [PengumumanPostController::class, 'delete'])->name('dashboard.pengumuman.delete');
-    Route::get('/dashboard/content/agenda/list', [AgendaController::class, 'index'])->name('dashboard.agenda.list');
-    Route::get('/dashboard/content/agenda/form', [AgendaController::class, 'form'])->name('dashboard.agenda.form');
-    Route::post('/dashboard/content/agenda/store', [AgendaController::class, 'store'])->name('dashboard.agenda.store');
-    Route::post('/dashboard/content/agenda/update/{id}', [AgendaController::class, 'update'])->name('dashboard.agenda.update');
-    Route::post('/dashboard/content/agenda/delete/{id}', [AgendaController::class, 'delete'])->name('dashboard.agenda.delete');
-    Route::get('/dashboard/content/agenda/show/{id}', [AgendaController::class, 'show'])->name('dashboard.agenda.show');
     Route::post('/upload', [FileUploadController::class, 'filePondUpload']);
     Route::post('/editor/upload', [FileUploadController::class, 'editorFileUpload']);
     Route::get('/filemanager', [FileManagerController::class, 'index'])->name('filemanager');
     Route::post('/logout', [LoginController::class, 'doLogout'])->name('logout');
 
-        //Dprd
-        Route::get('/dashboard/konten/postingan/list', [NewsPostController::class, 'index'])
-        ->name('dashboard.news.post.list');
-        Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])
-        ->name('dashboard.member.list');
-        Route::get('/dashboard/konten/anggota/registrasi', [MemberController::class, 'memberRegister'])
-        ->name('dashboard.member.register');
-        Route::post('/dashboard/konten/anggota/create', [MemberController::class, 'memberCreate'])
-        ->name('dashboard.member.create');
-        Route::get('/dashboard/konten/anggota/detail/{id}', [MemberController::class, 'memberDetail'])
-        ->name('dashboard.member.detail');
-        Route::post('/dashboard/konten/anggota/update/{id}', [MemberController::class, 'updateMember'])
-        ->name('dashboard.member.update');
-        Route::post('/dashboard/konten/anggota/delete/{id}', [MemberController::class, 'deleteMember'])
-        ->name('dashboard.member.delete');
+    //Dprd
+    //member
+    Route::get('/dashboard/konten/postingan/list', [NewsPostController::class, 'index'])->name('dashboard.news.post.list');
+    Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])->name('dashboard.member.list');
+    Route::get('/dashboard/konten/anggota/registrasi', [MemberController::class, 'memberRegister'])->name('dashboard.member.register');
+    Route::post('/dashboard/konten/anggota/create', [MemberController::class, 'memberCreate'])->name('dashboard.member.create');
+    Route::get('/dashboard/konten/anggota/detail/{id}', [MemberController::class, 'memberDetail'])->name('dashboard.member.detail');
+    Route::post('/dashboard/konten/anggota/update/{id}', [MemberController::class, 'updateMember'])->name('dashboard.member.update');
+    Route::post('/dashboard/konten/anggota/delete/{id}', [MemberController::class, 'deleteMember'])->name('dashboard.member.delete');
 
-        Route::get('/dashboard/konten/partai/list', [MemberController::class, 'getParties'])
-        ->name('dashboard.party.list');
-        Route::get('/dashboard/konten/partai/new', [MemberController::class, 'partyForm'])
-        ->name('dashboard.party.new');
-        Route::post('/dashboard/konten/partai/create', [MemberController::class, 'createParty'])
-        ->name('dashboard.party.create');
-        Route::post('/dashboard/konten/partai/update/{id}', [MemberController::class, 'updateParty'])
-        ->name('dashboard.party.update');
-        Route::post('/dashboard/konten/partai/delete/{id}', [MemberController::class, 'deleteParty'])
-        ->name('dashboard.party.delete');
+    Route::get('/dashboard/konten/partai/list', [MemberController::class, 'getParties'])->name('dashboard.party.list');
+    Route::get('/dashboard/konten/partai/new', [MemberController::class, 'partyForm'])->name('dashboard.party.new');
+    Route::post('/dashboard/konten/partai/create', [MemberController::class, 'createParty'])->name('dashboard.party.create');
+    Route::post('/dashboard/konten/partai/update/{id}', [MemberController::class, 'updateParty'])->name('dashboard.party.update');
+    Route::post('/dashboard/konten/partai/delete/{id}', [MemberController::class, 'deleteParty'])->name('dashboard.party.delete');
 
+    Route::get('/dashboard/konten/agenda/list', [AgendaController::class, 'index'])->name('dashboard.agenda.list');
+    Route::get('/dashboard/konten/agenda/form', [AgendaController::class, 'form'])->name('dashboard.agenda.form');
+    Route::post('/dashboard/konten/agenda/store', [AgendaController::class, 'store'])->name('dashboard.agenda.store');
+    Route::post('/dashboard/konten/agenda/update/{id}', [AgendaController::class, 'update'])->name('dashboard.agenda.update');
+    Route::post('/dashboard/konten/agenda/delete/{id}', [AgendaController::class, 'delete'])->name('dashboard.agenda.delete');
+    Route::get('/dashboard/konten/agenda/show/{id}', [AgendaController::class, 'show'])->name('dashboard.agenda.show');
 
-
-
-        Route::middleware(AdminMiddleware::class)->group(function(){
-
+    Route::middleware(AdminMiddleware::class)->group(function () {
         Route::get('/dashboard/category/berita', [CategoryController::class, 'catNews'])->name('dashboard.category.berita');
         Route::get('/dashboard/category/article', [CategoryController::class, 'catArticle'])->name('dashboard.category.article');
         Route::get('/dashboard/category/pengumuman', [CategoryController::class, 'catPengumuman'])->name('dashboard.category.pengumuman');
         Route::get('/dashboard/category/agenda', [CategoryController::class, 'catAgenda'])->name('dashboard.category.agenda');
 
-        Route::get('/dashboard/settings/slide-image/list', [SettingController::class,'slideImage'])->name('dashboard.settings.slide-image.list');
+        Route::get('/dashboard/settings/slide-image/list', [SettingController::class, 'slideImage'])->name('dashboard.settings.slide-image.list');
         Route::post('/dashboard/settings/slide-image/create', [ImageSliderController::class, 'createSlide'])->name('dashboard.settings.slide-image.create');
         Route::post('/dashboard/settings/slide-image/update/{id}', [ImageSliderController::class, 'updateSlide'])->name('dashboard.settings.slide-image.update');
         Route::post('/dashboard/settings/slide-image/delete/{id}', [ImageSliderController::class, 'deleteSlide'])->name('dashboard.settings.slide-image.delete');
-        Route::get('/dashboard/settings/slide-link/list', [SettingController::class,'slideLink'])->name('dashboard.settings.slide-link.list');
-        Route::post('/dashboard/settings/slide-link/create', [SlideLinkController::class,'createSlideLink'])->name('dashboard.settings.slide-link.create');
-        Route::post('/dashboard/settings/slide-link/update/{id}', [SlideLinkController::class,'updateSlideLink'])->name('dashboard.settings.slide-link.update');
-        Route::post('/dashboard/settings/slide-link/delete/{id}', [SlideLinkController::class,'deleteSlideLink'])->name('dashboard.settings.slide-link.delete');
-        Route::get('/dashboard/settings/skpd-link/list', [SettingController::class,'skpdLink'])->name('dashboard.settings.skpd-link.list');
-        Route::post('/dashboard/settings/skpd-link/create', [SkpdLinkController::class,'createSkpdLink'])->name('dashboard.settings.skpd-link.create');
-        Route::post('/dashboard/settings/skpd-link/update/{id}', [SkpdLinkController::class,'updateSkpdLink'])->name('dashboard.settings.skpd-link.update');
-        Route::post('/dashboard/settings/skpd-link/delete/{id}', [SkpdLinkController::class,'deleteSkpdLink'])->name('dashboard.settings.skpd-link.delete');
+        Route::get('/dashboard/settings/slide-link/list', [SettingController::class, 'slideLink'])->name('dashboard.settings.slide-link.list');
+        Route::post('/dashboard/settings/slide-link/create', [SlideLinkController::class, 'createSlideLink'])->name('dashboard.settings.slide-link.create');
+        Route::post('/dashboard/settings/slide-link/update/{id}', [SlideLinkController::class, 'updateSlideLink'])->name('dashboard.settings.slide-link.update');
+        Route::post('/dashboard/settings/slide-link/delete/{id}', [SlideLinkController::class, 'deleteSlideLink'])->name('dashboard.settings.slide-link.delete');
+        Route::get('/dashboard/settings/skpd-link/list', [SettingController::class, 'skpdLink'])->name('dashboard.settings.skpd-link.list');
+        Route::post('/dashboard/settings/skpd-link/create', [SkpdLinkController::class, 'createSkpdLink'])->name('dashboard.settings.skpd-link.create');
+        Route::post('/dashboard/settings/skpd-link/update/{id}', [SkpdLinkController::class, 'updateSkpdLink'])->name('dashboard.settings.skpd-link.update');
+        Route::post('/dashboard/settings/skpd-link/delete/{id}', [SkpdLinkController::class, 'deleteSkpdLink'])->name('dashboard.settings.skpd-link.delete');
 
-        Route::get('/dashboard/settings/menu/list', [MenuController::class,'index'])->name('dashboard.settings.menu.list');
+        Route::get('/dashboard/settings/menu/list', [MenuController::class, 'index'])->name('dashboard.settings.menu.list');
         Route::post('/dashboard/settings/menu/create', [MenuController::class, 'createMenu'])->name('dashboard.settings.menu.create');
         Route::post('/dashboard/settings/menu/update/{id}', [MenuController::class, 'updateMenu'])->name('dashboard.settings.menu.update');
         Route::post('/dashboard/settings/menu/delete/{id}', [MenuController::class, 'deleteMenu'])->name('dashboard.settings.menu.delete');
@@ -157,16 +142,12 @@ Route::middleware(AuthenticateUser::class)->group(function () {
         Route::post('/dashboard/settings/link/category/update/{id}', [LinkController::class, 'createCategory'])->name('dashboard.settings.link.category.update');
         Route::post('/dashboard/settings/link/category/delete/{id}', [LinkController::class, 'deleteCategory'])->name('dashboard.settings.link.category.delete');
 
-
-
         Route::get('/dashboard/user/manager/list', [UserManagerController::class, 'index'])->name('dashboard.usermanager.list');
         Route::post('/dashboard/user/manager/register', [UserManagerController::class, 'register'])->name('dashboard.usermanager.register');
         Route::get('/dashboard/user/manager/form', [UserManagerController::class, 'createForm'])->name('dashboard.usermanager.create.form');
         Route::post('/dashboard/user/manager/update/{id}', [UserManagerController::class, 'update'])->name('dashboard.usermanager.update');
         Route::post('/dashboard/user/manager/delete/{id}', [UserManagerController::class, 'delete'])->name('dashboard.usermanager.delete');
-
     });
 });
-
 
 Route::get('/test', [TestController::class, 'test']);

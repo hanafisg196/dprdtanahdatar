@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\HasTags;
 
 class Member extends Model
 {
-    use HasTags;
+    use HasTags, Sluggable;
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
@@ -19,6 +20,15 @@ class Member extends Model
         'party_id',
         'status'
     ];
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => ['nama', 'id']
+            ]
+        ];
+    }
 
     public function parties()
     {

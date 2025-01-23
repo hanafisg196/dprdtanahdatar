@@ -34,7 +34,7 @@ if (!function_exists('dateFormat')) {
     function dateFormat($date)
     {
         return Carbon::create($date)
-        // ->setTime(7, 0)
+
         ->translatedFormat('d F Y');
     }
 }

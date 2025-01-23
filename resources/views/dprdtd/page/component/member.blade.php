@@ -19,6 +19,7 @@
                     <div class="swiper-wrapper">
                         @foreach ($data['members'] as $member)
                         <div class="swiper-slide">
+                            <a href="{{ route('dprd.member.detail', $member->slug) }}">
                             <div class="icon-box t-center light-gry-border rect-angles">
                                 <img
                                     src="{{ asset('storage/'. $member->images->image) }}"
@@ -27,11 +28,13 @@
                                     style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
                                 <h6 class="uppercase mt-1">{{ $member->nama }}</h6>
                             </div>
+                        </a>
                         </div>
+
                         @endforeach
                     </div>
                     <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>->
+                    <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
@@ -42,6 +45,7 @@
                     <div class="row">
                         @foreach ($party->members as $partyMember)
                         <div class="col-md-2">
+                            <a href="{{ route('dprd.member.detail', $partyMember->slug) }}">
                             <div class="card">
                                 <div class="icon-box t-center light-gry-border rect-angles">
                                     <img
@@ -52,9 +56,9 @@
                                     <h6 class="uppercase mt-1">{{ $partyMember->nama }}</h6>
                                 </div>
                             </div>
+                             </a>
                         </div>
                         @endforeach
-
                     </div>
                 </div>
             @endforeach

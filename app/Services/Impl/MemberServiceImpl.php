@@ -167,4 +167,8 @@ class MemberServiceImpl implements MemberService
         }
     }
 
+    public function getDetailMemberBySlug($slug){
+         return Member::with(['images','parties.images','tags'])->where('slug', $slug)->first();
+    }
+
 }

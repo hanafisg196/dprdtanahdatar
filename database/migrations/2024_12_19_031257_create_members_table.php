@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('agama')->nullable();
             $table->string('dapil')->nullable();
             $table->string('status')->default('anggota');
+            $table->string('slug', 200)->unique();
             $table->unsignedBigInteger('party_id');
 
             $table->foreign("party_id")->on("parties")->references("id");

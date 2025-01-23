@@ -14,5 +14,6 @@ interface MemberService {
     public function updateMember(Request $request, $id);
     public function deleteMember($id);
     public function memberDetail($id);
+    public function getDetailMemberBySlug($slug);
 
 }

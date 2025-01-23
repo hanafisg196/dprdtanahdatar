@@ -153,124 +153,137 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Artikel'
         ]);
 
-        // for ($i = 1; $i <= 5; $i++) {
-        //     $party = Party::create([
-        //          'name' => 'PartaiSatu' . $i,
-        //          'initial' => 'PS' . $i,
-        //      ]);
-        //      if($party){
-        //          Images::create(
-        //           [
-        //              'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Partai_Gerindra_logo.jpg/870px-Partai_Gerindra_logo.jpg',
-        //              'party_id' => $party->id
-        //           ]);
-        //      }
+        for ($i = 1; $i <= 5; $i++) {
+            $party = Party::create([
+                 'name' => 'PartaiSatu' . $i,
+                 'initial' => 'PS' . $i,
+             ]);
+             if($party){
+                 Images::create(
+                  [
+                     'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Partai_Gerindra_logo.jpg/870px-Partai_Gerindra_logo.jpg',
+                     'party_id' => $party->id
+                  ]);
+             }
+          }
+
+
+
+        //  for ($i = 1; $i <= 5; $i++) {
+        //    $party = Party::create([
+        //         'name' => 'PartaiSatu' . $i,
+        //         'initial' => 'PS' . $i,
+        //     ]);
+        //     if($party){
+        //         $imageParty = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
+        //         $fileNameParty = 'party' . $party->id . '_' . Str::random(10) . '.jpg';
+        //         $partiImageContent = file_get_contents($imageParty);
+        //         Storage::disk('public')->put('images/' . $fileNameParty, $partiImageContent);
+        //         Images::create(
+        //          [
+        //             'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Partai_Gerindra_logo.jpg/870px-Partai_Gerindra_logo.jpg',
+        //             'party_id' => $party->id
+        //          ]);
+        //     }
+        //  }
+
+
+        //  for ($i = 1; $i <= 10; $i++) {
+        //     $anggota = Member::create([
+        //         'nama' => 'Anggota' . $i,
+        //         'lahir' => 'Padang, 30 Mai 1996',
+        //         'agama' => 'Islam',
+        //         'dapil' => 'Dapil Sekian',
+        //         'status' => 'anggota',
+        //         'party_id' => 1
+        //     ]);
+
+        //     if ($anggota) {
+        //         $imageUrl = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
+        //         $filename = 'member_' . $anggota->id . '_' . Str::random(10) . '.jpg';
+        //         $imageContent = file_get_contents($imageUrl);
+        //         Storage::disk('public')->put('images/' . $filename, $imageContent);
+        //         Images::create([
+        //             'image' => 'images/' . $filename,
+        //             'member_id' => $anggota->id
+        //         ]);
+        //     }
+        //   }
+
+        //   for ($i = 1; $i <= 2; $i++) {
+        //     $anggota = Member::create([
+        //         'nama' => 'Anggota' . $i,
+        //         'lahir' => 'Padang, 30 Mai 1996',
+        //         'agama' => 'Islam',
+        //         'dapil' => 'Dapil Sekian',
+        //         'status' => 'ketua',
+        //         'party_id' => 1
+
+        //     ]);
+
+        //     if ($anggota) {
+        //         $imageUrl = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
+        //         $filename = 'member_' . $anggota->id . '_' . Str::random(10) . '.jpg';
+        //         $imageContent = file_get_contents($imageUrl);
+        //         Storage::disk('public')->put('images/' . $filename, $imageContent);
+        //         Images::create([
+        //             'image' => 'images/' . $filename,
+        //             'member_id' => $anggota->id
+        //         ]);
+        //     }
+        //   }
+
+        //   for ($i = 1; $i <= 2; $i++) {
+        //     $anggota = Member::create([
+        //         'nama' => 'Anggota' . $i,
+        //         'lahir' => 'Padang, 30 Mai 1996',
+        //         'agama' => 'Islam',
+        //         'dapil' => 'Dapil Sekian',
+        //         'status' => 'wakil ketua',
+        //         'party_id' => 1,
+        //     ]);
+
+        //     if ($anggota) {
+        //         $imageUrl = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
+        //         $filename = 'member_' . $anggota->id . '_' . Str::random(10) . '.jpg';
+        //         $imageContent = file_get_contents($imageUrl);
+        //         Storage::disk('public')->put('images/' . $filename, $imageContent);
+        //         Images::create([
+        //             'image' => 'images/' . $filename,
+        //             'member_id' => $anggota->id
+        //         ]);
+        //     }
         //   }
 
 
 
-         for ($i = 1; $i <= 5; $i++) {
-           $party = Party::create([
-                'name' => 'PartaiSatu' . $i,
-                'initial' => 'PS' . $i,
-            ]);
-            if($party){
-                $imageParty = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
-                $fileNameParty = 'party' . $party->id . '_' . Str::random(10) . '.jpg';
-                $partiImageContent = file_get_contents($imageParty);
-                Storage::disk('public')->put('images/' . $fileNameParty, $partiImageContent);
-                Images::create(
-                 [
-                    'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Partai_Gerindra_logo.jpg/870px-Partai_Gerindra_logo.jpg',
-                    'party_id' => $party->id
-                 ]);
-            }
-         }
+        //   for ($i = 1; $i <= 10; $i++) {
+        //     $blog = News::create([
+        //         'title' => 'What is Lorem Ipsum?' . $i,
+        //         'body' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+        //         'description' => 'test',
+        //         'keyword' => 'test',
+        //         'status' => 1,
+        //         'headline' => 1,
+        //         'cat_id' => 1,
+        //         'user_id' => 1
+        //     ]);
 
-
-         for ($i = 1; $i <= 10; $i++) {
-            $anggota = Member::create([
-                'nama' => 'Anggota' . $i,
-                'lahir' => 'Padang, 30 Mai 1996',
-                'agama' => 'Islam',
-                'dapil' => 'Dapil Sekian',
-                'status' => 'anggota',
-                'party_id' => 1
-            ]);
-
-            if ($anggota) {
-                $imageUrl = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
-                $filename = 'member_' . $anggota->id . '_' . Str::random(10) . '.jpg';
-                $imageContent = file_get_contents($imageUrl);
-                Storage::disk('public')->put('images/' . $filename, $imageContent);
-                Images::create([
-                    'image' => 'images/' . $filename,
-                    'member_id' => $anggota->id
-                ]);
-            }
-          }
-
-          for ($i = 1; $i <= 2; $i++) {
-            $anggota = Member::create([
-                'nama' => 'Anggota' . $i,
-                'lahir' => 'Padang, 30 Mai 1996',
-                'agama' => 'Islam',
-                'dapil' => 'Dapil Sekian',
-                'status' => 'ketua',
-                'party_id' => 1
-            ]);
-
-            if ($anggota) {
-                $imageUrl = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
-                $filename = 'member_' . $anggota->id . '_' . Str::random(10) . '.jpg';
-                $imageContent = file_get_contents($imageUrl);
-                Storage::disk('public')->put('images/' . $filename, $imageContent);
-                Images::create([
-                    'image' => 'images/' . $filename,
-                    'member_id' => $anggota->id
-                ]);
-            }
-          }
-
-          for ($i = 1; $i <= 2; $i++) {
-            $anggota = Member::create([
-                'nama' => 'Anggota' . $i,
-                'lahir' => 'Padang, 30 Mai 1996',
-                'agama' => 'Islam',
-                'dapil' => 'Dapil Sekian',
-                'status' => 'wakil ketua',
-                'party_id' => 1
-            ]);
-
-            if ($anggota) {
-                $imageUrl = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
-                $filename = 'member_' . $anggota->id . '_' . Str::random(10) . '.jpg';
-                $imageContent = file_get_contents($imageUrl);
-                Storage::disk('public')->put('images/' . $filename, $imageContent);
-                Images::create([
-                    'image' => 'images/' . $filename,
-                    'member_id' => $anggota->id
-                ]);
-            }
-          }
-
-
-
-          for ($i = 1; $i <= 10; $i++) {
-            $anggota = News::create([
-
-            ]);
-
-            if ($anggota) {
-                $imageUrl = 'https://dprd.padang.go.id/uploads/images/image_big_671725456e3c1.jpg';
-                $filename = 'member_' . $anggota->id . '_' . Str::random(10) . '.jpg';
-                $imageContent = file_get_contents($imageUrl);
-                Storage::disk('public')->put('images/' . $filename, $imageContent);
-                Images::create([
-                    'image' => 'images/' . $filename,
-                    'member_id' => $anggota->id
-                ]);
-            }
-          }
+        //     if ($blog) {
+        //         $thumbsUrl = 'https://dprd.padang.go.id/uploads/images/image_default_6597c64b61728.jpg';
+        //         $blogImgUrl = 'https://dprd.padang.go.id/uploads/images/image_big_6597c64b28362.jpg';
+        //         $blogImgName = 'blog' . $blog->id . '_' . Str::random(10) . '.jpg';
+        //         $thumbname = 'thumbs' . $blog->id . '_' . Str::random(10) . '.jpg';
+        //         $blogContent = file_get_contents($thumbsUrl);
+        //         $thumbContent = file_get_contents($blogImgUrl);
+        //         Storage::disk('public')->put('images/' . $blogImgName, $blogContent);
+        //         Storage::disk('public')->put('images/thumbs/' . $thumbname, $thumbContent);
+        //         Images::create([
+        //             'image' => 'images/' . $filename,
+        //             'thumbnail' => 'thumbs/' . $blogImgName,
+        //             'news_id' => $blog->id
+        //         ]);
+        //     }
+        //   }
     }
 }
