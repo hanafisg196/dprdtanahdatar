@@ -40,7 +40,8 @@ Route::get('/berita/detail/{slug}', [BlogController::class, 'getDetailBlog'])
 ->name('dprd.detail.blog');
 Route::get('/anggota/detail/{slug}', [MemberController::class, 'getMemberDatailBySlug'])
 ->name('dprd.member.detail');
-
+Route::get('/agenda/list', [AgendaController::class, 'listAgenda'])
+->name('dprd.agenda.list');
 
 
 

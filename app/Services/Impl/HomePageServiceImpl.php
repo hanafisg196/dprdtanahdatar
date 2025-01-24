@@ -16,13 +16,16 @@ class HomePageServiceImpl implements HomePageService
             ->where('status', 1)
             ->latest()
             ->get();
+
         $latestNews = News::with(['images', 'categories'])
             ->where('status', 1)
             ->latest()
             ->get();
+
         $leaders = Member::with('images')
             ->whereIn('status', ['ketua', 'wakil ketua'])
             ->get();
+
         $members = Member::with('images')
         ->where('status', 'anggota')->get();
 
@@ -30,19 +33,13 @@ class HomePageServiceImpl implements HomePageService
             $query->limit(8)->with('images');
         }])->limit(8)->get();
 
-
-
         $partiesMember = Party::with('members')->get();
-        $agendas =  Agenda::latest()->limit(5)->get();
-        $randomNews = News::where('status', 1)->latest()->limit(5)->get();
         return [
             'headlines' => $headlines,
             'latestNews' => $latestNews,
             'leaders' => $leaders,
             'members' => $members,
             'partiesMember' => $partiesMember,
-            'agendas' => $agendas,
-            'randomNews' => $randomNews,
             'blogTabs' => $blogTabs
         ];
     }

@@ -14,6 +14,7 @@ class Agenda extends Model implements HasMedia
 
     protected $fillable = [
         'title',
+        'slug',
         'waktu_mulai',
         'waktu_selesai',
         'tempat',

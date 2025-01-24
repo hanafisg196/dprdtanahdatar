@@ -85,5 +85,9 @@ class AgendaServiceImpl implements AgendaService
 
     }
 
+    public function getAgendaList(){
+        return Agenda::latest()->paginate(10);
+    }
+
 
 }

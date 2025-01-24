@@ -27,7 +27,7 @@
                     <form method="post" action="{{route('doLogin')}}">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control  @error('email') is-invalid @enderror" placeholder="Username" name="email">
+                            <input type="text" class="form-control form-control-xl  @error('email') is-invalid @enderror" placeholder="Username" name="email">
                             @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -38,7 +38,12 @@
                             </div>
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" class="form-control form-control-xl" placeholder="Password" name="password">
+                            <input type="password" class="form-control form-control-xl @error('password') is-invalid @enderror" placeholder="Password" name="password">
+                            @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                             @enderror
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>
@@ -47,7 +52,7 @@
                         <div class="form-group position-relative has-icon-left mb-4">
                             <label for="captcha">Captcha</label>
                            <div class="mb-2">
-                            {!! captcha_img() !!}
+                            {!! captcha_img('math') !!}
                            </div>
                             <input type="text" class="form-control  @error('captcha') is-invalid @enderror" placeholder="captcha" name="captcha" id="captcha">
                             @error('captcha')

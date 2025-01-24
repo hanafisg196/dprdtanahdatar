@@ -77,7 +77,7 @@ class NewsServiceImpl implements NewsService
 
     public function getNewsDetail($slug){
 
-      return News::with('images')->where('slug', $slug)->first();
+      return News::with(['images','categories'])->where('slug', $slug)->first();
 
 
     }

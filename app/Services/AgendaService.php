@@ -10,4 +10,5 @@ interface AgendaService
     public function createAgenda(Request $request);
     public function updateAgenda(Request $request,$id);
     public function deleteAgenda($id);
+    public function getAgendaList();
 }

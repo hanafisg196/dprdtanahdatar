@@ -51,5 +51,10 @@ class AgendaController extends Controller
             'data' => $data
         ]);
     }
+
+    public function listAgenda(){
+        $agendas = $this->agendaService->getAgendaList();
+        return view('dprdtd.page.list-agenda')->with('agendas', $agendas);
+    }
 }
 

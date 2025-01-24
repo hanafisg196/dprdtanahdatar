@@ -17,7 +17,8 @@ class OtherNews extends Component
     }
 
     public function getRandomNews(){
-        $this->randomNews = News::with('images')->inRandomOrder()->limit(5)->get();
+        $this->randomNews = News::where('status', 1)
+        ->with('images')->inRandomOrder()->limit(5)->get();
     }
 
     public function render()
