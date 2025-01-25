@@ -42,9 +42,10 @@ Route::get('/anggota/detail/{slug}', [MemberController::class, 'getMemberDatailB
 ->name('dprd.member.detail');
 Route::get('/agenda/list', [AgendaController::class, 'listAgenda'])
 ->name('dprd.agenda.list');
-
-
-
+Route::post('/berita/cari', [HomeController::class, 'searchNews'])
+->name('dprd.news.search');
+Route::get('/berita/semua', [BlogController::class, 'getNews'])
+->name('dprd.news.all');
 
 // Route::get('/home', [HomePageController::class, 'index'])->name('home');
 // Route::get('/berita/{slug}', [NewsPageController::class,'detailNews'])->name('news.detail');

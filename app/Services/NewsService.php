@@ -11,4 +11,6 @@ interface NewsService {
     public function update(Request $request,$id);
     public function delete($id);
     public function getNewsDetail($slug);
+    public function searchNews(Request $request);
+    public function getNews();
 }

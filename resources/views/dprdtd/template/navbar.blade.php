@@ -22,9 +22,12 @@
         <!-- top search start -->
         <div class="top-search">
             <a href="#"><span class="fa fa-search"></span></a>
+            <form action="{{route('dprd.news.search')}}" method="post">
+                @csrf
             <div class="search-box">
-                <input type="text" name="t" placeHolder="Type And Hit Enter..." />
+                <input type="text" name="search" placeHolder="Ketik Dan Tekan Enter..." />
             </div>
+           </form>
         </div>
         <!-- top search end -->
 

@@ -61,7 +61,7 @@ class NewsServiceImpl implements NewsService
         }
     }
     public function getNews(){
-        return News::with('images')->latest()->paginate(6);
+        return News::with('images')->latest()->paginate(10);
     }
     public function getNewsByUser()
     {
@@ -81,6 +81,7 @@ class NewsServiceImpl implements NewsService
 
 
     }
+
 
 
     public function getCategory()
@@ -159,4 +160,22 @@ class NewsServiceImpl implements NewsService
             $data->delete();
         }
     }
+
+    public function searchNews(Request $request)
+    {
+        $search = $request->input('search');
+
+        $news = News::query();
+
+        if ($search) {
+            $news->where('title', 'LIKE', '%' . $search . '%')
+                ->with('images')
+                ->orWhereHas('categories', function ($query) use ($search) {
+                    $query->where('nama', 'LIKE', '%' . $search . '%');
+                });
+        }
+
+        return $news->paginate(10);
+    }
+
 }

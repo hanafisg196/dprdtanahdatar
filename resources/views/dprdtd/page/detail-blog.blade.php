@@ -1,10 +1,17 @@
 @extends('dprdtd.template.main')
 @section('content')
+@section('title', $blog->title)
+{{-- @section('description', $blog->description)
+@section('keywords', $blog->keyword)
+@section('ogurl', route('dprd.member.detail',$blog->slug))
+@section('ogtitle', $blog->title)
+@section('ogdesc', $blog->description)
+@section('ogimage', asset('storage/' . $blog->images->image)) --}}
     <div class="breadcrumbs">
         <div class="container">
-            <a href="{{ route('home') }}">Home</a>
+            <a href="#}">Beranda</a>
             <i class="fa fa-long-arrow-right main-color"></i>
-            <a href="#">Blog</a><i
+            <a href="#">Berita</a><i
                 class="fa fa-long-arrow-right main-color"></i><span>test</span>
         </div>
     </div>

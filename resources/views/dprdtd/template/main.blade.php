@@ -13,6 +13,14 @@
     <!-- Put favicon.ico and apple-touch-icon(s).png in the images folder -->
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
+    <title>@yield('title', 'DPRD Tanah Datar')</title>
+    {{-- <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta name="og:url" content="@yield('ogurl', 'https://tanahdatar.go.id')" />
+    <meta name="og:title" content="@yield('ogtitle', 'DPRD Tanah Datar')" />
+    <meta name="og:type" content="berita" />
+    <meta name="og:description" content="@yield('ogdesc')" />
+    <meta name="og:image" content="@yield('ogimage')" /> --}}
     <link
         href='https://fonts.googleapis.com/css?family=Oswald:400,100,300,500,700%7CLato:400,300,700,900&subset=latin,latin-ext'
         rel='stylesheet' type='text/css'>

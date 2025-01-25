@@ -98,9 +98,8 @@
     </style>
     <div class="breadcrumbs">
         <div class="container">
-            <a href="#">Home</a><i class="fa fa-long-arrow-right main-color"></i><a href="#">Blog</a><i
-                class="fa fa-long-arrow-right main-color"></i><span>Blog Post
-                Details</span>
+            <a href="{{route('home')}}">Beranda</a><i
+                class="fa fa-long-arrow-right main-color"></i><span>{{$memberDetail->nama}}</span>
         </div>
     </div>
     <div class="container" style="margin-top: 5px;">

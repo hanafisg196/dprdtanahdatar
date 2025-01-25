@@ -21,37 +21,44 @@
                     <div class="tab-pane fade in active" id="vision6">
                         <div class="row row-eq-height">
                             <div class="col-md-9">
-                             @foreach ($data['latestNews'] as  $newsLatest )
-                             <div class="blog-posts small-image">
-                                <div class="post-item">
-                                    <article class="post-content">
-                                        <div class="post-image main-border bot-4-border">
-                                            <a href="blog-single.html">
-                                                <img src="{{ asset('storage/' . $newsLatest->images->image) }}" alt="Our Blog post goes here">
-                                            </a>
-                                        </div>
-                                        <div class="post-item-rit">
-                                            <div class="post-info-container">
-                                                <div class="post-info">
-                                                    <ul class="post-meta">
-                                                        <li class="meta_date"><i class="fa fa-folder-o"></i><a href="#">{{$newsLatest->categories->nama}}</a></li>
-                                                        <li class="meta_date"><i class="fa fa-clock-o"></i>{{dateFormat($newsLatest->created_at)}}</li>
-                                                        </ul>
-                                                    <h4>
-                                                    <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
-                                                        {{ $newsLatest->title }}
-                                                    </a>
-                                                </h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
+                                @if ($data['latestNews']->isNotEmpty())
+                                @foreach ($data['latestNews'] as  $newsLatest )
+                                <div class="blog-posts small-image">
+                                   <div class="post-item">
+                                       <article class="post-content">
+                                           <div class="post-image main-border bot-4-border">
+                                               <a href="blog-single.html">
+                                                   <img src="{{ asset('storage/' . $newsLatest->images->image) }}" alt="Our Blog post goes here">
+                                               </a>
+                                           </div>
+                                           <div class="post-item-rit">
+                                               <div class="post-info-container">
+                                                   <div class="post-info">
+                                                       <ul class="post-meta">
+                                                           <li class="meta_date"><i class="fa fa-folder-o"></i><a href="#">{{$newsLatest->categories->nama}}</a></li>
+                                                           <li class="meta_date"><i class="fa fa-clock-o"></i>{{dateFormat($newsLatest->created_at)}}</li>
+                                                           </ul>
+                                                       <h4>
+                                                       <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
+                                                           {{ $newsLatest->title }}
+                                                       </a>
+                                                   </h4>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </article>
+                                   </div>
+                                   <div class="">
+                                       <hr class="divider dev-style3">
+                                   </div>
+                               </div>
+                                @endforeach
+                                <div style="display: flex; justify-content: center;">
+                                   <a class="btn main-bg" href="{{route('dprd.news.all')}}"><i class="fa fa-book"></i>Semua</a>
                                 </div>
-                                <div class="">
-                                    <hr class="divider dev-style3">
-                                </div>
-                            </div>
-                             @endforeach
+                                @else
+                                <h4 class="text-center">Tidak Ada Data</h4>
+                                @endif
                             </div>
                             @include('dprdtd.page.news-sidebar')
                         </div>
@@ -60,6 +67,8 @@
                     <div class="tab-pane fade" id="blogTab{{ $blogTab->id }}">
                         <div class="row row-eq-height">
                             <div class="col-md-9">
+                             @if ($blogTab->news->isNotEmpty())
+
                              @foreach ($blogTab->news as  $blog)
                              <div class="blog-posts small-image">
                                 <div class="post-item">
@@ -87,9 +96,16 @@
                                 </div>
                             </div>
                              @endforeach
+                             <div style="display: flex; justify-content: center;">
+                                <a class="btn main-bg" href="{{route('dprd.news.all')}}"><i class="fa fa-book"></i>Semua</a>
+                             </div>
+                             @else
+                             <h4 class="text-center">Tidak Ada Data</h4>
+                             @endif
                             </div>
                             @include('dprdtd.page.news-sidebar')
                         </div>
+
                     </div>
                     @endforeach
 

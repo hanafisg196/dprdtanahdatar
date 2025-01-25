@@ -18,4 +18,9 @@ class BlogController extends Controller
         $blog = $this->newsService->getNewsDetail($slug);
         return view('dprdtd.page.detail-blog')->with('blog', $blog);
     }
+
+    public function getNews(){
+       $blogs =  $this->newsService->getNews();
+        return view('dprdtd.page.list-blog')->with('blogs', $blogs);
+    }
 }
