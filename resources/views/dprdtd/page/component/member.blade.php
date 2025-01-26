@@ -7,7 +7,7 @@
                     <a href="#mission{{ $party->id }}"
                        data-toggle="tab"
                        role="tab">
-                       {{ $party->name }}
+                       {{ $party->initial }}
                     </a>
                 </li>
             @endforeach

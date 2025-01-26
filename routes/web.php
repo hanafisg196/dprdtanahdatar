@@ -94,7 +94,7 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])->name('dashboard.member.list');
     Route::get('/dashboard/konten/anggota/registrasi', [MemberController::class, 'memberRegister'])->name('dashboard.member.register');
     Route::post('/dashboard/konten/anggota/create', [MemberController::class, 'memberCreate'])->name('dashboard.member.create');
-    Route::get('/dashboard/konten/anggota/detail/{id}', [MemberController::class, 'memberDetail'])->name('dashboard.member.detail');
+    Route::get('/dashboard/konten/anggota/detail/{slug}', [MemberController::class, 'memberDetail'])->name('dashboard.member.detail');
     Route::post('/dashboard/konten/anggota/update/{id}', [MemberController::class, 'updateMember'])->name('dashboard.member.update');
     Route::post('/dashboard/konten/anggota/delete/{id}', [MemberController::class, 'deleteMember'])->name('dashboard.member.delete');
 

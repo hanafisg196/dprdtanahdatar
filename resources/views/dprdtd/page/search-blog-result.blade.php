@@ -2,8 +2,8 @@
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
-            <a href="#">Home</a><i class="fa fa-long-arrow-right main-color"></i><a href="{{route('home')}}">
-            Berita</a><i class="fa fa-long-arrow-right main-color"></i><span>Pencarian</span>
+           <a href="{{route('home')}}">
+            Beranda</a><i class="fa fa-long-arrow-right main-color"></i><span>Pencarian</span>
         </div>
     </div>
     <div class="container">
@@ -22,7 +22,7 @@
                                 <div class="post-item-rit">
                                     <div class="post-info-container">
                                         <div class="post-info">
-                                            <h4><a href="blog-single.html">{{ $blog->title }}</a></h4>
+                                            <h4><a href="{{ route('dprd.detail.blog', $blog->slug) }}">{{ $blog->title }}</a></h4>
                                             <ul class="post-meta">
                                                 <li class="meta_date"><i class="fa fa-clock-o"></i>{{ dateFormat($blog->created_at) }}</li>
                                                 <li class="meta_location">

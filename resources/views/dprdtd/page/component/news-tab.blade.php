@@ -14,7 +14,6 @@
                         </a>
                     </li>
                     @endforeach
-
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">
@@ -28,7 +27,7 @@
                                        <article class="post-content">
                                            <div class="post-image main-border bot-4-border">
                                                <a href="blog-single.html">
-                                                   <img src="{{ asset('storage/' . $newsLatest->images->image) }}" alt="Our Blog post goes here">
+                                                   <img src="{{ asset('storage/' . $newsLatest->images->thumbnail) }}" alt="Our Blog post goes here">
                                                </a>
                                            </div>
                                            <div class="post-item-rit">
@@ -68,14 +67,13 @@
                         <div class="row row-eq-height">
                             <div class="col-md-9">
                              @if ($blogTab->news->isNotEmpty())
-
                              @foreach ($blogTab->news as  $blog)
                              <div class="blog-posts small-image">
                                 <div class="post-item">
                                     <article class="post-content">
                                         <div class="post-image main-border bot-4-border">
                                             <a href="blog-single.html">
-                                                <img src="{{ asset('storage/' . $blog->images->image) }}" alt="Our Blog post goes here">
+                                                <img src="{{ asset('storage/' . $blog->images->thumbnail) }}" alt="Our Blog post goes here">
                                             </a>
                                         </div>
                                         <div class="post-item-rit">

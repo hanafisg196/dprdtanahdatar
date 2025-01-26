@@ -2,9 +2,7 @@
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
-            <a href="#">Home</a><i class="fa fa-long-arrow-right main-color"></i><a href="#">Blog</a><i
-                class="fa fa-long-arrow-right main-color"></i><span>Blog Post
-                Details</span>
+            <a href="{{ route('home') }}">Beranda</a><i class="fa fa-long-arrow-right main-color"></i><a href="#">Semua Agenda</a>
         </div>
     </div>
 
@@ -23,7 +21,7 @@
                                 <div class="post-item-rit">
                                     <div class="post-info-container">
                                         <div class="post-info">
-                                            <h4><a href="blog-single.html">{{ $agenda->title }}</a></h4>
+                                            <h4>{{ $agenda->title }}</h4>
                                             <ul class="post-meta">
                                                 <li class="meta_date"><i class="fa fa-clock-o"></i>{{ dateFormat($agenda->mulai) }}</li>
                                                 <li class="meta_location">

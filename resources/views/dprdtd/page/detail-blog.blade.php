@@ -1,18 +1,19 @@
-@extends('dprdtd.template.main')
-@section('content')
 @section('title', $blog->title)
-{{-- @section('description', $blog->description)
+@section('description', $blog->description)
 @section('keywords', $blog->keyword)
 @section('ogurl', route('dprd.member.detail',$blog->slug))
 @section('ogtitle', $blog->title)
 @section('ogdesc', $blog->description)
-@section('ogimage', asset('storage/' . $blog->images->image)) --}}
+@section('ogimage', asset('storage/' . $blog->images->image))
+
+@extends('dprdtd.template.main')
+@section('content')
     <div class="breadcrumbs">
         <div class="container">
-            <a href="#}">Beranda</a>
+            <a href="{{ route('home') }}">Beranda</a>
             <i class="fa fa-long-arrow-right main-color"></i>
-            <a href="#">Berita</a><i
-                class="fa fa-long-arrow-right main-color"></i><span>test</span>
+            <a href="{{ route('dprd.news.all') }}">Berita</a><i
+                class="fa fa-long-arrow-right main-color"></i><span>{{ $blog->title }}</span>
         </div>
     </div>
     <div class="container">

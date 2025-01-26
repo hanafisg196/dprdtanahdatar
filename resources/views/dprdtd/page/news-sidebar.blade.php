@@ -18,7 +18,7 @@
                 </div>
             </li>
             <li class="widget w-recent-posts">
-                <h4 class="widget-title"><span class="main-color">Berita</span>Lainya</h4>
+                <h4 class="widget-title"><span class="main-color">Berita </span>Lainya</h4>
                 <div class="widget-content">
                     <livewire:other-news lazy>
                 </div>

@@ -93,8 +93,8 @@ class MemberServiceImpl implements MemberService
             $party->delete();
         }
     }
-    public function memberDetail($id){
-      return  Member::with('images')->find($id);
+    public function memberDetail($slug){
+      return  Member::with('images')->find($slug);
     }
 
 
