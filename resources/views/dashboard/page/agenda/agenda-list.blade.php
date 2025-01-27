@@ -2,7 +2,20 @@
 @section('content')
 @include('dashboard.component.floating-button-action')
 <div class="page-heading d-flex justify-content-between align-items-center">
-        <h5 class="ms-2">Agenda</h5>
+    <h4 class="card-title d-flex"> Anggota
+        <form action="{{ route('dashboard.agenda.search') }}" method="POST" class="d-flex ms-4">
+            @csrf
+            <input type="text"
+                   name="search"
+                   class="form-control form-control-sm"
+                   placeholder="Cari Agenda"
+                   style="width: 250px;">
+            <button type="submit" class="btn btn-primary btn-sm ms-2">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+    </h4>
+
         <a href="{{ route('dashboard.agenda.form') }}" class="btn btn-primary btn-md" style="margin-left: 10px;">
             <i class="bi bi-plus-lg"></i>&nbsp;Buat Agenda
         </a>

@@ -2,7 +2,6 @@
 
 namespace App\Services\Impl;
 
-
 use App\Models\Category;
 use App\Models\Images;
 use App\Models\News;
@@ -17,10 +16,14 @@ use Spatie\Image\Image;
 
 class NewsServiceImpl implements NewsService
 {
-
     private function decrypt($payload)
     {
         return Crypt::decrypt($payload);
+    }
+
+    private function userRole()
+    {
+        return Auth::user()->roles->pluck('name');
     }
 
     private function makeThumbnail($imagePath, $thumbPath)
@@ -60,13 +63,20 @@ class NewsServiceImpl implements NewsService
             $item->delete();
         }
     }
-    public function getNews(){
+    public function getNews()
+    {
         return News::with('images')->latest()->paginate(10);
     }
     public function getNewsByUser()
     {
         $user = Auth::user()->id;
-        return News::with('images')->where('user_id', $user)->latest()->paginate(6);
+        $query = News::with('images')->latest();
+
+        if ($this->userRole() == 'admin') {
+            $query->where('user_id', $user);
+        }
+
+        return $query->paginate(6);
     }
     public function getNewsById($id)
     {
@@ -75,31 +85,29 @@ class NewsServiceImpl implements NewsService
         return News::with('images')->where('user_id', $user)->find($id);
     }
 
-    public function getNewsDetail($slug){
-
-      return News::with(['images','categories'])->where('slug', $slug)->first();
-
-
+    public function getNewsDetail($slug)
+    {
+        return News::with(['images', 'categories'])
+            ->where('slug', $slug)
+            ->first();
     }
-
-
 
     public function getCategory()
     {
         return Category::latest()->get();
     }
-    private function validation ($request){
-       return   $request->validate([
-              'judul' => 'required|string|max:200',
-              'konten' => 'required|string',
-              'kategori' => 'required|numeric',
-              'status' => 'required|numeric',
-              'description' => 'nullable|string|max:160',
-              'keyword' => 'nullable|string|max:160',
-              'headline' => 'numeric'
-          ]);
-      }
-
+    private function validation($request)
+    {
+        return $request->validate([
+            'judul' => 'required|string|max:200',
+            'konten' => 'required|string',
+            'kategori' => 'required|numeric',
+            'status' => 'required|numeric',
+            'description' => 'nullable|string|max:160',
+            'keyword' => 'nullable|string|max:160',
+            'headline' => 'numeric',
+        ]);
+    }
 
     public function create(Request $request)
     {
@@ -168,7 +176,8 @@ class NewsServiceImpl implements NewsService
         $news = News::query();
 
         if ($search) {
-            $news->where('title', 'LIKE', '%' . $search . '%')
+            $news
+                ->where('title', 'LIKE', '%' . $search . '%')
                 ->with('images')
                 ->orWhereHas('categories', function ($query) use ($search) {
                     $query->where('nama', 'LIKE', '%' . $search . '%');
@@ -178,4 +187,27 @@ class NewsServiceImpl implements NewsService
         return $news->paginate(10);
     }
 
+    public function searchNewsForDashboard(Request $request)
+    {
+        $user = Auth::user()->id;
+        $search = $request->input('search');
+
+        $news = News::query();
+
+        if ($search) {
+            $news->where(function ($query) use ($search, $user) {
+                if ($this->userRole() == 'admin') {
+                    $query->where('user_id', $user);
+                }
+                $query
+                    ->where('title', 'LIKE', '%' . $search . '%')
+                    ->with('images')
+                    ->orWhereHas('categories', function ($query) use ($search) {
+                        $query->where('nama', 'LIKE', '%' . $search . '%');
+                    });
+            });
+        }
+
+        return $news->paginate(10);
+    }
 }

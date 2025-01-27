@@ -135,4 +135,9 @@ class CategoryServiceImpl implements CategoryService
         $category = AgendaCategory::find($id);
         $category->delete();
     }
+
+    public function getCategoryAgendaById($id)
+    {
+        return AgendaCategory::find($id);
+    }
 }

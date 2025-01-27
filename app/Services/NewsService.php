@@ -13,4 +13,5 @@ interface NewsService {
     public function getNewsDetail($slug);
     public function searchNews(Request $request);
     public function getNews();
+    public function searchNewsForDashboard(Request $request);
 }

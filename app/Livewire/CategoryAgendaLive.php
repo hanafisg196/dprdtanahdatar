@@ -79,7 +79,7 @@ class CategoryAgendaLive extends Component
     }
 
     public function edit($id) {
-        $categoryArticle = $this->categoryService->getCategoryArticleById($id);
+        $categoryArticle = $this->categoryService->getCategoryAgendaById($id);
         $this->categoryId = $categoryArticle->id;
         $this->editNama = $categoryArticle->nama;
 

@@ -89,7 +89,7 @@
                             <div class="logo d-flex flex-column align-items-center">
                                 <img src="/dist/assets/compiled/jpg/logotanahdatar.png"
                                     style="width: 50px; height: 50px;" alt="Logo" class="mb-2">
-                                <span style="font-size: 20px;">Tanah Datar</span>
+                                <span style="font-size: 20px;">DPRD Tanah Datar</span>
                             </div>
                             <div class="sidebar-toggler x">
                                 <a href="#" class="sidebar-hide d-xl-none d-block"><i

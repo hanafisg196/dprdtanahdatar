@@ -2,8 +2,11 @@
     <div class="container">
         <!-- Logo start -->
         <div class="logo">
-            <a href="index.html"><img alt="" src="/dist/assets/compiled/jpg/logotanahdatar.png" /></a>
-            <h3 style="margin: 0; font-size: 18px;">DEWAN PERWAKILAN RAKYAT DAERAH</h3>
+            <a href="{{ route('home') }}"><img alt="" src="/dist/assets/compiled/jpg/logotanahdatar.png" /></a>
+            <div class="text">
+                <h3>DEWAN PERWAKILAN RAKYAT DAERAH</h3>
+                <h3 class="subtitle">Tanah Datar</h3>
+            </div>
         </div>
         <!-- Logo end -->
           <div class="responsive-nav">

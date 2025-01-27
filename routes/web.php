@@ -89,6 +89,7 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::post('/dashboard/konten/berita/update/{id}', [NewsPostController::class, 'update'])->name('dashboard.news.post.update');
     Route::post('/dashboard/konten/berita/delete/{id}', [NewsPostController::class, 'delete'])->name('dashboard.news.post.delete');
     Route::get('/dashboard/konten/berita/preview/{id}', [NewsPostController::class, 'preview'])->name('dashboard.news.post.preview');
+    Route::post('/dashboard/konten/berita/cari', [NewsPostController::class, 'search'])->name('dashboard.news.post.search');
 
     //member
     Route::get('/dashboard/konten/anggota/list', [MemberController::class, 'memberList'])->name('dashboard.member.list');
@@ -97,6 +98,7 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::get('/dashboard/konten/anggota/detail/{slug}', [MemberController::class, 'memberDetail'])->name('dashboard.member.detail');
     Route::post('/dashboard/konten/anggota/update/{id}', [MemberController::class, 'updateMember'])->name('dashboard.member.update');
     Route::post('/dashboard/konten/anggota/delete/{id}', [MemberController::class, 'deleteMember'])->name('dashboard.member.delete');
+    Route::post('/dashboard/konten/anggota/cari', [MemberController::class, 'search'])->name('dashboard.member.search');
 
     Route::get('/dashboard/konten/partai/list', [MemberController::class, 'getParties'])->name('dashboard.party.list');
     Route::get('/dashboard/konten/partai/new', [MemberController::class, 'partyForm'])->name('dashboard.party.new');
@@ -110,6 +112,7 @@ Route::middleware(AuthenticateUser::class)->group(function () {
     Route::post('/dashboard/konten/agenda/update/{id}', [AgendaController::class, 'update'])->name('dashboard.agenda.update');
     Route::post('/dashboard/konten/agenda/delete/{id}', [AgendaController::class, 'delete'])->name('dashboard.agenda.delete');
     Route::get('/dashboard/konten/agenda/show/{id}', [AgendaController::class, 'show'])->name('dashboard.agenda.show');
+    Route::post('/dashboard/konten/agenda/cari', [AgendaController::class, 'search'])->name('dashboard.agenda.search');
 
     Route::middleware(AdminMiddleware::class)->group(function () {
         Route::get('/dashboard/category/berita', [CategoryController::class, 'catNews'])->name('dashboard.category.berita');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\NewsService;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class NewsPostController extends Controller
 {
@@ -15,8 +15,11 @@ class NewsPostController extends Controller
     }
     public function index()
     {
+
         $data = $this->newsService->getNewsByUser();
-        return view('dashboard.page.news.news-list')->with('data', $data);
+        return view('dashboard.page.news.news-list')->with([
+            'data' => $data
+        ]);
     }
 
     public function form() {
@@ -52,6 +55,13 @@ class NewsPostController extends Controller
     public function preview($id){
         $data = $this->newsService->getNewsById($id);
         return view('dashboard.page.news.news-preview')->with('data', $data);
+    }
+
+    public function search(Request $request){
+        $data = $this->newsService->searchNewsForDashboard($request);
+        return view('dashboard.page.news.news-list')->with([
+            'data' => $data
+        ]);
     }
 
 }

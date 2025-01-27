@@ -93,4 +93,10 @@ class MemberController extends Controller
         return view('dprdtd.page.detail-member')
         ->with('memberDetail', $memberDetail);
     }
+
+    public function search(Request $request)
+    {
+        $members = $this->memberService->searchMember($request);
+        return view('dashboard.page.dprd.member-list')->with('members', $members);
+    }
 }

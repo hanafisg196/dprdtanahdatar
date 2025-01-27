@@ -27,7 +27,8 @@
                     <form method="post" action="{{route('doLogin')}}">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl  @error('email') is-invalid @enderror" placeholder="Username" name="email">
+                            <input type="text" class="form-control form-control-xl  @error('email') is-invalid @enderror"
+                            value="{{ old('email') }}" placeholder="Username" name="email">
                             @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}

@@ -56,5 +56,10 @@ class AgendaController extends Controller
         $agendas = $this->agendaService->getAgendaList();
         return view('dprdtd.page.list-agenda')->with('agendas', $agendas);
     }
+
+    public function search(Request $request){
+       $data = $this->agendaService->searchAgenda($request);
+        return view('dashboard.page.agenda.agenda-list')->with('data', $data);
+    }
 }
 

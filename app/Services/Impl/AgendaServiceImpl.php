@@ -89,5 +89,20 @@ class AgendaServiceImpl implements AgendaService
         return Agenda::latest()->paginate(10);
     }
 
+    public function searchAgenda(Request $request)
+    {
+        $search = $request->input('search');
+        $agenda = Agenda::query();
+        if ($search) {
+            $agenda
+                ->where('title', 'LIKE', '%' . $search . '%')
+                ->orWhereHas('categories', function ($query) use ($search) {
+                    $query->where('nama', 'LIKE', '%' . $search . '%');
+                });
+        }
+        return $agenda->paginate(10);
+    }
+
+
 
 }

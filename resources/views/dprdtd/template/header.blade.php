@@ -23,7 +23,10 @@
             <a href="index.html">
                 <img alt="Logo Tanah Datar" src="/dist/assets/compiled/jpg/logotanahdatar.png" />
             </a>
-            <h3>DEWAN PERWAKILAN RAKYAT DAERAH</h3>
+            <div class="text">
+                <h3>DEWAN PERWAKILAN RAKYAT DAERAH</h3>
+                <h3 class="subtitle">Tanah Datar</h3>
+            </div>
         </div>
 
         <!-- Logo end -->

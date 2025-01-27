@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Put favicon.ico and apple-touch-icon(s).png in the images folder -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/dist/assets/compiled/jpg/logotanahdatar.png">
     <link
         href='https://fonts.googleapis.com/css?family=Oswald:400,100,300,500,700%7CLato:400,300,700,900&subset=latin,latin-ext'
         rel='stylesheet' type='text/css'>
@@ -39,6 +39,39 @@
 
 <body>
     <style>
+        .logo {
+            text-align: center;
+            /* Pusatkan konten */
+        }
+
+        .logo img {
+            max-width: 100px;
+            /* Sesuaikan ukuran logo */
+            margin-bottom: 9px;
+            /* Jarak bawah logo */
+        }
+
+        .logo .text {
+            display: inline-block;
+            /* Buat teks tetap dalam satu blok */
+        }
+
+        .logo .text h3 {
+            margin: 0;
+            /* Hapus margin default */
+            font-size: 1.5rem;
+            /* Ukuran font default */
+        }
+
+        .logo .text .subtitle {
+            font-size: 16px;
+            /* Ukuran font lebih kecil untuk "Tanah Datar" */
+            font-weight: normal;
+            /* Gunakan font normal untuk subtitle */
+            margin-top: 5px;
+            /* Jarak dari teks di atas */
+        }
+
         .post-image img {
             width: 100%;
             /* Menjaga lebar penuh slide */
@@ -129,17 +162,17 @@
 
     <div class="pageWrapper">
         <!-- Header start -->
-        @if(request()->routeIs('home'))
-        @include('dprdtd.template.header')
-        <div class="xl-padding parallax" style="background: url('assets/images/dprd.png');background-size: cover;"
-            data-stellar-background-ratio="0.4" data-overlay="rgba(0,0,0,.5)">
-            <div class="t-center md-padding hi-index">
-                <h2 class="font-70 white uppercase fx" data-animate="fadeInUp" data-animation-delay="500">Selamat
-                    Datang Di<span class="main-color"> DPRD Tanah Datar</span> </h2>
+        @if (request()->routeIs('home'))
+            @include('dprdtd.template.header')
+            <div class="xl-padding parallax" style="background: url('assets/images/dprd.png');background-size: cover;"
+                data-stellar-background-ratio="0.4" data-overlay="rgba(0,0,0,.5)">
+                <div class="t-center md-padding hi-index">
+                    <h2 class="font-70 white uppercase fx" data-animate="fadeInUp" data-animation-delay="500">Selamat
+                        Datang Di<span class="main-color"> DPRD Tanah Datar</span> </h2>
+                </div>
             </div>
-        </div>
         @else
-        @include('dprdtd.template.header-two')
+            @include('dprdtd.template.header-two')
         @endif
         <!-- Header start -->
         <!-- Content start -->
@@ -153,7 +186,7 @@
         @include('dprdtd.template.footer')
         <!-- Footer end -->
     </div>
-        @include('dprdtd.template.script')
+    @include('dprdtd.template.script')
 </body>
 
 </html>

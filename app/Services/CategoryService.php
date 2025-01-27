@@ -27,6 +27,7 @@ interface CategoryService{
     public function createCategoryAgenda(Request $request);
     public function updateCategoryAgenda(Request $request, $id);
     public function deleteCategoryAgenda($id);
+    public function getCategoryAgendaById($id);
 
 
 }

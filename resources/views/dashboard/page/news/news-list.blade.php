@@ -2,11 +2,25 @@
 @section('content')
     @include('dashboard.component.floating-button-action')
     <div class="page-heading d-flex justify-content-between align-items-center">
-        <h5 class="ms-2">Berita</h5>
+        <div class="d-flex align-items-center">
+            <h5 class="ms-2">Berita</h5>
+            <form action="{{ route('dashboard.news.post.search') }}" method="POST" class="d-flex ms-4">
+                @csrf
+                <input type="text"
+                       name="search"
+                       class="form-control form-control-sm"
+                       placeholder="Cari berita..."
+                       style="width: 250px;">
+                <button type="submit" class="btn btn-primary btn-sm ms-2">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
         <a href="{{ route('dashboard.news.post.form') }}" class="btn btn-primary btn-md" style="margin-left: 10px;">
             <i class="bi bi-plus-lg"></i>&nbsp;Buat Berita
         </a>
     </div>
+
     <div id="page" class="page-content" style="display:none">
         <div class="container d-flex justify-content-center">
             <div class="row">

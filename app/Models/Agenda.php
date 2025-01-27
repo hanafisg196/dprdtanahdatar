@@ -32,7 +32,7 @@ class Agenda extends Model implements HasMedia
             ]
         ];
     }
-    public function agendaCategories()
+    public function categories()
     {
         return $this->belongsTo(AgendaCategory::class, 'cat_id','id');
     }

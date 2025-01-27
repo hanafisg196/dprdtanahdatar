@@ -13,7 +13,19 @@
             <div class="card-header d-flex justify-content-between align-items-center  mb-4">
                 <h4 class="card-title d-flex">
                     <i class="bx bx-check font-medium-5 pl-25 pr-75"></i>Anggota
+                    <form action="{{ route('dashboard.member.search') }}" method="POST" class="d-flex ms-4">
+                        @csrf
+                        <input type="text"
+                               name="search"
+                               class="form-control form-control-sm"
+                               placeholder="Cari Anggota"
+                               style="width: 250px;">
+                        <button type="submit" class="btn btn-primary btn-sm ms-2">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
                 </h4>
+
                 <a class="btn btn-md btn-primary" href="{{ route('dashboard.member.register') }}">
                    Tambah
                 </a>
@@ -30,7 +42,7 @@
                     <img src="{{ asset('/dist/assets/compiled/png/user.png') }}"  width="200" height="250"
                     style="object-fit: cover;"  class="rounded-circle" alt="Profile">
                     @endif
-                    <div style="position: absolute; top: 10px; right: 10px; z-index: 1;">
+                    <div style="position: absolute; top: 10px; right: 10px;     ">
                           <a class="btn btn-sm btn-primary" href="{{ route('dashboard.member.detail', $member->id) }}"><i class="bi bi-pencil-square"></i></a>
                           <form id="{{$member->id }}"
                               action="{{ route('dashboard.member.delete', $member->id) }}"

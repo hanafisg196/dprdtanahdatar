@@ -171,4 +171,19 @@ class MemberServiceImpl implements MemberService
          return Member::with(['images','parties.images','tags'])->where('slug', $slug)->first();
     }
 
+    public function searchMember(Request $request)
+    {
+        $search = $request->input('search');
+        $member = Member::query();
+        if ($search) {
+            $member
+                ->where('nama', 'LIKE', '%' . $search . '%')
+                ->with('images')
+                ->orWhereHas('parties', function ($query) use ($search) {
+                    $query->where('name', 'LIKE', '%' . $search . '%');
+                });
+        }
+        return $member->paginate(10);
+    }
+
 }
