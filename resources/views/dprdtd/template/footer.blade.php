@@ -21,10 +21,8 @@
 							    </ul>
 						    </div> --}}
 						    <!-- footer social links right cell end -->
-
 					    </div>
 				    </div>
 			    </div>
-
 		    </footer>
 			<!-- Footer end -->

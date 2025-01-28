@@ -42,6 +42,7 @@
                 @else
                 <h4 class="text-center">Berita Tidak Di Temukan</h4>
                 @endif
+                {{ $blogs->links() }}
             </div>
                 @include('dprdtd.page.news-sidebar')
             </div>

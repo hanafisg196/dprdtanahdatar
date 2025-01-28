@@ -26,7 +26,7 @@
                                    <div class="post-item">
                                        <article class="post-content">
                                            <div class="post-image main-border bot-4-border">
-                                               <a href="blog-single.html">
+                                               <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
                                                    <img src="{{ asset('storage/' . $newsLatest->images->thumbnail) }}" alt="Our Blog post goes here">
                                                </a>
                                            </div>
@@ -72,7 +72,7 @@
                                 <div class="post-item">
                                     <article class="post-content">
                                         <div class="post-image main-border bot-4-border">
-                                            <a href="blog-single.html">
+                                            <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
                                                 <img src="{{ asset('storage/' . $blog->images->thumbnail) }}" alt="Our Blog post goes here">
                                             </a>
                                         </div>

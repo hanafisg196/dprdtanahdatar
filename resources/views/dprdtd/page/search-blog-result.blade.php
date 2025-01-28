@@ -42,6 +42,7 @@
                         <div class="">
                             <hr class="divider dev-style3">
                         </div>
+                        {{ $blogs->links() }}
                     </div>
                 </div>
                 @include('dprdtd.page.news-sidebar')

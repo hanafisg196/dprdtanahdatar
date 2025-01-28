@@ -38,6 +38,7 @@
                             <hr class="divider dev-style3">
                         </div>
                     </div>
+                    {{ $agendas->links() }}
                 </div>
                 @include('dprdtd.page.news-sidebar')
             </div>

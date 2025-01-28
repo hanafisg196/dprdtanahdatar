@@ -20,7 +20,7 @@
     <div class="container">
         <!-- Logo start -->
         <div class="logo">
-            <a href="index.html">
+            <a href="{{ route('home') }}">
                 <img alt="Logo Tanah Datar" src="/dist/assets/compiled/jpg/logotanahdatar.png" />
             </a>
             <div class="text">
