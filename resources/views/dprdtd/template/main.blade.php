@@ -19,8 +19,7 @@
 
     <!-- Put favicon.ico and apple-touch-icon(s).png in the images folder -->
     <link rel="shortcut icon" href="/dist/assets/compiled/jpg/logotanahdatar.png">
-    <link
-        href='https://fonts.googleapis.com/css?family=Oswald:400,100,300,500,700%7CLato:400,300,700,900&subset=latin,latin-ext'
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,100,300,500,700%7CLato:400,300,700,900&subset=latin,latin-ext'
         rel='stylesheet' type='text/css'>
 
     <!-- Plugins CSS files -->
@@ -31,9 +30,11 @@
     <!-- Magazine Styles -->
     <link rel="stylesheet" href="/assets/css/sliders/swiper.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/demos/magazine.css" type="text/css">
-
     <link id="theme_css" rel="stylesheet" href="/assets/css/light.css">
     <link id="skin_css" rel="stylesheet" href="/assets/css/skins/default.css">
+    <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/sliders/owl.carousel.css" property='stylesheet' />
 
 </head>
 

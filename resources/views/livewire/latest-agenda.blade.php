@@ -9,9 +9,10 @@
                 <div class="widget-post-info">
                     <h5><a href="{{ route('dprd.agenda.list') }}">{{ $agenda->title }}</a></h5>
                     <div class="meta">
-                        <span><i class="fa fa-clock-o"></i>{{ $agenda->waktu_mulai }}</span>
+                        <span><i class="fa fa-clock-o"></i>{{ $agenda->waktu_mulai }}</span><br>
                         <span><i class="fa fa-map-marker"></i>{{ $agenda->tempat }}</span>
                     </div>
+
                 </div>
             </li>
         @endforeach
