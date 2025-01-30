@@ -27,7 +27,7 @@
                                        <article class="post-content">
                                            <div class="post-image main-border bot-4-border">
                                                <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
-                                                   <img src="{{ asset('storage/' . $newsLatest->images->thumbnail) }}" alt="Our Blog post goes here">
+                                                   <img src="{{ asset('storage/' . $newsLatest->images->thumbnail) }}" style="width: 800px;" alt="Our Blog post goes here">
                                                </a>
                                            </div>
                                            <div class="post-item-rit">
@@ -35,13 +35,13 @@
                                                    <div class="post-info">
                                                        <ul class="post-meta">
                                                            <li class="meta_date"><i class="fa fa-folder-o"></i><a href="#">{{$newsLatest->categories->nama}}</a></li>
-                                                           <li class="meta_date"><i class="fa fa-clock-o"></i>{{dateFormat($newsLatest->created_at)}}</li>
-                                                           </ul>
-                                                       <h4>
-                                                       <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
+                                                           <li class="meta_date mt-1"><i class="fa fa-clock-o"></i>{{dateFormat($newsLatest->created_at)}}</li>
+                                                        </ul>
+                                                       <h5>
+                                                       <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}" >
                                                            {{ $newsLatest->title }}
                                                        </a>
-                                                   </h4>
+                                                       </h5>
                                                    </div>
                                                </div>
                                            </div>
@@ -73,7 +73,7 @@
                                     <article class="post-content">
                                         <div class="post-image main-border bot-4-border">
                                             <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
-                                                <img src="{{ asset('storage/' . $blog->images->thumbnail) }}" alt="Our Blog post goes here">
+                                                <img src="{{ asset('storage/' . $blog->images->thumbnail) }}" style="width: 800px;" alt="Our Blog post goes here">
                                             </a>
                                         </div>
                                         <div class="post-item-rit">
@@ -83,7 +83,7 @@
                                                         <li class="meta_date"><i class="fa fa-folder-o"></i><a href="#">{{$blog->categories->nama}}</a></li>
                                                         <li class="meta_date"><i class="fa fa-clock-o"></i>{{dateFormat($blog->created_at)}}</li>
                                                         </ul>
-                                                    <h4><a href="{{ route('dprd.detail.blog', $blog->slug) }}">{{ $blog->title }}</a></h4>
+                                                    <h5><a href="{{ route('dprd.detail.blog', $blog->slug) }}">{{ $blog->title }}</a></h5>
                                                 </div>
                                             </div>
                                         </div>

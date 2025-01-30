@@ -56,7 +56,10 @@
                     <div class="user-menu d-flex">
                         <div class="user-name text-end me-3">
                             <h6 class="mb-0 text-gray-600"><livewire:card-profile-live/></h6>
-                            <p class="mb-0 text-sm text-gray-600">Author</p>
+                          @foreach (auth()->user()->roles  as $role)
+                          <p class="mb-0 text-sm text-gray-600">{{ $role->name }}</p>
+                          @endforeach
+
                         </div>
                         <div class="user-img d-flex align-items-center">
                             <div class="avatar avatar-md" style="border: 2px solid #fff;">

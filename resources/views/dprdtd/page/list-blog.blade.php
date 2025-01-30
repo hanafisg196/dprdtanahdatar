@@ -14,9 +14,9 @@
                 <div class="blog-posts small-image">
                     <div class="post-item">
                         <article class="post-content">
-                            <div class="post-image main-border bot-4-border">
-                                <a href="blog-single.html">
-                                <img src="{{asset('storage/' . $blog->images->thumbnail)}}"alt="agenda">
+                            <div class="post-image main-border bot-4-border" style="width: 100%;">
+                                <a href="{{ route('dprd.detail.blog', $blog->slug) }}">
+                                <img src="{{asset('storage/' . $blog->images->thumbnail)}}" style="width: 800px;"alt="agenda" >
                                 </a>
                             </div>
                             <div class="post-item-rit">

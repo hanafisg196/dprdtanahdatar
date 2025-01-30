@@ -16,13 +16,15 @@ class AuthenticateUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-       $accesRole = ['admin','member'];
-       $userAccess = Auth::user()->roles->pluck('name')->intersect($accesRole)->isNotEmpty();
-       if($userAccess){
-        return $next($request);
-       } else{
+        $accesRole = ['admin', 'member'];
+        if (!Auth::check()) {
+            abort(404);
+        }
+        $userAccess = Auth::user()->roles->pluck('name')->intersect($accesRole)->isNotEmpty();
+        if ($userAccess) {
+            return $next($request);
+        }
         abort(404);
-       }
-
     }
+
 }

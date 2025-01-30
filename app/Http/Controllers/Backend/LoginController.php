@@ -17,6 +17,10 @@ class LoginController extends Controller
 
     public function index()
     {
+         if(Auth::user() !=null)
+        {
+            return redirect()->route('dashboard');
+        }
         return view('dashboard.page.login');
     }
 
