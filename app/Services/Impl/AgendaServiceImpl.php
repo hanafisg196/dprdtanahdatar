@@ -38,7 +38,7 @@ class AgendaServiceImpl implements AgendaService
     public function getAgendaByUser()
     {
         $user = $this->user();
-        return Agenda::where('user_id' , $user )->latest()->paginate(10);
+        return Agenda::where('user_id' , $user )->latest()->paginate(6);
     }
     public function getAgendaById($id)
     {
@@ -86,7 +86,7 @@ class AgendaServiceImpl implements AgendaService
     }
 
     public function getAgendaList(){
-        return Agenda::latest()->paginate(10);
+        return Agenda::latest()->paginate(6);
     }
 
     public function searchAgenda(Request $request)
@@ -100,7 +100,7 @@ class AgendaServiceImpl implements AgendaService
                     $query->where('nama', 'LIKE', '%' . $search . '%');
                 });
         }
-        return $agenda->paginate(10);
+        return $agenda->paginate(6);
     }
 
 

@@ -1,7 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>Publikasi</h3>
+            <div class="heading style4">
+                <h4 class="uppercase">Berita</h4>
+            </div>
             <div class="tabs bottom-border">
                 <ul class="nav nav-tabs">
                     <li class="active" style="font-size: 1.8rem;"><a href="#vision6" data-toggle="tab">Semua</a></li>
@@ -37,11 +39,11 @@
                                                            <li class="meta_date"><i class="fa fa-folder-o"></i><a href="#">{{$newsLatest->categories->nama}}</a></li>
                                                            <li class="meta_date mt-1"><i class="fa fa-clock-o"></i>{{dateFormat($newsLatest->created_at)}}</li>
                                                         </ul>
-                                                       <h5>
+                                                       <h4>
                                                        <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}" >
                                                            {{ $newsLatest->title }}
                                                        </a>
-                                                       </h5>
+                                                       </h4>
                                                    </div>
                                                </div>
                                            </div>
@@ -83,7 +85,7 @@
                                                         <li class="meta_date"><i class="fa fa-folder-o"></i><a href="#">{{$blog->categories->nama}}</a></li>
                                                         <li class="meta_date"><i class="fa fa-clock-o"></i>{{dateFormat($blog->created_at)}}</li>
                                                         </ul>
-                                                    <h5><a href="{{ route('dprd.detail.blog', $blog->slug) }}">{{ $blog->title }}</a></h5>
+                                                    <h4><a href="{{ route('dprd.detail.blog', $blog->slug) }}">{{ $blog->title }}</a></h4>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,5 +1,10 @@
 @extends('dprdtd.template.main')
 @section('content')
+<div class="container">
+<div class="heading style4" style="margin-top: 20px; margin-bottom: -5px;">
+    <h4 class="uppercase">Berita Terkini</h4>
+</div>
+</div>
 <div id="owl-slider" class="owl-carousel owl-theme" style="width: 81%; margin: auto; height: auto; margin-top: 20px;">
     @foreach ($data['headlines'] as $headline)
         <div class="item">

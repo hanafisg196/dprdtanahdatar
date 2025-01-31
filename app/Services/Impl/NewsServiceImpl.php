@@ -65,7 +65,7 @@ class NewsServiceImpl implements NewsService
     }
     public function getNews()
     {
-        return News::with('images')->latest()->paginate(10);
+        return News::with('images')->latest()->paginate(6);
     }
     public function getNewsByUser()
     {
@@ -184,7 +184,7 @@ class NewsServiceImpl implements NewsService
                 });
         }
 
-        return $news->paginate(10);
+        return $news->paginate(6);
     }
 
     public function searchNewsForDashboard(Request $request)
@@ -208,6 +208,6 @@ class NewsServiceImpl implements NewsService
             });
         }
 
-        return $news->paginate(10);
+        return $news->paginate(6);
     }
 }

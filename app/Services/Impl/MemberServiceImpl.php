@@ -18,7 +18,7 @@ class MemberServiceImpl implements MemberService
     }
 
     public function getMembers(){
-        return Member::with(['images','tags'])->latest()->get();
+        return Member::with(['images','tags'])->latest()->paginate(8);
     }
 
     public function copyTemporaryFile($tmpFile, $field, $fileId)
