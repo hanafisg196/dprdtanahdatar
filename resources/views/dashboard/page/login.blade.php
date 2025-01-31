@@ -24,7 +24,7 @@
                             </div>
                         </div>
                     @endif
-                    <form method="post" action="{{route('doLogin')}}">
+                    <form method="post" action="{{route('doLogin')}}" id="loginForm">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl  @error('email') is-invalid @enderror"
@@ -63,19 +63,25 @@
                              @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5" id="submitButton">Login</button>
                     </form>
 
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
-
                 </div>
             </div>
         </div>
 
     </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function() {
+            let submitButton = document.getElementById("submitButton");
+            submitButton.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Loading...`;
+            submitButton.disabled = true;
+        });
+    </script>
 </body>
 
 </html>

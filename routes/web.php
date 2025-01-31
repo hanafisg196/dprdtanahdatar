@@ -5,15 +5,12 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Backend\LinkController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FetchingDataControlller;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\FileUploadController;
-use App\Http\Controllers\Frontend\NewsPageController;
 use App\Http\Controllers\ImageContentController;
 use App\Http\Controllers\ImageSliderController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MenuController;
@@ -50,8 +47,8 @@ Route::get('/berita/semua', [BlogController::class, 'getNews'])
 // Route::get('/home', [HomePageController::class, 'index'])->name('home');
 // Route::get('/berita/{slug}', [NewsPageController::class,'detailNews'])->name('news.detail');
 // // Route::post('/commen/{newsId}', [NewsPageController::class,'detailNews'])->name('news.detail');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'dologin'])->name('doLogin');
+Route::get('/admindprd', [LoginController::class, 'index'])->name('login');
+Route::post('/dologin', [LoginController::class, 'dologin'])->name('doLogin');
 // Route::get('/fetching', [FetchingDataControlller::class, 'fetchData']);
 
 Route::middleware(AuthenticateUser::class)->group(function () {
