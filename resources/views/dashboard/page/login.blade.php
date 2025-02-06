@@ -52,10 +52,10 @@
 
                         <div class="form-group position-relative has-icon-left mb-4">
                             <label for="captcha">Captcha</label>
-                           <div class="mb-2">
-                            {!! captcha_img('math') !!}
-                           </div>
-                            <input type="text" class="form-control  @error('captcha') is-invalid @enderror" placeholder="captcha" name="captcha" id="captcha">
+                            <div class="mb-2">
+                                <img src="{{ captcha_src('math') }}" alt="CAPTCHA" style="width: 200px; height: 60px;">
+                            </div>
+                            <input type="text" class="form-control  @error('captcha') is-invalid @enderror" placeholder="Berapa ?" name="captcha" id="captcha">
                             @error('captcha')
                             <div class="invalid-feedback">
                                 {{ $message }}
