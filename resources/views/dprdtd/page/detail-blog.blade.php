@@ -4,7 +4,12 @@
 @section('ogurl', route('dprd.member.detail',$blog->slug))
 @section('ogtitle', $blog->title)
 @section('ogdesc', $blog->description)
+@if ($blog->images)
 @section('ogimage', asset('storage/' . $blog->images->image))
+@else
+@section('ogimage', asset(''))
+@endif
+
 
 @extends('dprdtd.template.main')
 @section('content')
@@ -31,7 +36,12 @@
                 <div class="blog-single">
                     <div class="post-item">
                         <div class="details-img">
+                            @if ($blog->images)
                             <img src="{{ asset('storage/' . $blog->images->image) }}" alt="blog">
+                            @else
+                            <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}" alt="blog">
+                            @endif
+
                         </div>
                         <article class="post-content">
                             {!! $blog->body !!}

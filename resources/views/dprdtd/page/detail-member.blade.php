@@ -66,7 +66,12 @@
 
             <!-- Foto Kanan -->
             <div>
+                @if ($memberDetail->images)
                 <img src="{{ asset('storage/' . $memberDetail->images->image) }}" alt="Foto Muharlion" class="photo-img">
+                @else
+                <img src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}" alt="Foto Muharlion" class="photo-img">
+                @endif
+
             </div>
         </div>
 
@@ -83,9 +88,16 @@
             <!-- Kontainer untuk Partai -->
             <div class="party" style="display: flex; align-items: center; margin-top: 10px; gap: 15px;">
                 <!-- Gambar Logo Partai -->
+                @if ($memberDetail->parties->images)
                 <img src="{{ asset('storage/' . $memberDetail->parties->images->image) }}"
-                     alt="Logo Partai"
-                     style="width: 200px;;object-fit: contain; margin-right: 10px; margin-bottom: 10px;">
+                alt="Logo Partai"
+                style="width: 200px;;object-fit: contain; margin-right: 10px; margin-bottom: 10px;">
+                @else
+                <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}"
+                alt="Logo Partai"
+                style="width: 200px;;object-fit: contain; margin-right: 10px; margin-bottom: 10px;">
+                @endif
+
 
                 <!-- Informasi Partai -->
                 <div style="font-size: 14px; line-height: 1.5; color: #555;">

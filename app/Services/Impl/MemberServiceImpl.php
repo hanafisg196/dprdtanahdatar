@@ -104,11 +104,11 @@ class MemberServiceImpl implements MemberService
         $jabatan = explode(',', $request->tags);
         $validated =  $request->validate([
             'nama' =>  'required|string|max:150',
-            'lahir' => 'nullable|string|max:150',
-            'agama' => 'nullable|string|max:15',
-            'dapil' => 'nullable|string|max:180',
+            'lahir' => 'required|string|max:150',
+            'agama' => 'required|string|max:15',
+            'dapil' => 'required|string|max:180',
             'partai'=> 'required|numeric',
-            'status' => 'string'
+            'status' => 'required|string'
         ]);
         $member =  Member::create([
             'nama' => $validated['nama'],
@@ -118,7 +118,9 @@ class MemberServiceImpl implements MemberService
             'party_id' => $validated['partai'],
             'status' => $validated['status']
         ]);
-        $member->syncTags($jabatan);
+        if (!empty($jabatan)) {
+            $member->attachTags($jabatan);
+        }
 
         $this->copyTemporaryFile($temporaryFiles, 'member_id',$member->id);
     }
@@ -129,11 +131,11 @@ class MemberServiceImpl implements MemberService
         $jabatan = array_filter(explode(',', $request->tags));
         $validated =  $request->validate([
             'nama' =>  'required|string|max:150',
-            'lahir' => 'nullable|string|max:150',
-            'agama' => 'nullable|string|max:15',
-            'dapil' => 'nullable|string|max:180',
+            'lahir' => 'required|string|max:150',
+            'agama' => 'required|string|max:15',
+            'dapil' => 'required|string|max:180',
             'partai'=> 'required|numeric',
-            'status' => 'string',
+            'status' => 'required|string',
         ]);
         $member = Member::find($id);
         $member->update([

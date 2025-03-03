@@ -6,11 +6,8 @@
             <h5 class="ms-2">Berita</h5>
             <form action="{{ route('dashboard.news.post.search') }}" method="POST" class="d-flex ms-4">
                 @csrf
-                <input type="text"
-                       name="search"
-                       class="form-control form-control-sm"
-                       placeholder="Cari berita..."
-                       style="width: 250px;">
+                <input type="text" name="search" class="form-control form-control-sm" placeholder="Cari berita..."
+                    style="width: 250px;">
                 <button type="submit" class="btn btn-primary btn-sm ms-2">
                     <i class="bi bi-search"></i>
                 </button>
@@ -47,10 +44,11 @@
                                             class="btn btn-primary btn-sm">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                        <a href="{{ route('dashboard.news.post.preview', encrypt($item->id)) }}"
-                                            class="btn btn-primary btn-sm">
-                                            <i class="bi bi-eye-fill"></i>
-                                        </a>
+                                        <input type="text" id="copyText" value="{{route('dprd.detail.blog', $item->slug)}}" hidden="true">
+
+                                        <button type="button" class="btn btn-success btn-sm" onclick="copyToClipboard()">
+                                            <i class="bi bi-copy"></i>
+                                        </button>
                                         <button type="button" class="btn btn-danger btn-sm"
                                             onclick="confirmDelete('{{ $item->id }}')">
                                             <i class="bi bi-trash"></i>
@@ -81,4 +79,20 @@
     @include('placeholder.component.card')
     @include('placeholder.script.loader-script')
     @include('dashboard.component.alert-delete')
+    <script>
+     function copyToClipboard() {
+        var copyText = document.getElementById("copyText").value;
+        navigator.clipboard.writeText(copyText).then(() => {
+            Swal.fire({
+                icon: "success",
+                title: "Berhasil!",
+                text: "Url Halaman Berhasil Di Salin",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }).catch(err => {
+            alert("Gagal menyalin teks: " + err);
+        });
+    }
+    </script>
 @endsection

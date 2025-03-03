@@ -19,15 +19,25 @@
                     <div class="swiper-wrapper">
                         @foreach ($data['members'] as $member)
                         <div class="swiper-slide">
+
                             <a href="{{ route('dprd.member.detail', $member->slug) }}">
                             <div class="icon-box t-center light-gry-border rect-angles">
+                                @if ($member->images)
                                 <img
-                                    src="{{ asset('storage/'. $member->images->image) }}"
-                                    alt="{{ $member->nama }}"
-                                    class="img-circle"
-                                    style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                src="{{ asset('storage/'. $member->images->image) }}"
+                                alt="{{ $member->nama }}"
+                                class="img-circle"
+                                style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                @else
+                                <img
+                                src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}"
+                                alt="{{ $member->nama }}"
+                                class="img-circle"
+                                style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                @endif
                                 <h6 class="uppercase mt-1">{{ $member->nama }}</h6>
                             </div>
+
                         </a>
                         </div>
 
@@ -48,12 +58,23 @@
                             <a href="{{ route('dprd.member.detail', $partyMember->slug) }}">
                             <div class="card">
                                 <div class="icon-box t-center light-gry-border rect-angles">
-                                    <img
+                                    @if ($partyMember->images)
+                                        <img
                                         src="{{ asset('storage/'. $partyMember->images->image) }}"
                                         alt="{{ $partyMember->nama }}"
                                         class="img-circle"
                                         style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                        @else
+                                        <img
+                                        src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}"
+                                        alt="{{ $partyMember->nama }}"
+                                        class="img-circle"
+                                        style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                        @endif
+
+
                                     <h6 class="uppercase mt-1">{{ $partyMember->nama }}</h6>
+
                                 </div>
                             </div>
                              </a>

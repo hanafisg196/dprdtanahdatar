@@ -151,8 +151,8 @@
                                 <img src="{{asset('storage/' . $member->images->image) }}" alt="Profile"
                                 width="200px;" height="220px;" style="object-fit: cover;">
                                 @else
-                                <img src="{{asset('/dist/assets/compiled/png/user.png') }}" alt="Profile"
-                                width="150px;" height="150px;" style=" object-fit: cover;">
+                             <img src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}" alt="Profile"
+                                width="200px;" height="250px;" style=" object-fit: cover;">
                                 @endif
                             </div>
                             <label for="profile">Ganti Foto</label>

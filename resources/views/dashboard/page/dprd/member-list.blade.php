@@ -33,18 +33,19 @@
                         <div class="col">
                             <div class="card h-100" style="position: relative;">
                                 @if ($member->images)
-                                    <img src="{{ asset('storage/' . $member->images->image) }}" width="200" height="250"
-                                        class="card-img-top" alt="Logo Partai 1" style="object-fit: cover;">
+                                    <img src="{{ asset('storage/' . $member->images->image) }}" width="200"
+                                        height="250" class="card-img-top" alt="Logo Partai 1" style="object-fit: cover;">
                                 @else
-                                    <img src="{{ asset('/dist/assets/compiled/png/user.png') }}" width="200" height="250"
-                                        style="object-fit: cover;" class="rounded-circle" alt="Profile">
+                                    <img src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}"
+                                        width="200" height="250" class="card-img-top" alt="Logo Partai 1"
+                                        style="object-fit: cover;">
                                 @endif
                                 <div style="position: absolute; top: 10px; right: 10px;     ">
                                     <a class="btn btn-sm btn-primary"
                                         href="{{ route('dashboard.member.detail', $member->id) }}"><i
                                             class="bi bi-pencil-square"></i></a>
-                                    <form id="{{ $member->id }}" action="{{ route('dashboard.member.delete', $member->id) }}"
-                                        method="POST">
+                                    <form id="{{ $member->id }}"
+                                        action="{{ route('dashboard.member.delete', $member->id) }}" method="POST">
                                         @csrf
                                     </form>
                                     <button class="btn btn-sm btn-danger" style="margin-top: 2px;"
@@ -52,7 +53,9 @@
                                 </div>
                                 <div class="card-body" style="margin-top: -10px;">
                                     <h6>{{ $member->nama }}</h6>
-                                    <p>- {{ $member->tags->first()->name }}</p>
+                                    @if ($member->tags->isNotEmpty())
+                                        <p>-{{ $member->tags->first()->name }}</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>

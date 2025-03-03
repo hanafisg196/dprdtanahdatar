@@ -5,13 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>@yield('title', 'DPRD Tanah Datar')</title>
-    <meta name="description" content="@yield('description')">
-    <meta name="keywords" content="@yield('keywords')">
+    <meta name="description" content="@yield('description','')">
+    <meta name="keywords" content="@yield('keywords','')">
     <meta name="og:url" content="@yield('ogurl', 'https://tanahdatar.go.id')" />
     <meta name="og:title" content="@yield('ogtitle', 'Tanah Datar')" />
     <meta name="og:type" content="berita" />
-    <meta name="og:description" content="@yield('ogdesc')" />
-    <meta name="og:image" content="@yield('ogimage')" />
+    <meta name="og:description" content="@yield('ogdesc','')" />
+    <meta name="og:image" content="@yield('ogimage', '')" />
     <meta name="author" content="IT-RAYS">
 
     <!-- Devices Meta -->

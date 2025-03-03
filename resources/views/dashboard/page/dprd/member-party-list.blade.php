@@ -27,7 +27,7 @@
                 <img src="{{ asset('storage/' . $party->images->image) }}" class="card-img-top"
                 style="object-fit: cover;" width="220" height="200" alt="Logo Partai 1">
                 @else
-                <img src="{{ asset('storage/' . $party->images->image) }}"
+                <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}"
                 style="object-fit: cover;" width="220" height="200" class="card-img-top" alt="Logo Partai 1">
                 @endif
                 <div style="position: absolute; top: 10px; right: 10px; z-index: 1;">

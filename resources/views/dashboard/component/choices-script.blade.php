@@ -8,7 +8,7 @@
             editItems: true,
             maxItemCount: 10,
             removeItemButton: true,
-            placeholderValue: 'Masukan Keyword',
+            placeholderValue: '',
           }
         );
      });

@@ -45,7 +45,7 @@
                         <img src="{{asset('storage/' . $party->images->image) }}" alt="Profile"
                         width="150px;" height="150px;" style="object-fit: cover;">
                         @else
-                        <img src="{{asset('/dist/assets/compiled/png/user.png') }}" alt="Profile"
+                        <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}" alt="Profile"
                         width="150px;" height="150px;" style="object-fit: cover;">
                         @endif
                     </div>

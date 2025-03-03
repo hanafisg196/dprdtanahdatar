@@ -18,7 +18,7 @@
                         </button>
                         @include('dashboard.component.modals.modal-add-menu')
                     </div>
-                    <div class="card-content" style="margin-top: -4%">
+                    <div class="card-content">
                         <div class="card-body">
                             @if ($menus->isEmpty())
                                 <div class="d-flex justify-content-center">

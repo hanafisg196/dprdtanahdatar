@@ -9,6 +9,18 @@
 
 						    <!-- footer copyrights left cell -->
 				    		<div class="copyrights over-hidden tbl">© Copyrights <b class="main-color">DPRD Tanah Datar</b> 2025. All rights reserved.</div>
+                            <div class="text-center">
+                                <b class="main-color">Alamat</b>
+                            </div>
+                            <div class="text-center">
+                                <p>
+                                    Gedung DPRD Kabupaten Tanah Datar
+                                    Jl. Sultan Alam Bagagarsyah
+                                    Pagaruyung, Tanjung Emas
+                                    Kabupaten Tanah Datar
+                                    Sumatera Barat, Indonesia
+                                </p>
+                          </div>
 
 				    		<!-- footer social links right cell start -->
 						    {{-- <div class="tbl m-t-2 over-hidden">

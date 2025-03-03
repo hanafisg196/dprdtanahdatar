@@ -29,7 +29,12 @@
                                        <article class="post-content">
                                            <div class="post-image main-border bot-4-border">
                                                <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
-                                                   <img src="{{ asset('storage/' . $newsLatest->images->thumbnail) }}" style="width: 800px;" alt="Our Blog post goes here">
+                                                @if ($newsLatest->images)
+                                                <img src="{{ asset('storage/' . $newsLatest->images->thumbnail) }}" style="width: 800px;" alt="Our Blog post goes here">
+                                                @else
+                                                <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}" style="width: 800px;" alt="Our Blog post goes here">
+                                                @endif
+
                                                </a>
                                            </div>
                                            <div class="post-item-rit">
@@ -75,7 +80,12 @@
                                     <article class="post-content">
                                         <div class="post-image main-border bot-4-border">
                                             <a href="{{ route('dprd.detail.blog', $newsLatest->slug) }}">
+                                                @if ($blog->images)
                                                 <img src="{{ asset('storage/' . $blog->images->thumbnail) }}" style="width: 800px;" alt="Our Blog post goes here">
+                                                @else
+                                                <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}" style="width: 800px;" alt="Our Blog post goes here">
+                                                @endif
+
                                             </a>
                                         </div>
                                         <div class="post-item-rit">

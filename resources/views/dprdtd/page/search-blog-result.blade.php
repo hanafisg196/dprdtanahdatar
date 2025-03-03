@@ -15,8 +15,13 @@
                             @foreach ($blogs as $blog)
                             <article class="post-content">
                                 <div class="post-image main-border bot-4-border">
-                                    <a href="blog-single.html">
-                                    <img src="{{asset('storage/' . $blog->images->thumbnail)}}"alt="agenda">
+                                    <a href="#">
+                                    @if ($blog->images)
+                                     <img src="{{asset('storage/' . $blog->images->thumbnail)}}"alt="agenda">
+                                     @else
+                                     <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}"alt="agenda">
+                                    @endif
+
                                     </a>
                                 </div>
                                 <div class="post-item-rit">

@@ -17,10 +17,16 @@
             </div>
             <a href="{{ route('dprd.detail.blog', $headline->slug) }}" class="label label-danger p-a-1"
                 style="position:absolute;left:20px;bottom:100px">LIHAT</a>
+            @if ($headline->images)
             <img alt="" style="height: 400px; width: 100%;object-fit: cover; border-radius: 5px;"
-                src="{{ asset('storage/' . $headline->images->image) }}" />
+            src="{{ asset('storage/' . $headline->images->image) }}" />
+            @else
+            <img alt="" style="height: 400px; width: 100%;object-fit: cover; border-radius: 5px;"
+            src="{{ asset('dist/assets/compiled/png/broken-image.png') }}" />
+            @endif
         </div>
     @endforeach
+
 </div>
 
 @include('dprdtd.page.component.leader')

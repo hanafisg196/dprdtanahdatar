@@ -29,6 +29,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'homePage'])->name('home');
 
+// Route::get('/generate', function(){
+
+// });
 Route::get('/berita', function () {
     return view('dprdtd.page.detail-blog');
 })->name('berita');

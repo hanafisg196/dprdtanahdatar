@@ -3,7 +3,14 @@
         @foreach ($randomNews as $ranNews)
             <li>
                 <div class="post-img">
-                    <a href="{{route('dprd.detail.blog', $ranNews->slug)}}"><img src="{{asset('storage/'.$ranNews->images->thumbnail)}}" alt=""></a>
+                    <a href="{{route('dprd.detail.blog', $ranNews->slug)}}">
+                        @if ($ranNews->image)
+                        <img src="{{asset('storage/'.$ranNews->images->thumbnail)}}" alt="">
+                        @else
+                        <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}" alt="">
+                        @endif
+
+                    </a>
                 </div>
                 <div class="widget-post-info">
                     <h5><a href="{{route('dprd.detail.blog', $ranNews->slug)}}">{{ wordLimiter($ranNews->title, 30) }}</a></h5>

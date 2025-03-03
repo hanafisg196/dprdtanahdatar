@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="logo">Logo</label>
-                            <input type="file" class="filepond" id="file" name="file">
+                            <input type="file" class="filepond" id="file" name="file" required>
                         </div>
                     </div>
                 </div>
