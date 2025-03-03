@@ -46,6 +46,23 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md-6 mb-6">
+                                <div class="form-group">
+                                    <label for="sublink">Agama</label>
+                                    <small class="form-text text-danger">
+                                        <i class="fas fa-info-circle"></i>
+                                        *
+                                    </small>
+                                    <select class="form-select" id="basicSelect" name="agama">
+                                        <option selected>Pilih Agama</option>
+                                        <option value="Islam">Islam</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                        <option value="Konghucu">Konghucu</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="sublink">Lahir</label>
                                 <small class="form-text text-danger">
@@ -53,7 +70,8 @@
                                     *
                                 </small>
                                 <input type="text" class="form-control @error('lahir') is-invalid @enderror"
-                                    name="lahir" placeholder="ex : Tempat, Tanggal Bulan Tahun " value="{{ old('lahir') }}">
+                                    name="lahir" placeholder="ex : Tempat, Tanggal Bulan Tahun "
+                                    value="{{ old('lahir') }}">
                                 @error('lahir')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -108,20 +126,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label for="sublink">Agama</label>
-                                <small class="form-text text-danger">
-                                    <i class="fas fa-info-circle"></i>
-                                    *
-                                </small>
-                                <input type="text" class="form-control @error('agama') is-invalid @enderror"
-                                    name="agama" placeholder="ex: Islam" value="{{ old('agama') }}">
-                                @error('agama')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
+
                             <div class="form-group">
                                 <label for="dapil">Daerah Pemilihan</label>
                                 <small class="form-text text-danger">
@@ -129,7 +134,7 @@
                                     *
                                 </small>
                                 <input type="text" class="form-control @error('dapil') is-invalid @enderror"
-                                    name="dapil" placeholder="ex: Daearah Pemilihan Satu" value="{{ old('dapil') }}" >
+                                    name="dapil" placeholder="ex: Daearah Pemilihan Satu" value="{{ old('dapil') }}">
                                 @error('dapil')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -153,6 +158,6 @@
         </form>
     </section>
 
-    @include('dashboard.component.choices-script')
+@include('dashboard.component.choices-script')
 @endsection
 @include('dashboard.component.filepond')
