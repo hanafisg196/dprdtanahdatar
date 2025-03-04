@@ -4,7 +4,7 @@
             <li>
                 <div class="post-img">
                     <a href="{{route('dprd.detail.blog', $ranNews->slug)}}">
-                        @if ($ranNews->image)
+                        @if ($ranNews->images)
                         <img src="{{asset('storage/'.$ranNews->images->thumbnail)}}" alt="">
                         @else
                         <img src="{{ asset('dist/assets/compiled/png/broken-image.png') }}" alt="">

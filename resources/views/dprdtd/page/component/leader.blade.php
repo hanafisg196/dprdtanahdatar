@@ -2,7 +2,7 @@
      <div class="row">
          @foreach ($data['leaders'] as $leader)
              <div class="col-md-3">
-                 <div class="icon-box t-center light-gry-border rect-angles">
+                 <div class="icon-box t-center light-gry-border rect-angles" style="max-height: 358px;">
                      <a href="{{ route('dprd.member.detail', $leader->slug) }}">
                         @if ($leader->images)
                         <img src="{{ asset('storage/' . $leader->images->image) }}" alt="Person 1" class="img-circle"
