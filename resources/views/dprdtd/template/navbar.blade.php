@@ -1,3 +1,4 @@
+
 <div class="responsive-nav">
     <!-- top navigation menu start -->
     <nav class="top-nav">
@@ -29,9 +30,5 @@
             </div>
            </form>
         </div>
-        <!-- top search end -->
-
-        <!-- cart start -->
-        <!-- cart end -->
     </div>
 </div>

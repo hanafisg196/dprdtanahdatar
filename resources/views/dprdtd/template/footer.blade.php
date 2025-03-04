@@ -15,7 +15,7 @@
                             <div class="text-center">
                                 <p>
                                     Gedung DPRD Kabupaten Tanah Datar
-                                    Jl. Sultan Alam Bagagarsyah
+                                    Jl. Sultan Alam Bagagarsyah <br>
                                     Pagaruyung, Tanjung Emas
                                     Kabupaten Tanah Datar
                                     Sumatera Barat, Indonesia
