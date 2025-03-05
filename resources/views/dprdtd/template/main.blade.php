@@ -5,12 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>@yield('title', 'DPRD Tanah Datar')</title>
-    <meta name="description" content="@yield('description','')">
-    <meta name="keywords" content="@yield('keywords','')">
+    <meta name="description" content="@yield('description', '')">
+    <meta name="keywords" content="@yield('keywords', '')">
     <meta name="og:url" content="@yield('ogurl', 'https://tanahdatar.go.id')" />
     <meta name="og:title" content="@yield('ogtitle', 'Tanah Datar')" />
     <meta name="og:type" content="berita" />
-    <meta name="og:description" content="@yield('ogdesc','')" />
+    <meta name="og:description" content="@yield('ogdesc', '')" />
     <meta name="og:image" content="@yield('ogimage', '')" />
     <meta name="author" content="IT-RAYS">
 
@@ -19,7 +19,8 @@
 
     <!-- Put favicon.ico and apple-touch-icon(s).png in the images folder -->
     <link rel="shortcut icon" href="/dist/assets/compiled/jpg/logotanahdatar.png">
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,100,300,500,700%7CLato:400,300,700,900&subset=latin,latin-ext'
+    <link
+        href='https://fonts.googleapis.com/css?family=Oswald:400,100,300,500,700%7CLato:400,300,700,900&subset=latin,latin-ext'
         rel='stylesheet' type='text/css'>
 
     <!-- Plugins CSS files -->
@@ -40,6 +41,38 @@
 
 <body>
     <style>
+        .card-member {
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            max-height: 400px;
+            text-align: center;
+        }
+
+        .card-member-2 {
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            width: 180px;
+            max-height:240px;
+            text-align: center;
+        }
+
+
+
+        .img-circle {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            margin-top: 5px;
+        }
+
+
+
         .logo {
             text-align: center;
             /* Pusatkan konten */
@@ -137,6 +170,9 @@
         @media (max-width: 768px) {
             .custom-col {
                 width: 48%;
+            }
+            .icon-box h6 {
+                display:block;
             }
         }
 

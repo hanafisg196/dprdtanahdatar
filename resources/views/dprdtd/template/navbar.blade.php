@@ -1,4 +1,3 @@
-
 <div class="responsive-nav">
     <!-- top navigation menu start -->
     <nav class="top-nav">

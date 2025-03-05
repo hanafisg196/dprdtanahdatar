@@ -4,10 +4,8 @@
             <li class="active"><a href="#vision3" data-toggle="tab">Anggota</a></li>
             @foreach ($data['partiesMember'] as $index => $party)
                 <li class="{{ $index === 0 ? '' : '' }}">
-                    <a href="#mission{{ $party->id }}"
-                       data-toggle="tab"
-                       role="tab">
-                       {{ $party->initial }}
+                    <a href="#mission{{ $party->id }}" data-toggle="tab" role="tab">
+                        {{ $party->initial }}
                     </a>
                 </li>
             @endforeach
@@ -18,29 +16,26 @@
                 <div class="swiper mySwiper" style="position: relative;">
                     <div class="swiper-wrapper">
                         @foreach ($data['members'] as $member)
-                        <div class="swiper-slide">
-
-                            <a href="{{ route('dprd.member.detail', $member->slug) }}">
-                            <div class="icon-box t-center light-gry-border rect-angles">
-                                @if ($member->images)
-                                <img
-                                src="{{ asset('storage/'. $member->images->image) }}"
-                                alt="{{ $member->nama }}"
-                                class="img-circle"
-                                style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
-                                @else
-                                <img
-                                src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}"
-                                alt="{{ $member->nama }}"
-                                class="img-circle"
-                                style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
-                                @endif
-                                <h6 class="uppercase mt-1">{{ $member->nama }}</h6>
+                            <div class="swiper-slide">
+                                <a href="{{ route('dprd.member.detail', $member->slug) }}">
+                                    <div class="col-md-2">
+                                        <a href="{{ route('dprd.member.detail', $member->slug) }}">
+                                            <div class="card-member-2">
+                                                @if ($member->images)
+                                                    <img src="{{ asset('storage/' . $member->images->image) }}"
+                                                        alt="{{ $member->nama }}" class="img-circle"
+                                                        style="width: 200px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                                @else
+                                                    <img src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}"
+                                                        alt="{{ $member->nama }}" class="img-circle"
+                                                        style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                                @endif
+                                                <h6 class="uppercase mt-1">{{ $member->nama }}</h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </a>
                             </div>
-
-                        </a>
-                        </div>
-
                         @endforeach
                     </div>
                     <div class="swiper-button-next"></div>
@@ -48,37 +43,26 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-            @foreach ($data['partiesMember']  as $index => $party)
-                <div class="tab-pane fade"
-                     id="mission{{ $party->id }}"
-                     role="tabpanel">
+            @foreach ($data['partiesMember'] as $index => $party)
+                <div class="tab-pane fade" id="mission{{ $party->id }}" role="tabpanel">
                     <div class="row">
                         @foreach ($party->members as $partyMember)
-                        <div class="col-md-2">
-                            <a href="{{ route('dprd.member.detail', $partyMember->slug) }}">
-                            <div class="card">
-                                <div class="icon-box t-center light-gry-border rect-angles">
-                                    @if ($partyMember->images)
-                                        <img
-                                        src="{{ asset('storage/'. $partyMember->images->image) }}"
-                                        alt="{{ $partyMember->nama }}"
-                                        class="img-circle"
-                                        style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                            <div class="col-md-2">
+                                <a href="{{ route('dprd.member.detail', $partyMember->slug) }}">
+                                    <div class="card-member-2">
+                                        @if ($partyMember->images)
+                                            <img src="{{ asset('storage/' . $partyMember->images->image) }}"
+                                                alt="{{ $partyMember->nama }}" class="img-circle"
+                                                style="width: 200px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
                                         @else
-                                        <img
-                                        src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}"
-                                        alt="{{ $partyMember->nama }}"
-                                        class="img-circle"
-                                        style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
+                                            <img src="{{ asset('/dist/assets/compiled/png/placeholder_member.png') }}"
+                                                alt="{{ $partyMember->nama }}" class="img-circle"
+                                                style="width: 160px; height: 160px; object-fit: cover; border: 2px solid #ccc; margin-top: 5px;">
                                         @endif
-
-
-                                    <h6 class="uppercase mt-1">{{ $partyMember->nama }}</h6>
-
-                                </div>
+                                        <h6 class="uppercase mt-1">{{ $partyMember->nama }}</h6>
+                                    </div>
+                                </a>
                             </div>
-                             </a>
-                        </div>
                         @endforeach
                     </div>
                 </div>

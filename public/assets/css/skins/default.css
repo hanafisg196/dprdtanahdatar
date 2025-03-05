@@ -14,9 +14,11 @@
 .icon-boxes-1 [class*="col-md-"]:before,.icon-boxes-1 [class*="col-md-"]:after,.filter-by.style2 ul li.selected a span,.filter-by.style3 ul li.selected a span,.filter-by.style4 ul li.selected a span,
 .list-grid a.selected,.heading.main .head-sep:before,.heading.main .head-sep:after,.slick-prev:hover, .slick-next:hover,#to-top:hover,.swiper-button:hover,.section-bullets li.active a:after,.top-head.box-head.light-head > .container:before,
 .top-head.box-head.dark-head > .container:before,.on-sale-inner{
-	background-color:#fff !important;
+	background-color:#26abff;
 	color:#fff
 }
+
+
 
 .main-border,.team-box.box-1:hover .team-img,.side-nav li.dl-back a,.light-sub.top-nav ul li ul,.dark-sub.top-nav ul li ul,.tags li:hover a,.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover,
 .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover,.accordion.colored.bottom-border h5.acc-head a,.tabs.bg-color .nav-tabs>li.active>a,.tabs.bottom.bg-color .nav-tabs, .tabs.bottom.bg-color .nav-tabs>li.active>a,
